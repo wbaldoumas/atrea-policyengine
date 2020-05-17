@@ -4,9 +4,4 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="IPolicyEngine.cs~RF1dff766.TMP" />
-    <None Remove="Processors\Processor.cs~RF1b0c3d7.TMP" />
-  </ItemGroup>
-
 </Project>
