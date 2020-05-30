@@ -4,4 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="IAsyncPolicyEngine.cs~RFf74266.TMP" />
+    <None Remove="Policies\Output\IOutputPolicy.cs~RF1073549.TMP" />
+  </ItemGroup>
+
 </Project>
