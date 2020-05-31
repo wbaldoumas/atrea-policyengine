@@ -18,7 +18,7 @@
 
         /// <summary>
         ///     Accept the item for this given <see cref="IInputPolicy{T}"/> and continue evaluating remaining
-        ///     input policies, or being processing if this is the result of the last input policy run.
+        ///     input policies, or begin processing if this is the result of the last input policy that has been run.
         /// </summary>
         Continue
     }

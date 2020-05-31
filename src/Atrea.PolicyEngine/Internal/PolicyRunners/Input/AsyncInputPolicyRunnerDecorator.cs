@@ -1,22 +1,24 @@
-﻿using System;
+﻿using Atrea.PolicyEngine.Policies.Input;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Atrea.PolicyEngine.Policies.Input;
 
 namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
 {
-    internal class AsyncInputPolicyRunner<T> : IAsyncInputPolicyRunner<T>
+    internal class AsyncInputPolicyRunnerDecorator<T> : BaseAsyncInputPolicyRunnerDecorator<T>
     {
-        private readonly IEnumerable<IAsyncInputPolicy<T>> _inputPolicies;
+        private readonly IEnumerable<IAsyncInputPolicy<T>> _asyncInputPolicies;
 
-        public AsyncInputPolicyRunner(IEnumerable<IAsyncInputPolicy<T>> inputPolicies)
+        public AsyncInputPolicyRunnerDecorator(
+            IAsyncInputPolicyRunner<T> asyncInputPolicyRunner, 
+            IEnumerable<IAsyncInputPolicy<T>> asyncInputPolicies) : base(asyncInputPolicyRunner)
         {
-            _inputPolicies = inputPolicies;
+            _asyncInputPolicies = asyncInputPolicies;
         }
 
-        public async Task<InputPolicyResult> ShouldProcessAsync(T item)
+        protected override async Task<InputPolicyResult> EvaluateInputPolicies(T item)
         {
-            foreach (var inputPolicy in _inputPolicies)
+            foreach (var inputPolicy in _asyncInputPolicies)
             {
                 switch (await inputPolicy.ShouldProcessAsync(item))
                 {

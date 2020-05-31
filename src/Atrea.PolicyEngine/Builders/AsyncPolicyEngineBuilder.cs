@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using Atrea.PolicyEngine.Internal.Engines;
+﻿using Atrea.PolicyEngine.Internal.Engines;
 using Atrea.PolicyEngine.Internal.PolicyRunners.Input;
 using Atrea.PolicyEngine.Internal.PolicyRunners.Output;
-using Atrea.PolicyEngine.Internal.ProcessorRunners;
 using Atrea.PolicyEngine.Policies.Input;
 using Atrea.PolicyEngine.Policies.Output;
 using Atrea.PolicyEngine.Processors;
+using System.Collections.Generic;
+using Atrea.PolicyEngine.Internal.ProcessorRunners;
 
 namespace Atrea.PolicyEngine.Builders
 {
@@ -30,14 +30,9 @@ namespace Atrea.PolicyEngine.Builders
         IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder<T>,
         IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder<T>
     {
-        private IEnumerable<IAsyncInputPolicy<T>> _asyncInputPolicies = new List<IAsyncInputPolicy<T>>();
-        private IEnumerable<IAsyncOutputPolicy<T>> _asyncOutputPolicies = new List<IAsyncOutputPolicy<T>>();
-        private IEnumerable<IAsyncProcessor<T>> _asyncProcessors = new List<IAsyncProcessor<T>>();
-        private IEnumerable<IInputPolicy<T>> _inputPolicies = new List<IInputPolicy<T>>();
-        private IEnumerable<IOutputPolicy<T>> _outputPolicies = new List<IOutputPolicy<T>>();
-        private IEnumerable<IAsyncOutputPolicy<T>> _parallelOutputPolicies = new List<IAsyncOutputPolicy<T>>();
-        private IEnumerable<IAsyncProcessor<T>> _parallelProcessors = new List<IAsyncProcessor<T>>();
-        private IEnumerable<IProcessor<T>> _processors = new List<IProcessor<T>>();
+        private IAsyncInputPolicyRunner<T> _asyncInputPolicyRunner;
+        private IAsyncProcessorRunner<T> _asyncProcessorRunner;
+        private IAsyncOutputPolicyRunner<T> _asyncOutputPolicyRunner;
 
         /// <summary>
         ///     Begin configuring a <see cref="IAsyncPolicyEngine{T}"/>.
@@ -53,7 +48,10 @@ namespace Atrea.PolicyEngine.Builders
         IWithInputPoliciesProcessorAsyncPolicyEngineBuilder<T> IInputPolicyAsyncPolicyEngineBuilder<T>.
             WithInputPolicies(IEnumerable<IInputPolicy<T>> inputPolicies)
         {
-            _inputPolicies = inputPolicies;
+            _asyncInputPolicyRunner = new SynchronousInputPolicyRunnerDecorator<T>(
+                _asyncInputPolicyRunner,
+                inputPolicies
+            );
 
             return this;
         }
@@ -61,7 +59,10 @@ namespace Atrea.PolicyEngine.Builders
         IProcessorAsyncPolicyEngineBuilder<T> IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder<T>.
             WithInputPolicies(IEnumerable<IInputPolicy<T>> inputPolicies)
         {
-            _inputPolicies = inputPolicies;
+            _asyncInputPolicyRunner = new SynchronousInputPolicyRunnerDecorator<T>(
+                _asyncInputPolicyRunner,
+                inputPolicies
+            );
 
             return this;
         }
@@ -73,7 +74,10 @@ namespace Atrea.PolicyEngine.Builders
         IProcessorAsyncPolicyEngineBuilder<T> IWithInputPoliciesProcessorAsyncPolicyEngineBuilder<T>.
             WithAsyncInputPolicies(IEnumerable<IAsyncInputPolicy<T>> asyncInputPolicies)
         {
-            _asyncInputPolicies = asyncInputPolicies;
+            _asyncInputPolicyRunner = new AsyncInputPolicyRunnerDecorator<T>(
+                _asyncInputPolicyRunner,
+                asyncInputPolicies
+            );
 
             return this;
         }
@@ -81,7 +85,10 @@ namespace Atrea.PolicyEngine.Builders
         IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder<T> IInputPolicyAsyncPolicyEngineBuilder<T>.
             WithAsyncInputPolicies(IEnumerable<IAsyncInputPolicy<T>> asyncInputPolicies)
         {
-            _asyncInputPolicies = asyncInputPolicies;
+            _asyncInputPolicyRunner = new AsyncInputPolicyRunnerDecorator<T>(
+                _asyncInputPolicyRunner,
+                asyncInputPolicies
+            );
 
             return this;
         }
@@ -94,7 +101,7 @@ namespace Atrea.PolicyEngine.Builders
             IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder<T>.WithProcessors(
                 IEnumerable<IProcessor<T>> processors)
         {
-            _processors = processors;
+            _asyncProcessorRunner = new SynchronousAsyncProcessorRunner<T>(_asyncProcessorRunner, processors);
 
             return this;
         }
@@ -103,7 +110,7 @@ namespace Atrea.PolicyEngine.Builders
             IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder<T>.WithProcessors(
                 IEnumerable<IProcessor<T>> processors)
         {
-            _processors = processors;
+            _asyncProcessorRunner = new SynchronousAsyncProcessorRunner<T>(_asyncProcessorRunner, processors);
 
             return this;
         }
@@ -111,7 +118,7 @@ namespace Atrea.PolicyEngine.Builders
         IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder<T> IProcessorAsyncPolicyEngineBuilder<T>.WithProcessors(
             IEnumerable<IProcessor<T>> processors)
         {
-            _processors = processors;
+            _asyncProcessorRunner = new SynchronousAsyncProcessorRunner<T>(_asyncProcessorRunner, processors);
 
             return this;
         }
@@ -120,7 +127,7 @@ namespace Atrea.PolicyEngine.Builders
             IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder<T>.WithProcessors(
                 IEnumerable<IProcessor<T>> processors)
         {
-            _processors = processors;
+            _asyncProcessorRunner = new SynchronousAsyncProcessorRunner<T>(_asyncProcessorRunner, processors);
 
             return this;
         }
@@ -132,7 +139,7 @@ namespace Atrea.PolicyEngine.Builders
         IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder<T> IProcessorAsyncPolicyEngineBuilder<T>.
             WithAsyncProcessors(IEnumerable<IAsyncProcessor<T>> asyncProcessors)
         {
-            _asyncProcessors = asyncProcessors;
+            _asyncProcessorRunner = new AsyncProcessorRunnerDecorator<T>(_asyncProcessorRunner, asyncProcessors);
 
             return this;
         }
@@ -141,7 +148,7 @@ namespace Atrea.PolicyEngine.Builders
             IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder<T>.WithAsyncProcessors(
                 IEnumerable<IAsyncProcessor<T>> asyncProcessors)
         {
-            _asyncProcessors = asyncProcessors;
+            _asyncProcessorRunner = new AsyncProcessorRunnerDecorator<T>(_asyncProcessorRunner, asyncProcessors);
 
             return this;
         }
@@ -150,7 +157,7 @@ namespace Atrea.PolicyEngine.Builders
             IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder<T>.WithAsyncProcessors(
                 IEnumerable<IAsyncProcessor<T>> asyncProcessors)
         {
-            _asyncProcessors = asyncProcessors;
+            _asyncProcessorRunner = new AsyncProcessorRunnerDecorator<T>(_asyncProcessorRunner, asyncProcessors);
 
             return this;
         }
@@ -159,7 +166,7 @@ namespace Atrea.PolicyEngine.Builders
             IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder<T>.WithAsyncProcessors(
                 IEnumerable<IAsyncProcessor<T>> asyncProcessors)
         {
-            _asyncProcessors = asyncProcessors;
+            _asyncProcessorRunner = new AsyncProcessorRunnerDecorator<T>(_asyncProcessorRunner, asyncProcessors);
 
             return this;
         }
@@ -172,7 +179,7 @@ namespace Atrea.PolicyEngine.Builders
             IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder<T>.WithParallelProcessors(
                 IEnumerable<IAsyncProcessor<T>> parallelProcessors)
         {
-            _parallelProcessors = parallelProcessors;
+            _asyncProcessorRunner = new ParallelProcessorRunnerDecorator<T>(_asyncProcessorRunner, parallelProcessors);
 
             return this;
         }
@@ -180,7 +187,7 @@ namespace Atrea.PolicyEngine.Builders
         IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder<T> IProcessorAsyncPolicyEngineBuilder<T>.
             WithParallelProcessors(IEnumerable<IAsyncProcessor<T>> parallelProcessors)
         {
-            _parallelProcessors = parallelProcessors;
+            _asyncProcessorRunner = new ParallelProcessorRunnerDecorator<T>(_asyncProcessorRunner, parallelProcessors);
 
             return this;
         }
@@ -189,7 +196,7 @@ namespace Atrea.PolicyEngine.Builders
             IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder<T>.WithParallelProcessors(
                 IEnumerable<IAsyncProcessor<T>> parallelProcessors)
         {
-            _parallelProcessors = parallelProcessors;
+            _asyncProcessorRunner = new ParallelProcessorRunnerDecorator<T>(_asyncProcessorRunner, parallelProcessors);
 
             return this;
         }
@@ -198,7 +205,7 @@ namespace Atrea.PolicyEngine.Builders
             IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder<T>.WithParallelProcessors(
                 IEnumerable<IAsyncProcessor<T>> parallelProcessors)
         {
-            _parallelProcessors = parallelProcessors;
+            _asyncProcessorRunner = new ParallelProcessorRunnerDecorator<T>(_asyncProcessorRunner, parallelProcessors);
 
             return this;
         }
@@ -210,7 +217,10 @@ namespace Atrea.PolicyEngine.Builders
         IAsyncPolicyEngineBuilder<T> IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder<T>.
             WithOutputPolicies(IEnumerable<IOutputPolicy<T>> outputPolicies)
         {
-            _outputPolicies = outputPolicies;
+            _asyncOutputPolicyRunner = new SynchronousAsyncOutputPolicyRunnerDecorator<T>(
+                _asyncOutputPolicyRunner,
+                outputPolicies
+            );
 
             return this;
         }
@@ -219,7 +229,10 @@ namespace Atrea.PolicyEngine.Builders
             IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder<T>.WithOutputPolicies(
                 IEnumerable<IOutputPolicy<T>> outputPolicies)
         {
-            _outputPolicies = outputPolicies;
+            _asyncOutputPolicyRunner = new SynchronousAsyncOutputPolicyRunnerDecorator<T>(
+                _asyncOutputPolicyRunner,
+                outputPolicies
+            );
 
             return this;
         }
@@ -228,7 +241,10 @@ namespace Atrea.PolicyEngine.Builders
             IWithParallelOutputPoliciesAsyncPolicyEngineBuilder<T>.WithOutputPolicies(
                 IEnumerable<IOutputPolicy<T>> outputPolicies)
         {
-            _outputPolicies = outputPolicies;
+            _asyncOutputPolicyRunner = new SynchronousAsyncOutputPolicyRunnerDecorator<T>(
+                _asyncOutputPolicyRunner,
+                outputPolicies
+            );
 
             return this;
         }
@@ -236,7 +252,10 @@ namespace Atrea.PolicyEngine.Builders
         IWithOutputPoliciesAsyncPolicyEngineBuilder<T> IOutputPolicyAsyncPolicyEngineBuilder<T>.WithOutputPolicies(
             IEnumerable<IOutputPolicy<T>> outputPolicies)
         {
-            _outputPolicies = outputPolicies;
+            _asyncOutputPolicyRunner = new SynchronousAsyncOutputPolicyRunnerDecorator<T>(
+                _asyncOutputPolicyRunner,
+                outputPolicies
+            );
 
             return this;
         }
@@ -248,7 +267,10 @@ namespace Atrea.PolicyEngine.Builders
         IAsyncPolicyEngineBuilder<T> IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder<T>.
             WithAsyncOutputPolicies(IEnumerable<IAsyncOutputPolicy<T>> asyncOutputPolicies)
         {
-            _asyncOutputPolicies = asyncOutputPolicies;
+            _asyncOutputPolicyRunner = new AsyncOutputPolicyRunnerDecorator<T>(
+                _asyncOutputPolicyRunner,
+                asyncOutputPolicies
+            );
 
             return this;
         }
@@ -256,7 +278,10 @@ namespace Atrea.PolicyEngine.Builders
         IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder<T> IWithOutputPoliciesAsyncPolicyEngineBuilder<T>.
             WithAsyncOutputPolicies(IEnumerable<IAsyncOutputPolicy<T>> asyncOutputPolicies)
         {
-            _asyncOutputPolicies = asyncOutputPolicies;
+            _asyncOutputPolicyRunner = new AsyncOutputPolicyRunnerDecorator<T>(
+                _asyncOutputPolicyRunner,
+                asyncOutputPolicies
+            );
 
             return this;
         }
@@ -265,7 +290,10 @@ namespace Atrea.PolicyEngine.Builders
             IWithParallelOutputPoliciesAsyncPolicyEngineBuilder<T>.WithAsyncOutputPolicies(
                 IEnumerable<IAsyncOutputPolicy<T>> asyncOutputPolicies)
         {
-            _asyncOutputPolicies = asyncOutputPolicies;
+            _asyncOutputPolicyRunner = new AsyncOutputPolicyRunnerDecorator<T>(
+                _asyncOutputPolicyRunner,
+                asyncOutputPolicies
+            );
 
             return this;
         }
@@ -273,7 +301,10 @@ namespace Atrea.PolicyEngine.Builders
         IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder<T> IOutputPolicyAsyncPolicyEngineBuilder<T>.
             WithAsyncOutputPolicies(IEnumerable<IAsyncOutputPolicy<T>> asyncOutputPolicies)
         {
-            _asyncOutputPolicies = asyncOutputPolicies;
+            _asyncOutputPolicyRunner = new AsyncOutputPolicyRunnerDecorator<T>(
+                _asyncOutputPolicyRunner,
+                asyncOutputPolicies
+            );
 
             return this;
         }
@@ -286,7 +317,10 @@ namespace Atrea.PolicyEngine.Builders
             IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder<T>.WithParallelOutputPolicies(
                 IEnumerable<IAsyncOutputPolicy<T>> parallelOutputPolicies)
         {
-            _parallelOutputPolicies = parallelOutputPolicies;
+            _asyncOutputPolicyRunner = new ParallelAsyncOutputPolicyRunner<T>(
+                _asyncOutputPolicyRunner,
+                parallelOutputPolicies
+            );
 
             return this;
         }
@@ -294,7 +328,10 @@ namespace Atrea.PolicyEngine.Builders
         IAsyncPolicyEngineBuilder<T> IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder<T>.
             WithParallelOutputPolicies(IEnumerable<IAsyncOutputPolicy<T>> parallelOutputPolicies)
         {
-            _parallelOutputPolicies = parallelOutputPolicies;
+            _asyncOutputPolicyRunner = new ParallelAsyncOutputPolicyRunner<T>(
+                _asyncOutputPolicyRunner,
+                parallelOutputPolicies
+            );
 
             return this;
         }
@@ -303,7 +340,10 @@ namespace Atrea.PolicyEngine.Builders
             IWithOutputPoliciesAsyncPolicyEngineBuilder<T>.WithParallelOutputPolicies(
                 IEnumerable<IAsyncOutputPolicy<T>> parallelOutputPolicies)
         {
-            _parallelOutputPolicies = parallelOutputPolicies;
+            _asyncOutputPolicyRunner = new ParallelAsyncOutputPolicyRunner<T>(
+                _asyncOutputPolicyRunner,
+                parallelOutputPolicies
+            );
 
             return this;
         }
@@ -311,7 +351,10 @@ namespace Atrea.PolicyEngine.Builders
         IWithParallelOutputPoliciesAsyncPolicyEngineBuilder<T> IOutputPolicyAsyncPolicyEngineBuilder<T>.
             WithParallelOutputPolicies(IEnumerable<IAsyncOutputPolicy<T>> parallelOutputPolicies)
         {
-            _parallelOutputPolicies = parallelOutputPolicies;
+            _asyncOutputPolicyRunner = new ParallelAsyncOutputPolicyRunner<T>(
+                _asyncOutputPolicyRunner,
+                parallelOutputPolicies
+            );
 
             return this;
         }
@@ -322,48 +365,11 @@ namespace Atrea.PolicyEngine.Builders
         {
             var policyEngine = new AsyncPolicyEngine<T>();
 
-            policyEngine.SetInputPolicyRunner(BuildAggregateAsyncInputPolicyRunner());
-            policyEngine.SetProcessorRunner(BuildAggregateAsyncProcessorRunner());
-            policyEngine.SetOutputPolicyRunner(BuildAggregateAsyncOutputPolicyRunner());
+            policyEngine.SetInputPolicyRunner(_asyncInputPolicyRunner);
+            policyEngine.SetProcessorRunner(_asyncProcessorRunner);
+            policyEngine.SetOutputPolicyRunner(_asyncOutputPolicyRunner);
 
             return policyEngine;
-        }
-
-        private AggregateAsyncInputPolicyRunner<T> BuildAggregateAsyncInputPolicyRunner()
-        {
-            var inputPolicyRunner = new InputPolicyRunner<T>(_inputPolicies);
-            var asyncInputPolicyRunner = new AsyncInputPolicyRunner<T>(_asyncInputPolicies);
-
-            return new AggregateAsyncInputPolicyRunner<T>(
-                inputPolicyRunner,
-                asyncInputPolicyRunner
-            );
-        }
-
-        private AggregateAsyncProcessorRunner<T> BuildAggregateAsyncProcessorRunner()
-        {
-            var processorRunner = new ProcessorRunner<T>(_processors);
-            var asyncProcessorRunner = new AsyncProcessorRunner<T>(_asyncProcessors);
-            var parallelProcessorRunner = new ParallelProcessorRunner<T>(_parallelProcessors);
-
-            return new AggregateAsyncProcessorRunner<T>(
-                processorRunner,
-                asyncProcessorRunner,
-                parallelProcessorRunner
-            );
-        }
-
-        private AggregateAsyncOutputPolicyRunner<T> BuildAggregateAsyncOutputPolicyRunner()
-        {
-            var outputPolicyRunner = new OutputPolicyRunner<T>(_outputPolicies);
-            var asyncOutputPolicyRunner = new AsyncOutputPolicyRunner<T>(_asyncOutputPolicies);
-            var parallelOutputPolicyRunner = new ParallelOutputPolicyRunner<T>(_parallelOutputPolicies);
-
-            return new AggregateAsyncOutputPolicyRunner<T>(
-                outputPolicyRunner,
-                asyncOutputPolicyRunner,
-                parallelOutputPolicyRunner
-            );
         }
     }
 }

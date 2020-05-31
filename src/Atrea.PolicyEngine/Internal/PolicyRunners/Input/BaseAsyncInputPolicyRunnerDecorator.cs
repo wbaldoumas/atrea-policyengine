@@ -4,30 +4,33 @@ using Atrea.PolicyEngine.Policies.Input;
 
 namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
 {
-    internal class AggregateAsyncInputPolicyRunner<T> : IAsyncInputPolicyRunner<T>
+    internal abstract class BaseAsyncInputPolicyRunnerDecorator<T> : IAsyncInputPolicyRunner<T>
     {
         private readonly IAsyncInputPolicyRunner<T> _asyncInputPolicyRunner;
-        private readonly IInputPolicyRunner<T> _inputPolicyRunner;
 
-        public AggregateAsyncInputPolicyRunner(
-            IInputPolicyRunner<T> inputPolicyRunner,
-            IAsyncInputPolicyRunner<T> asyncInputPolicyRunner)
+        private protected BaseAsyncInputPolicyRunnerDecorator(IAsyncInputPolicyRunner<T> asyncInputPolicyRunner)
         {
-            _inputPolicyRunner = inputPolicyRunner;
             _asyncInputPolicyRunner = asyncInputPolicyRunner;
         }
 
         public async Task<InputPolicyResult> ShouldProcessAsync(T item)
         {
-            var inputPolicyResult = _inputPolicyRunner.ShouldProcess(item);
+            var result = InputPolicyResult.Continue;
 
-            return inputPolicyResult switch
+            if (!(_asyncInputPolicyRunner is null))
+            {
+                result = await _asyncInputPolicyRunner.ShouldProcessAsync(item);
+            }
+
+            return result switch
             {
                 InputPolicyResult.Accept => InputPolicyResult.Accept,
                 InputPolicyResult.Reject => InputPolicyResult.Reject,
-                InputPolicyResult.Continue => await _asyncInputPolicyRunner.ShouldProcessAsync(item),
+                InputPolicyResult.Continue => await EvaluateInputPolicies(item),
                 _ => throw new ArgumentOutOfRangeException()
             };
         }
+
+        protected abstract Task<InputPolicyResult> EvaluateInputPolicies(T item);
     }
 }
