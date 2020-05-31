@@ -1,0 +1,15 @@
+#### [Atrea.PolicyEngine](./index.md 'index')
+### [Atrea.PolicyEngine.Builders](./Atrea-PolicyEngine-Builders.md 'Atrea.PolicyEngine.Builders').[IInputPolicyAsyncPolicyEngineBuilder&lt;T&gt;](./Atrea-PolicyEngine-Builders-IInputPolicyAsyncPolicyEngineBuilder-T-.md 'Atrea.PolicyEngine.Builders.IInputPolicyAsyncPolicyEngineBuilder&lt;T&gt;')
+## IInputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithInputPolicies(System.Collections.Generic.IEnumerable&lt;Atrea.PolicyEngine.Policies.Input.IInputPolicy&lt;T&gt;&gt;) Method
+Configure the [IAsyncPolicyEngine&lt;T&gt;](./Atrea-PolicyEngine-IAsyncPolicyEngine-T-.md 'Atrea.PolicyEngine.IAsyncPolicyEngine&lt;T&gt;') with the given synchronous input policies.  
+```csharp
+Atrea.PolicyEngine.Builders.IWithInputPoliciesProcessorAsyncPolicyEngineBuilder<T> WithInputPolicies(System.Collections.Generic.IEnumerable<Atrea.PolicyEngine.Policies.Input.IInputPolicy<T>> inputPolicies);
+```
+#### Parameters
+<a name='Atrea-PolicyEngine-Builders-IInputPolicyAsyncPolicyEngineBuilder-T--WithInputPolicies(System-Collections-Generic-IEnumerable-Atrea-PolicyEngine-Policies-Input-IInputPolicy-T--)-inputPolicies'></a>
+`inputPolicies` [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Atrea.PolicyEngine.Policies.Input.IInputPolicy&lt;](./Atrea-PolicyEngine-Policies-Input-IInputPolicy-T-.md 'Atrea.PolicyEngine.Policies.Input.IInputPolicy&lt;T&gt;')[T](./Atrea-PolicyEngine-Builders-IInputPolicyAsyncPolicyEngineBuilder-T-.md#Atrea-PolicyEngine-Builders-IInputPolicyAsyncPolicyEngineBuilder-T--T 'Atrea.PolicyEngine.Builders.IInputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.T')[&gt;](./Atrea-PolicyEngine-Policies-Input-IInputPolicy-T-.md 'Atrea.PolicyEngine.Policies.Input.IInputPolicy&lt;T&gt;')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
+The synchronous input policies to configure the [IAsyncPolicyEngine&lt;T&gt;](./Atrea-PolicyEngine-IAsyncPolicyEngine-T-.md 'Atrea.PolicyEngine.IAsyncPolicyEngine&lt;T&gt;') with.  
+  
+#### Returns
+[Atrea.PolicyEngine.Builders.IWithInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;](./Atrea-PolicyEngine-Builders-IWithInputPoliciesProcessorAsyncPolicyEngineBuilder-T-.md 'Atrea.PolicyEngine.Builders.IWithInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;')[T](./Atrea-PolicyEngine-Builders-IInputPolicyAsyncPolicyEngineBuilder-T-.md#Atrea-PolicyEngine-Builders-IInputPolicyAsyncPolicyEngineBuilder-T--T 'Atrea.PolicyEngine.Builders.IInputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.T')[&gt;](./Atrea-PolicyEngine-Builders-IWithInputPoliciesProcessorAsyncPolicyEngineBuilder-T-.md 'Atrea.PolicyEngine.Builders.IWithInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;')  
+[IWithInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;](./Atrea-PolicyEngine-Builders-IWithInputPoliciesProcessorAsyncPolicyEngineBuilder-T-.md 'Atrea.PolicyEngine.Builders.IWithInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;')  

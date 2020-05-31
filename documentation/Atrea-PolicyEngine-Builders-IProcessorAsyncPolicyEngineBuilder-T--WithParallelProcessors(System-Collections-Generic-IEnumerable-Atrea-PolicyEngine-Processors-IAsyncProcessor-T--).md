@@ -1,0 +1,15 @@
+#### [Atrea.PolicyEngine](./index.md 'index')
+### [Atrea.PolicyEngine.Builders](./Atrea-PolicyEngine-Builders.md 'Atrea.PolicyEngine.Builders').[IProcessorAsyncPolicyEngineBuilder&lt;T&gt;](./Atrea-PolicyEngine-Builders-IProcessorAsyncPolicyEngineBuilder-T-.md 'Atrea.PolicyEngine.Builders.IProcessorAsyncPolicyEngineBuilder&lt;T&gt;')
+## IProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelProcessors(System.Collections.Generic.IEnumerable&lt;Atrea.PolicyEngine.Processors.IAsyncProcessor&lt;T&gt;&gt;) Method
+Configure the [IAsyncPolicyEngine&lt;T&gt;](./Atrea-PolicyEngine-IAsyncPolicyEngine-T-.md 'Atrea.PolicyEngine.IAsyncPolicyEngine&lt;T&gt;') with the given parallel processors.  
+```csharp
+Atrea.PolicyEngine.Builders.IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder<T> WithParallelProcessors(System.Collections.Generic.IEnumerable<Atrea.PolicyEngine.Processors.IAsyncProcessor<T>> parallelProcessors);
+```
+#### Parameters
+<a name='Atrea-PolicyEngine-Builders-IProcessorAsyncPolicyEngineBuilder-T--WithParallelProcessors(System-Collections-Generic-IEnumerable-Atrea-PolicyEngine-Processors-IAsyncProcessor-T--)-parallelProcessors'></a>
+`parallelProcessors` [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Atrea.PolicyEngine.Processors.IAsyncProcessor&lt;](./Atrea-PolicyEngine-Processors-IAsyncProcessor-T-.md 'Atrea.PolicyEngine.Processors.IAsyncProcessor&lt;T&gt;')[T](./Atrea-PolicyEngine-Builders-IProcessorAsyncPolicyEngineBuilder-T-.md#Atrea-PolicyEngine-Builders-IProcessorAsyncPolicyEngineBuilder-T--T 'Atrea.PolicyEngine.Builders.IProcessorAsyncPolicyEngineBuilder&lt;T&gt;.T')[&gt;](./Atrea-PolicyEngine-Processors-IAsyncProcessor-T-.md 'Atrea.PolicyEngine.Processors.IAsyncProcessor&lt;T&gt;')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
+The parallel processors to configure the [IAsyncPolicyEngine&lt;T&gt;](./Atrea-PolicyEngine-IAsyncPolicyEngine-T-.md 'Atrea.PolicyEngine.IAsyncPolicyEngine&lt;T&gt;') with.  
+  
+#### Returns
+[Atrea.PolicyEngine.Builders.IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;](./Atrea-PolicyEngine-Builders-IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder-T-.md 'Atrea.PolicyEngine.Builders.IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;')[T](./Atrea-PolicyEngine-Builders-IProcessorAsyncPolicyEngineBuilder-T-.md#Atrea-PolicyEngine-Builders-IProcessorAsyncPolicyEngineBuilder-T--T 'Atrea.PolicyEngine.Builders.IProcessorAsyncPolicyEngineBuilder&lt;T&gt;.T')[&gt;](./Atrea-PolicyEngine-Builders-IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder-T-.md 'Atrea.PolicyEngine.Builders.IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;')  
+[IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;](./Atrea-PolicyEngine-Builders-IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder-T-.md 'Atrea.PolicyEngine.Builders.IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;')  

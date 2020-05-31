@@ -1,12 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="IAsyncPolicyEngine.cs~RFf74266.TMP" />
-    <None Remove="Policies\Output\IOutputPolicy.cs~RF1073549.TMP" />
-  </ItemGroup>
+  <PropertyGroup>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Atrea.PolicyEngine.xml</DocumentationFile>
+    <DefaultDocumentationFolder>..\..\documentation</DefaultDocumentationFolder>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>3</WarningLevel>
+    <NoWarn>1701;1702</NoWarn>
+  </PropertyGroup>
 
 </Project>
