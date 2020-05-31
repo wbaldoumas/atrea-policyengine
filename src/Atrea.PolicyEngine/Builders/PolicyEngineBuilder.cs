@@ -9,16 +9,23 @@ using System.Collections.Generic;
 
 namespace Atrea.PolicyEngine.Builders
 {
+    /// <summary>
+    ///     A builder class for configuring and building an <see cref="IPolicyEngine{T}"/>.
+    /// </summary>
+    /// <typeparam name="T">The type of the item to be processed by the <see cref="IPolicyEngine{T}"/></typeparam>
     public class PolicyEngineBuilder<T> :
         IInputPolicyEngineBuilder<T>,
         IProcessorPolicyEngineBuilder<T>,
-        IOutputPolicyEngineBuilder<T>,
-        IPolicyEngineBuilder<T>
+        IOutputPolicyEngineBuilder<T>
     {
         private IEnumerable<IInputPolicy<T>> _inputPolicies;
         private IEnumerable<IOutputPolicy<T>> _outputPolicies;
         private IEnumerable<IProcessor<T>> _processors;
 
+        /// <summary>
+        ///     Begin configuring a <see cref="IPolicyEngine{T}"/>.
+        /// </summary>
+        /// <returns><see cref="IInputPolicyEngineBuilder{T}"/></returns>
         public static IInputPolicyEngineBuilder<T> Configure()
         {
             return new PolicyEngineBuilder<T>();
