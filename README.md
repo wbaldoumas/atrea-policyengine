@@ -1,4 +1,4 @@
-# atrea-policy-engine
+# Atrea.PolicyEngine
 
 [![Documentation](https://img.shields.io/badge/%F0%9F%93%84-documentation-informational)](https://github.com/itabaiyu/atrea-policyengine/blob/master/documentation/index.md)
 [![GitHub](https://img.shields.io/github/license/itabaiyu/atrea-policyengine)](https://github.com/itabaiyu/atrea-policyengine/blob/master/LICENSE)
