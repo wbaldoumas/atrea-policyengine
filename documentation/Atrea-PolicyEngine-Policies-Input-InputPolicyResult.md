@@ -18,5 +18,5 @@ Reject the item as input - skip remaining input policies, processors, and output
 <a name='Atrea-PolicyEngine-Policies-Input-InputPolicyResult-Continue'></a>
 `Continue` 2  
 Accept the item for this given [IInputPolicy&lt;T&gt;](./Atrea-PolicyEngine-Policies-Input-IInputPolicy-T-.md 'Atrea.PolicyEngine.Policies.Input.IInputPolicy&lt;T&gt;') and continue evaluating remaining  
-input policies, or being processing if this is the result of the last input policy run.  
+input policies, or begin processing if this is the result of the last input policy that has been run.  
   
