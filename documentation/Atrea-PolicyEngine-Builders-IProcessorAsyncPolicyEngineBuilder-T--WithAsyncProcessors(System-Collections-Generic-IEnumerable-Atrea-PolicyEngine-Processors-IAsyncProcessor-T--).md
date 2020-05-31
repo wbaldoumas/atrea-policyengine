@@ -1,0 +1,15 @@
+#### [Atrea.PolicyEngine](./index.md 'index')
+### [Atrea.PolicyEngine.Builders](./Atrea-PolicyEngine-Builders.md 'Atrea.PolicyEngine.Builders').[IProcessorAsyncPolicyEngineBuilder&lt;T&gt;](./Atrea-PolicyEngine-Builders-IProcessorAsyncPolicyEngineBuilder-T-.md 'Atrea.PolicyEngine.Builders.IProcessorAsyncPolicyEngineBuilder&lt;T&gt;')
+## IProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncProcessors(System.Collections.Generic.IEnumerable&lt;Atrea.PolicyEngine.Processors.IAsyncProcessor&lt;T&gt;&gt;) Method
+Configure the [IAsyncPolicyEngine&lt;T&gt;](./Atrea-PolicyEngine-IAsyncPolicyEngine-T-.md 'Atrea.PolicyEngine.IAsyncPolicyEngine&lt;T&gt;') with the given asynchronous processors.  
+```csharp
+Atrea.PolicyEngine.Builders.IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder<T> WithAsyncProcessors(System.Collections.Generic.IEnumerable<Atrea.PolicyEngine.Processors.IAsyncProcessor<T>> asyncProcessors);
+```
+#### Parameters
+<a name='Atrea-PolicyEngine-Builders-IProcessorAsyncPolicyEngineBuilder-T--WithAsyncProcessors(System-Collections-Generic-IEnumerable-Atrea-PolicyEngine-Processors-IAsyncProcessor-T--)-asyncProcessors'></a>
+`asyncProcessors` [System.Collections.Generic.IEnumerable&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')[Atrea.PolicyEngine.Processors.IAsyncProcessor&lt;](./Atrea-PolicyEngine-Processors-IAsyncProcessor-T-.md 'Atrea.PolicyEngine.Processors.IAsyncProcessor&lt;T&gt;')[T](./Atrea-PolicyEngine-Builders-IProcessorAsyncPolicyEngineBuilder-T-.md#Atrea-PolicyEngine-Builders-IProcessorAsyncPolicyEngineBuilder-T--T 'Atrea.PolicyEngine.Builders.IProcessorAsyncPolicyEngineBuilder&lt;T&gt;.T')[&gt;](./Atrea-PolicyEngine-Processors-IAsyncProcessor-T-.md 'Atrea.PolicyEngine.Processors.IAsyncProcessor&lt;T&gt;')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1 'System.Collections.Generic.IEnumerable`1')  
+The asynchronous processors to configure the [IAsyncPolicyEngine&lt;T&gt;](./Atrea-PolicyEngine-IAsyncPolicyEngine-T-.md 'Atrea.PolicyEngine.IAsyncPolicyEngine&lt;T&gt;') with.  
+  
+#### Returns
+[Atrea.PolicyEngine.Builders.IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;](./Atrea-PolicyEngine-Builders-IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder-T-.md 'Atrea.PolicyEngine.Builders.IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;')[T](./Atrea-PolicyEngine-Builders-IProcessorAsyncPolicyEngineBuilder-T-.md#Atrea-PolicyEngine-Builders-IProcessorAsyncPolicyEngineBuilder-T--T 'Atrea.PolicyEngine.Builders.IProcessorAsyncPolicyEngineBuilder&lt;T&gt;.T')[&gt;](./Atrea-PolicyEngine-Builders-IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder-T-.md 'Atrea.PolicyEngine.Builders.IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;')  
+[IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;](./Atrea-PolicyEngine-Builders-IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder-T-.md 'Atrea.PolicyEngine.Builders.IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;')  

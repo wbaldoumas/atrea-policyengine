@@ -9,6 +9,10 @@ using Atrea.PolicyEngine.Processors;
 
 namespace Atrea.PolicyEngine.Builders
 {
+    /// <summary>
+    ///     A builder class for configuring and building an <see cref="IAsyncPolicyEngine{T}"/>.
+    /// </summary>
+    /// <typeparam name="T">The type of the item to be processed by the <see cref="IAsyncPolicyEngine{T}"/></typeparam>
     public class AsyncPolicyEngineBuilder<T> :
         IInputPolicyAsyncPolicyEngineBuilder<T>,
         IWithInputPoliciesProcessorAsyncPolicyEngineBuilder<T>,
@@ -35,6 +39,10 @@ namespace Atrea.PolicyEngine.Builders
         private IEnumerable<IAsyncProcessor<T>> _parallelProcessors = new List<IAsyncProcessor<T>>();
         private IEnumerable<IProcessor<T>> _processors = new List<IProcessor<T>>();
 
+        /// <summary>
+        ///     Begin configuring a <see cref="IAsyncPolicyEngine{T}"/>.
+        /// </summary>
+        /// <returns><see cref="IInputPolicyAsyncPolicyEngineBuilder{T}"/></returns>
         public static IInputPolicyAsyncPolicyEngineBuilder<T> Configure()
         {
             return new AsyncPolicyEngineBuilder<T>();

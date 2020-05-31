@@ -21,17 +21,13 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
         {
             var inputPolicyResult = _inputPolicyRunner.ShouldProcess(item);
 
-            switch (inputPolicyResult)
+            return inputPolicyResult switch
             {
-                case InputPolicyResult.Accept:
-                    return InputPolicyResult.Accept;
-                case InputPolicyResult.Reject:
-                    return InputPolicyResult.Reject;
-                case InputPolicyResult.Continue:
-                    return await _asyncInputPolicyRunner.ShouldProcessAsync(item);
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+                InputPolicyResult.Accept => InputPolicyResult.Accept,
+                InputPolicyResult.Reject => InputPolicyResult.Reject,
+                InputPolicyResult.Continue => await _asyncInputPolicyRunner.ShouldProcessAsync(item),
+                _ => throw new ArgumentOutOfRangeException()
+            };
         }
     }
 }
