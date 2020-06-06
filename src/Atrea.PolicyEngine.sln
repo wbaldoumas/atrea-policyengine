@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atrea.PolicyEngine", "Atrea.PolicyEngine\Atrea.PolicyEngine.csproj", "{9D16DB1B-A29E-42EF-8746-F43A75D97C6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atrea.PolicyEngine.Tests", "..\tests\Atrea.PolicyEngine.Tests\Atrea.PolicyEngine.Tests.csproj", "{904D4F4F-045E-48FB-A7EB-EF6446470A6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atrea.PolicyEngine.Tests", "..\tests\Atrea.PolicyEngine.Tests\Atrea.PolicyEngine.Tests.csproj", "{904D4F4F-045E-48FB-A7EB-EF6446470A6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

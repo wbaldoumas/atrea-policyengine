@@ -1,7 +1,7 @@
-﻿using Atrea.PolicyEngine.Policies.Input;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Atrea.PolicyEngine.Policies.Input;
 
 namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
 {
@@ -11,10 +11,8 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
 
         public SynchronousInputPolicyRunnerDecorator(
             IAsyncInputPolicyRunner<T> asyncInputPolicyRunner,
-            IEnumerable<IInputPolicy<T>> inputPolicies) : base(asyncInputPolicyRunner)
-        {
+            IEnumerable<IInputPolicy<T>> inputPolicies) : base(asyncInputPolicyRunner) =>
             _inputPolicies = inputPolicies;
-        }
 
         protected override Task<InputPolicyResult> EvaluateInputPolicies(T item)
         {

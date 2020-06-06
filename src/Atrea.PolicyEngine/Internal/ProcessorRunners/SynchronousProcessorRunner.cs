@@ -1,19 +1,17 @@
-﻿using Atrea.PolicyEngine.Processors;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Atrea.PolicyEngine.Processors;
 
 namespace Atrea.PolicyEngine.Internal.ProcessorRunners
 {
-    internal class SynchronousAsyncProcessorRunner<T> : BaseProcessorRunnerDecorator<T>
+    internal class SynchronousProcessorRunner<T> : BaseProcessorRunnerDecorator<T>
     {
         private readonly IEnumerable<IProcessor<T>> _processors;
 
-        public SynchronousAsyncProcessorRunner(
+        public SynchronousProcessorRunner(
             IAsyncProcessorRunner<T> asyncProcessorRunner,
-            IEnumerable<IProcessor<T>> processors) : base(asyncProcessorRunner)
-        {
+            IEnumerable<IProcessor<T>> processors) : base(asyncProcessorRunner) =>
             _processors = processors;
-        }
 
         protected override Task RunProcessors(T item)
         {

@@ -11,10 +11,8 @@ namespace Atrea.PolicyEngine.Internal.ProcessorRunners
         public AsyncProcessorRunnerDecorator(
             IAsyncProcessorRunner<T> asyncProcessorRunner,
             IEnumerable<IAsyncProcessor<T>> asyncProcessors) : base(
-            asyncProcessorRunner)
-        {
+            asyncProcessorRunner) =>
             _asyncProcessors = asyncProcessors;
-        }
 
         protected override async Task RunProcessors(T item)
         {

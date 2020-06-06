@@ -1,10 +1,10 @@
-﻿using Atrea.PolicyEngine.Builders;
+﻿using System.Collections.Generic;
+using Atrea.PolicyEngine.Builders;
 using Atrea.PolicyEngine.Policies.Input;
 using Atrea.PolicyEngine.Policies.Output;
 using Atrea.PolicyEngine.Processors;
 using NSubstitute;
 using NUnit.Framework;
-using System.Collections.Generic;
 
 namespace Atrea.PolicyEngine.Tests.Builders
 {

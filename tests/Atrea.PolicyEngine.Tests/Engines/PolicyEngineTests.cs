@@ -11,13 +11,6 @@ namespace Atrea.PolicyEngine.Tests.Engines
     [TestFixture]
     public class PolicyEngineTests
     {
-        private const int Item = 1;
-
-        private IInputPolicy<int> _mockInputPolicyA;
-        private IInputPolicy<int> _mockInputPolicyB;
-        private IProcessor<int> _mockProcessor;
-        private IOutputPolicy<int> _mockOutputPolicy;
-
         [SetUp]
         public void SetUp()
         {
@@ -26,6 +19,13 @@ namespace Atrea.PolicyEngine.Tests.Engines
             _mockProcessor = Substitute.For<IProcessor<int>>();
             _mockOutputPolicy = Substitute.For<IOutputPolicy<int>>();
         }
+
+        private const int Item = 1;
+
+        private IInputPolicy<int> _mockInputPolicyA;
+        private IInputPolicy<int> _mockInputPolicyB;
+        private IProcessor<int> _mockProcessor;
+        private IOutputPolicy<int> _mockOutputPolicy;
 
         [Test]
         public void Policy_Engine_Runs_Expected_Components_A()

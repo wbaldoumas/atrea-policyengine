@@ -8,8 +8,7 @@ namespace Atrea.PolicyEngine
     ///     process the item using its processors, then apply any post-processing to the item using its
     ///     output policies. Note that this engine can be configured with non-async and async input policies,
     ///     non-async, async, and parallel processors, and non-async, async, and parallel output policies.
-    ///
-    ///     See <see cref="AsyncPolicyEngineBuilder{T}"/> for configuration of this async policy engine.
+    ///     See <see cref="AsyncPolicyEngineBuilder{T}" /> for configuration of this async policy engine.
     /// </summary>
     /// <typeparam name="T">The type of the item to be processed.</typeparam>
     public interface IAsyncPolicyEngine<in T> : IAsyncProcessor<T> { }

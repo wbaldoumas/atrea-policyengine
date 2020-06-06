@@ -12,7 +12,7 @@ namespace Atrea.PolicyEngine.Processors
         ///     Process an item asynchronously.
         /// </summary>
         /// <param name="item">The item to be processed.</param>
-        /// <returns>A <see cref="Task"/> to be awaited.</returns>
+        /// <returns>A <see cref="Task" /> to be awaited.</returns>
         Task ProcessAsync(T item);
     }
 }
