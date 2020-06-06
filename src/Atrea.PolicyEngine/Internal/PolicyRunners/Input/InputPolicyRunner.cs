@@ -8,10 +8,7 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
     {
         private readonly IEnumerable<IInputPolicy<T>> _inputPolicies;
 
-        public InputPolicyRunner(IEnumerable<IInputPolicy<T>> inputPolicies)
-        {
-            _inputPolicies = inputPolicies;
-        }
+        public InputPolicyRunner(IEnumerable<IInputPolicy<T>> inputPolicies) => _inputPolicies = inputPolicies;
 
         public InputPolicyResult ShouldProcess(T item)
         {

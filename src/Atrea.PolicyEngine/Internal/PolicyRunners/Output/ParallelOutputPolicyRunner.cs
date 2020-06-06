@@ -5,16 +5,14 @@ using Atrea.PolicyEngine.Policies.Output;
 
 namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output
 {
-    internal class ParallelAsyncOutputPolicyRunner<T> : BaseAsyncOutputPolicyRunnerDecorator<T>
+    internal class ParallelOutputPolicyRunner<T> : BaseAsyncOutputPolicyRunnerDecorator<T>
     {
         private readonly IEnumerable<IAsyncOutputPolicy<T>> _parallelOutputPolicies;
 
-        public ParallelAsyncOutputPolicyRunner(
+        public ParallelOutputPolicyRunner(
             IAsyncOutputPolicyRunner<T> asyncOutputPolicyRunner,
-            IEnumerable<IAsyncOutputPolicy<T>> parallelOutputPolicies) : base(asyncOutputPolicyRunner)
-        {
+            IEnumerable<IAsyncOutputPolicy<T>> parallelOutputPolicies) : base(asyncOutputPolicyRunner) =>
             _parallelOutputPolicies = parallelOutputPolicies;
-        }
 
         protected override async Task ApplyOutputPolicies(T item)
         {

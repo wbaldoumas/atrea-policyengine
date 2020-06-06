@@ -7,10 +7,7 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output
     {
         private readonly IEnumerable<IOutputPolicy<T>> _outputPolicies;
 
-        public OutputPolicyRunner(IEnumerable<IOutputPolicy<T>> outputPolicies)
-        {
-            _outputPolicies = outputPolicies;
-        }
+        public OutputPolicyRunner(IEnumerable<IOutputPolicy<T>> outputPolicies) => _outputPolicies = outputPolicies;
 
         public void Apply(T item)
         {

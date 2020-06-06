@@ -6,10 +6,8 @@ namespace Atrea.PolicyEngine.Internal.ProcessorRunners
     {
         private readonly IAsyncProcessorRunner<T> _asyncProcessorRunner;
 
-        private protected BaseProcessorRunnerDecorator(IAsyncProcessorRunner<T> asyncProcessorRunner)
-        {
+        private protected BaseProcessorRunnerDecorator(IAsyncProcessorRunner<T> asyncProcessorRunner) =>
             _asyncProcessorRunner = asyncProcessorRunner;
-        }
 
         public async Task ProcessAsync(T item)
         {

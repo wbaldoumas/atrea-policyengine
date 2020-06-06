@@ -10,12 +10,10 @@ namespace Atrea.PolicyEngine.Internal.ProcessorRunners
         private readonly IEnumerable<IAsyncProcessor<T>> _parallelProcessors;
 
         internal ParallelProcessorRunnerDecorator(
-            IAsyncProcessorRunner<T> asyncProcessorRunner, 
+            IAsyncProcessorRunner<T> asyncProcessorRunner,
             IEnumerable<IAsyncProcessor<T>> parallelProcessors) : base(
-            asyncProcessorRunner)
-        {
+            asyncProcessorRunner) =>
             _parallelProcessors = parallelProcessors;
-        }
 
         protected override async Task RunProcessors(T item)
         {

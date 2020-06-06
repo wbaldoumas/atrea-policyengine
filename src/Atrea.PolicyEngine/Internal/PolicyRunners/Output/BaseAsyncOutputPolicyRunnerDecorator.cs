@@ -6,10 +6,8 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output
     {
         private readonly IAsyncOutputPolicyRunner<T> _asyncOutputPolicyRunner;
 
-        protected BaseAsyncOutputPolicyRunnerDecorator(IAsyncOutputPolicyRunner<T> asyncOutputPolicyRunner)
-        {
+        protected BaseAsyncOutputPolicyRunnerDecorator(IAsyncOutputPolicyRunner<T> asyncOutputPolicyRunner) =>
             _asyncOutputPolicyRunner = asyncOutputPolicyRunner;
-        }
 
         public async Task ApplyAsync(T item)
         {
@@ -17,7 +15,7 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output
             {
                 await _asyncOutputPolicyRunner.ApplyAsync(item);
             }
-            
+
             await ApplyOutputPolicies(item);
         }
 

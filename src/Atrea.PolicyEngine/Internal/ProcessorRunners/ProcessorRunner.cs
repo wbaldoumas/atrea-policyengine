@@ -7,10 +7,7 @@ namespace Atrea.PolicyEngine.Internal.ProcessorRunners
     {
         private readonly IEnumerable<IProcessor<T>> _processors;
 
-        public ProcessorRunner(IEnumerable<IProcessor<T>> processors)
-        {
-            _processors = processors;
-        }
+        public ProcessorRunner(IEnumerable<IProcessor<T>> processors) => _processors = processors;
 
         public void Process(T item)
         {

@@ -4,14 +4,12 @@ using Atrea.PolicyEngine.Policies.Input;
 
 namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
 {
-    internal abstract class BaseAsyncInputPolicyRunnerDecorator<T> : IAsyncInputPolicyRunner<T>
+    public abstract class BaseAsyncInputPolicyRunnerDecorator<T> : IAsyncInputPolicyRunner<T>
     {
         private readonly IAsyncInputPolicyRunner<T> _asyncInputPolicyRunner;
 
-        private protected BaseAsyncInputPolicyRunnerDecorator(IAsyncInputPolicyRunner<T> asyncInputPolicyRunner)
-        {
+        private protected BaseAsyncInputPolicyRunnerDecorator(IAsyncInputPolicyRunner<T> asyncInputPolicyRunner) =>
             _asyncInputPolicyRunner = asyncInputPolicyRunner;
-        }
 
         public async Task<InputPolicyResult> ShouldProcessAsync(T item)
         {
