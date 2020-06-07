@@ -34,9 +34,9 @@ namespace Atrea.PolicyEngine.Builders
         IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder<T>,
         IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder<T>
     {
-        private IAsyncInputPolicyRunner<T> _asyncInputPolicyRunner;
-        private IAsyncOutputPolicyRunner<T> _asyncOutputPolicyRunner;
-        private IAsyncProcessorRunner<T> _asyncProcessorRunner;
+        private IAsyncInputPolicyRunner<T> _asyncInputPolicyRunner = new RootAsyncInputPolicyRunner<T>();
+        private IAsyncOutputPolicyRunner<T> _asyncOutputPolicyRunner = new RootAsyncOutputPolicyRunner<T>();
+        private IAsyncProcessorRunner<T> _asyncProcessorRunner = new RootAsyncProcessorRunner<T>();
 
         public IAsyncPolicyEngine<T> Build()
         {
@@ -87,6 +87,8 @@ namespace Atrea.PolicyEngine.Builders
 
             return this;
         }
+
+        public IProcessorAsyncPolicyEngineBuilder<T> WithoutInputPolicies() => this;
 
         #endregion
 
@@ -188,6 +190,8 @@ namespace Atrea.PolicyEngine.Builders
             return this;
         }
 
+        public IOutputPolicyAsyncPolicyEngineBuilder<T> WithoutProcessors() => this;
+
         #endregion
 
         #region WithAsyncProcessors
@@ -288,6 +292,8 @@ namespace Atrea.PolicyEngine.Builders
 
             return this;
         }
+
+        public IAsyncPolicyEngineBuilder<T> WithoutOutputPolicies() => this;
 
         #endregion
 

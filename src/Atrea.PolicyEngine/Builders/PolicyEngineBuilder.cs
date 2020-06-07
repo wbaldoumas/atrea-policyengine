@@ -18,9 +18,9 @@ namespace Atrea.PolicyEngine.Builders
         IProcessorPolicyEngineBuilder<T>,
         IOutputPolicyEngineBuilder<T>
     {
-        private IEnumerable<IInputPolicy<T>> _inputPolicies;
-        private IEnumerable<IOutputPolicy<T>> _outputPolicies;
-        private IEnumerable<IProcessor<T>> _processors;
+        private IEnumerable<IInputPolicy<T>> _inputPolicies = new List<IInputPolicy<T>>();
+        private IEnumerable<IOutputPolicy<T>> _outputPolicies = new List<IOutputPolicy<T>>();
+        private IEnumerable<IProcessor<T>> _processors = new List<IProcessor<T>>();
 
         public IProcessorPolicyEngineBuilder<T> WithInputPolicies(IEnumerable<IInputPolicy<T>> inputPolicies)
         {
@@ -28,6 +28,8 @@ namespace Atrea.PolicyEngine.Builders
 
             return this;
         }
+
+        public IProcessorPolicyEngineBuilder<T> WithoutInputPolicies() => this;
 
         public IPolicyEngine<T> Build()
         {
@@ -47,12 +49,16 @@ namespace Atrea.PolicyEngine.Builders
             return this;
         }
 
+        public IPolicyEngineBuilder<T> WithoutOutputPolicies() => this;
+
         public IOutputPolicyEngineBuilder<T> WithProcessors(IEnumerable<IProcessor<T>> processors)
         {
             _processors = processors;
 
             return this;
         }
+
+        public IOutputPolicyEngineBuilder<T> WithoutProcessors() => this;
 
         /// <summary>
         ///     Begin configuring a <see cref="IPolicyEngine{T}" />.

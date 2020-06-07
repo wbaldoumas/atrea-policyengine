@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using Atrea.PolicyEngine.Builders;
+﻿using Atrea.PolicyEngine.Builders;
 using Atrea.PolicyEngine.Policies.Input;
 using Atrea.PolicyEngine.Policies.Output;
 using Atrea.PolicyEngine.Processors;
 using NSubstitute;
 using NUnit.Framework;
+using System.Collections.Generic;
 
 namespace Atrea.PolicyEngine.Tests.Builders
 {
@@ -13,38 +13,97 @@ namespace Atrea.PolicyEngine.Tests.Builders
     {
         private const int Item = 1;
 
+        private IInputPolicy<int> _mockInputPolicy;
+        private IProcessor<int> _mockProcessor;
+        private IOutputPolicy<int> _mockOutputPolicy;
+
+        [SetUp]
+        public void SetUp()
+        {
+            _mockInputPolicy = Substitute.For<IInputPolicy<int>>();
+            _mockProcessor = Substitute.For<IProcessor<int>>();
+            _mockOutputPolicy = Substitute.For<IOutputPolicy<int>>();
+
+            _mockInputPolicy.ShouldProcess(Item).Returns(InputPolicyResult.Continue);
+        }
+
         [Test]
         public void Fully_Configured_Policy_Engine_Runs_All_Components()
         {
-            var mockInputPolicyA = Substitute.For<IInputPolicy<int>>();
-            var mockInputPolicyB = Substitute.For<IInputPolicy<int>>();
-
-            mockInputPolicyA.ShouldProcess(Item).Returns(InputPolicyResult.Continue);
-            mockInputPolicyB.ShouldProcess(Item).Returns(InputPolicyResult.Continue);
-
-            var mockProcessorA = Substitute.For<IProcessor<int>>();
-            var mockProcessorB = Substitute.For<IProcessor<int>>();
-
-            var mockOutputPolicyA = Substitute.For<IOutputPolicy<int>>();
-            var mockOutputPolicyB = Substitute.For<IOutputPolicy<int>>();
-
             var policyEngine = PolicyEngineBuilder<int>
                 .Configure()
-                .WithInputPolicies(new List<IInputPolicy<int>> { mockInputPolicyA, mockInputPolicyB })
-                .WithProcessors(new List<IProcessor<int>> { mockProcessorA, mockProcessorB })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { mockOutputPolicyA, mockOutputPolicyB })
+                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicy })
+                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
+                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
                 .Build();
 
-            policyEngine.Process(1);
+            policyEngine.Process(Item);
 
             Received.InOrder(() =>
                 {
-                    mockInputPolicyA.ShouldProcess(Item);
-                    mockInputPolicyB.ShouldProcess(Item);
-                    mockProcessorA.Process(Item);
-                    mockProcessorB.Process(Item);
-                    mockOutputPolicyA.Apply(Item);
-                    mockOutputPolicyB.Apply(Item);
+                    _mockInputPolicy.ShouldProcess(Item);
+                    _mockProcessor.Process(Item);
+                    _mockOutputPolicy.Apply(Item);
+                }
+            );
+        }
+
+        [Test]
+        public void Policy_Engine_Configured_Without_Input_Policies_Runs_Configured_Components()
+        {
+            var policyEngine = PolicyEngineBuilder<int>
+                .Configure()
+                .WithoutInputPolicies()
+                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
+                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .Build();
+
+            policyEngine.Process(Item);
+
+            Received.InOrder(() =>
+                {
+                    _mockProcessor.Process(Item);
+                    _mockOutputPolicy.Apply(Item);
+                }
+            );
+        }
+
+        [Test]
+        public void Policy_Engine_Configured_Without_Processors_Runs_Configured_Components()
+        {
+            var policyEngine = PolicyEngineBuilder<int>
+                .Configure()
+                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicy })
+                .WithoutProcessors()
+                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .Build();
+
+            policyEngine.Process(Item);
+
+            Received.InOrder(() =>
+                {
+                    _mockInputPolicy.ShouldProcess(Item);
+                    _mockOutputPolicy.Apply(Item);
+                }
+            );
+        }
+
+        [Test]
+        public void Policy_Engine_Configured_Without_Output_Policies_Runs_Configured_Components()
+        {
+            var policyEngine = PolicyEngineBuilder<int>
+                .Configure()
+                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicy })
+                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
+                .WithoutOutputPolicies()
+                .Build();
+
+            policyEngine.Process(Item);
+
+            Received.InOrder(() =>
+                {
+                    _mockInputPolicy.ShouldProcess(Item);
+                    _mockProcessor.Process(Item);
                 }
             );
         }
