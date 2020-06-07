@@ -20,13 +20,17 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
                 result = await _asyncInputPolicyRunner.ShouldProcessAsync(item);
             }
 
-            return result switch
+            switch (result)
             {
-                InputPolicyResult.Accept => InputPolicyResult.Accept,
-                InputPolicyResult.Reject => InputPolicyResult.Reject,
-                InputPolicyResult.Continue => await EvaluateInputPolicies(item),
-                _ => throw new ArgumentOutOfRangeException()
-            };
+                case InputPolicyResult.Accept:
+                    return InputPolicyResult.Accept;
+                case InputPolicyResult.Reject:
+                    return InputPolicyResult.Reject;
+                case InputPolicyResult.Continue:
+                    return await EvaluateInputPolicies(item);
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
         protected abstract Task<InputPolicyResult> EvaluateInputPolicies(T item);
