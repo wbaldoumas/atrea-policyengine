@@ -21,6 +21,8 @@ Install-Package Atrea.Extensions -Version 1.3.0
 dotnet add package Atrea.Extensions --version 1.3.0
 ```
 
+---
+
 #### Related Projects:
 
 * [Atrea.Extensions](https://github.com/itabaiyu/atrea-extensions)
