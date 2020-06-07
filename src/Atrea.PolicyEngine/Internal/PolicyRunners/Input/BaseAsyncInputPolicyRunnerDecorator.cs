@@ -4,7 +4,7 @@ using Atrea.PolicyEngine.Policies.Input;
 
 namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
 {
-    public abstract class BaseAsyncInputPolicyRunnerDecorator<T> : IAsyncInputPolicyRunner<T>
+    internal abstract class BaseAsyncInputPolicyRunnerDecorator<T> : IAsyncInputPolicyRunner<T>
     {
         private readonly IAsyncInputPolicyRunner<T> _asyncInputPolicyRunner;
 

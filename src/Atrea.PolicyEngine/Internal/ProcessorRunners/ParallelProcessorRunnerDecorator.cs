@@ -5,7 +5,7 @@ using Atrea.PolicyEngine.Processors;
 
 namespace Atrea.PolicyEngine.Internal.ProcessorRunners
 {
-    public class ParallelProcessorRunnerDecorator<T> : BaseProcessorRunnerDecorator<T>
+    internal class ParallelProcessorRunnerDecorator<T> : BaseProcessorRunnerDecorator<T>
     {
         private readonly IEnumerable<IAsyncProcessor<T>> _parallelProcessors;
 
