@@ -2,7 +2,7 @@
 
 namespace Atrea.PolicyEngine.Internal.ProcessorRunners
 {
-    public abstract class BaseProcessorRunnerDecorator<T> : IAsyncProcessorRunner<T>
+    internal abstract class BaseProcessorRunnerDecorator<T> : IAsyncProcessorRunner<T>
     {
         private readonly IAsyncProcessorRunner<T> _asyncProcessorRunner;
 

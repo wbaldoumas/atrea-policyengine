@@ -4,7 +4,7 @@ using Atrea.PolicyEngine.Policies.Input;
 
 namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
 {
-    public abstract class BaseAsyncInputPolicyRunnerDecorator<T> : IAsyncInputPolicyRunner<T>
+    internal abstract class BaseAsyncInputPolicyRunnerDecorator<T> : IAsyncInputPolicyRunner<T>
     {
         private readonly IAsyncInputPolicyRunner<T> _asyncInputPolicyRunner;
 
@@ -20,17 +20,13 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
                 result = await _asyncInputPolicyRunner.ShouldProcessAsync(item);
             }
 
-            switch (result)
+            return result switch
             {
-                case InputPolicyResult.Accept:
-                    return InputPolicyResult.Accept;
-                case InputPolicyResult.Reject:
-                    return InputPolicyResult.Reject;
-                case InputPolicyResult.Continue:
-                    return await EvaluateInputPolicies(item);
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+                InputPolicyResult.Accept => InputPolicyResult.Accept,
+                InputPolicyResult.Reject => InputPolicyResult.Reject,
+                InputPolicyResult.Continue => await EvaluateInputPolicies(item),
+                _ => throw new ArgumentOutOfRangeException()
+            };
         }
 
         protected abstract Task<InputPolicyResult> EvaluateInputPolicies(T item);
