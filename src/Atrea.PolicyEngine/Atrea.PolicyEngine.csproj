@@ -4,9 +4,4 @@
     <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <WarningLevel>3</WarningLevel>
-    <NoWarn>1701;1702</NoWarn>
-  </PropertyGroup>
-
 </Project>
