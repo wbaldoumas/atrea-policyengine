@@ -13,12 +13,12 @@ A modular, composable policy engine for easy implementation of complex condition
 
 Package manager:
 ```
-Install-Package Atrea.Extensions -Version 1.3.0
+Install-Package Atrea.PolicyEngine -Version 1.0.0-alpha
 ```
 
 .NET CLI:
 ```
-dotnet add package Atrea.Extensions --version 1.3.0
+dotnet add package Atrea.PolicyEngine --version 1.0.0-alpha
 ```
 
 ---
