@@ -8,3 +8,22 @@ A modular, composable policy engine for easy implementation of complex condition
 | **NuGet** | [![NuGet Badge](https://buildstats.info/nuget/atrea.policyengine?includePreReleases=true)](https://www.nuget.org/packages/atrea.policyengine/) [![Nuget](https://img.shields.io/nuget/v/atrea.policyengine)](https://www.nuget.org/packages/Atrea.PolicyEngine/)
 | **Test Coverage** | [![Coverage Status](https://coveralls.io/repos/github/itabaiyu/atrea-policyengine/badge.png?branch=master)](https://coveralls.io/github/itabaiyu/atrea-policyengine?branch=master)
 | **License** | [![GitHub](https://img.shields.io/github/license/itabaiyu/atrea-policyengine)](https://github.com/itabaiyu/atrea-policyengine/blob/master/LICENSE)
+
+## Installation
+
+Package manager:
+```
+Install-Package Atrea.Extensions -Version 1.3.0
+```
+
+.NET CLI:
+```
+dotnet add package Atrea.Extensions --version 1.3.0
+```
+
+#### Related Projects:
+
+* [Atrea.Extensions](https://github.com/itabaiyu/atrea-extensions)
+* [Atrea.Utilities](https://github.com/itabaiyu/atrea-utilities)
+
+**Show your support by contributing or starring the repo!** :star::star::star::star::star: 
