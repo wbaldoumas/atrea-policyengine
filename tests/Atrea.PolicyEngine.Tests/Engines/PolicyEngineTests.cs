@@ -146,5 +146,24 @@ namespace Atrea.PolicyEngine.Tests.Engines
             _mockProcessor.DidNotReceiveWithAnyArgs().Process(Arg.Any<int>());
             _mockOutputPolicy.DidNotReceiveWithAnyArgs().Apply(Arg.Any<int>());
         }
+
+        [Test]
+        public void Policy_Engine_Runs_Expected_Components_F()
+        {
+            var policyEngine = PolicyEngineBuilder<int>
+                .Configure()
+                .WithoutInputPolicies()
+                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
+                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .Build();
+
+            policyEngine.Process(Item);
+
+            Received.InOrder(() =>
+            {
+                _mockProcessor.Process(Item);
+                _mockOutputPolicy.Apply(Item);
+            });
+        }
     }
 }
