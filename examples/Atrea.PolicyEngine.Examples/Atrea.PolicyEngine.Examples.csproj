@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Examples\PolicyEngineWithCompoundInputPoliciesExampleRunner.cs~RF1273146.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Atrea.PolicyEngine" Version="2.0.0" />
+  </ItemGroup>
+
+</Project>
