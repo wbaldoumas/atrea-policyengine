@@ -1,14 +1,11 @@
 ﻿using Atrea.PolicyEngine.Builders;
 using Atrea.PolicyEngine.Examples.Mocks.Domain;
-using Atrea.PolicyEngine.Examples.Mocks.Policies.Input;
-using Atrea.PolicyEngine.Examples.Mocks.Policies.Output;
-using Atrea.PolicyEngine.Examples.Mocks.Processors;
 
 namespace Atrea.PolicyEngine.Examples.Examples
 {
-    public class SimplePolicyEngineExample : IExample
+    public class SimplePolicyEngineExample : BaseExample
     {
-        public void Run()
+        public override void Run()
         {
             // Configure the engine with the desired input policies, processors, and output policies.
             var engine = PolicyEngineBuilder<TranslatableItem>
@@ -16,19 +13,19 @@ namespace Atrea.PolicyEngine.Examples.Examples
                 .WithInputPolicies(
                     // Only process items that haven't yet be translated, and are translations from
                     // US English to UK english.
-                    new NotYetTranslated(),
-                    new FromUsEnglish(),
-                    new ToUkEnglish()
+                    NotYetTranslated,
+                    FromUsEnglish,
+                    ToUkEnglish
                 ).WithProcessors(
                     // Use the SingleWordTranslator and DictionaryTranslator to perform translations.
-                    new SingleWordTranslator(),
-                    new DictionaryTranslator()
+                    SingleWordTranslator,
+                    DictionaryTranslator
                 ).WithOutputPolicies(
                     // After processing, publish the translation, mark the item as translated, and 
                     // send a translation success email to the user who requested it.
-                    new PublishTranslation(),
-                    new MarkItemTranslated(),
-                    new SendTranslationSuccessEmail()
+                    PublishTranslation,
+                    MarkItemTranslated,
+                    SendTranslationSuccessEmail
                 ).Build();
 
             var translatableItem = new TranslatableItem();
