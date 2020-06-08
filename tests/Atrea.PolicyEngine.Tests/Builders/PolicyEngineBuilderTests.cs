@@ -1,22 +1,16 @@
-﻿using Atrea.PolicyEngine.Builders;
+﻿using System.Collections.Generic;
+using Atrea.PolicyEngine.Builders;
 using Atrea.PolicyEngine.Policies.Input;
 using Atrea.PolicyEngine.Policies.Output;
 using Atrea.PolicyEngine.Processors;
 using NSubstitute;
 using NUnit.Framework;
-using System.Collections.Generic;
 
 namespace Atrea.PolicyEngine.Tests.Builders
 {
     [TestFixture]
     public class PolicyEngineBuilderTests
     {
-        private const int Item = 1;
-
-        private IInputPolicy<int> _mockInputPolicy;
-        private IProcessor<int> _mockProcessor;
-        private IOutputPolicy<int> _mockOutputPolicy;
-
         [SetUp]
         public void SetUp()
         {
@@ -26,6 +20,12 @@ namespace Atrea.PolicyEngine.Tests.Builders
 
             _mockInputPolicy.ShouldProcess(Item).Returns(InputPolicyResult.Continue);
         }
+
+        private const int Item = 1;
+
+        private IInputPolicy<int> _mockInputPolicy;
+        private IProcessor<int> _mockProcessor;
+        private IOutputPolicy<int> _mockOutputPolicy;
 
         [Test]
         public void Fully_Configured_Policy_Engine_Runs_All_Components()
@@ -69,26 +69,6 @@ namespace Atrea.PolicyEngine.Tests.Builders
         }
 
         [Test]
-        public void Policy_Engine_Configured_Without_Processors_Runs_Configured_Components()
-        {
-            var policyEngine = PolicyEngineBuilder<int>
-                .Configure()
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicy })
-                .WithoutProcessors()
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
-                .Build();
-
-            policyEngine.Process(Item);
-
-            Received.InOrder(() =>
-                {
-                    _mockInputPolicy.ShouldProcess(Item);
-                    _mockOutputPolicy.Apply(Item);
-                }
-            );
-        }
-
-        [Test]
         public void Policy_Engine_Configured_Without_Output_Policies_Runs_Configured_Components()
         {
             var policyEngine = PolicyEngineBuilder<int>
@@ -104,6 +84,26 @@ namespace Atrea.PolicyEngine.Tests.Builders
                 {
                     _mockInputPolicy.ShouldProcess(Item);
                     _mockProcessor.Process(Item);
+                }
+            );
+        }
+
+        [Test]
+        public void Policy_Engine_Configured_Without_Processors_Runs_Configured_Components()
+        {
+            var policyEngine = PolicyEngineBuilder<int>
+                .Configure()
+                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicy })
+                .WithoutProcessors()
+                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .Build();
+
+            policyEngine.Process(Item);
+
+            Received.InOrder(() =>
+                {
+                    _mockInputPolicy.ShouldProcess(Item);
+                    _mockOutputPolicy.Apply(Item);
                 }
             );
         }

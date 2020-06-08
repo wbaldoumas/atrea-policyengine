@@ -8,6 +8,7 @@
     <None Remove="Builders\AsyncPolicyEngineBuilderTests.cs~RF13f55d1.TMP" />
     <None Remove="Builders\AsyncPolicyEngineBuilderTests.cs~RFad83ec.TMP" />
     <None Remove="Engines\AsyncPolicyEngineTests.cs~RF129c77.TMP" />
+    <None Remove="Policies\Input\AndTests.cs~RF83de9b.TMP" />
   </ItemGroup>
 
   <ItemGroup>
