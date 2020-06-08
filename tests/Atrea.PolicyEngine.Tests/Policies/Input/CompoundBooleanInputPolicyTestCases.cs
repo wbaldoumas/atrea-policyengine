@@ -137,5 +137,26 @@ namespace Atrea.PolicyEngine.Tests.Policies.Input
                 );
             }
         }
+
+        public static IEnumerable<TestCaseData> NotTestCases
+        {
+            get
+            {
+                yield return new TestCaseData(
+                    InputPolicyResult.Continue,
+                    InputPolicyResult.Reject
+                );
+
+                yield return new TestCaseData(
+                    InputPolicyResult.Accept,
+                    InputPolicyResult.Reject
+                );
+
+                yield return new TestCaseData(
+                    InputPolicyResult.Reject,
+                    InputPolicyResult.Continue
+                );
+            }
+        }
     }
 }

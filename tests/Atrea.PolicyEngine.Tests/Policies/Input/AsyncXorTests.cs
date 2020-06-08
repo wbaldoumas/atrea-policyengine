@@ -34,9 +34,26 @@ namespace Atrea.PolicyEngine.Tests.Policies.Input
             _mockLeftInputPolicy.ShouldProcessAsync(Item).Returns(Task.FromResult(leftReturn));
             _mockRightInputPolicy.ShouldProcessAsync(Item).Returns(Task.FromResult(rightReturn));
 
-            var or = new AsyncXor<int>(_mockLeftInputPolicy, _mockRightInputPolicy);
+            var xor = new AsyncXor<int>(_mockLeftInputPolicy, _mockRightInputPolicy);
 
-            var result = await or.ShouldProcessAsync(Item);
+            var result = await xor.ShouldProcessAsync(Item);
+
+            result.Should().Be(expectedResult);
+        }
+
+        [Test]
+        [TestCaseSource(nameof(TestCases))]
+        public async Task Extension_Constructed_AsyncXor_Returns_Expected_Result_Based_On_Component_Return_Values(
+            InputPolicyResult leftReturn,
+            InputPolicyResult rightReturn,
+            InputPolicyResult expectedResult)
+        {
+            _mockLeftInputPolicy.ShouldProcessAsync(Item).Returns(Task.FromResult(leftReturn));
+            _mockRightInputPolicy.ShouldProcessAsync(Item).Returns(Task.FromResult(rightReturn));
+
+            var xor = _mockLeftInputPolicy.Xor(_mockRightInputPolicy);
+
+            var result = await xor.ShouldProcessAsync(Item);
 
             result.Should().Be(expectedResult);
         }

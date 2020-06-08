@@ -25,6 +25,23 @@ namespace Atrea.PolicyEngine.Tests.Policies.Input
 
         [Test]
         [TestCaseSource(nameof(TestCases))]
+        public void Extension_Constructed_Xor_Returns_Expected_Result_Based_On_Component_Return_Values(
+            InputPolicyResult leftReturn,
+            InputPolicyResult rightReturn,
+            InputPolicyResult expectedResult)
+        {
+            _mockLeftInputPolicy.ShouldProcess(Item).Returns(leftReturn);
+            _mockRightInputPolicy.ShouldProcess(Item).Returns(rightReturn);
+
+            var xor = _mockLeftInputPolicy.Xor(_mockRightInputPolicy);
+
+            var result = xor.ShouldProcess(Item);
+
+            result.Should().Be(expectedResult);
+        }
+
+        [Test]
+        [TestCaseSource(nameof(TestCases))]
         public void Xor_Returns_Expected_Result_Based_On_Component_Return_Values(
             InputPolicyResult leftReturn,
             InputPolicyResult rightReturn,
