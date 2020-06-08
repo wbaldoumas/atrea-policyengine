@@ -39,5 +39,22 @@ namespace Atrea.PolicyEngine.Tests.Policies.Input
 
             result.Should().Be(expectedResult);
         }
+
+        [Test]
+        [TestCaseSource(nameof(TestCases))]
+        public void Extension_Constructed_And_Returns_Expected_Result_Based_On_Component_Return_Values(
+            InputPolicyResult leftReturn,
+            InputPolicyResult rightReturn,
+            InputPolicyResult expectedResult)
+        {
+            _mockLeftInputPolicy.ShouldProcess(Item).Returns(leftReturn);
+            _mockRightInputPolicy.ShouldProcess(Item).Returns(rightReturn);
+
+            var and = _mockLeftInputPolicy.And(_mockRightInputPolicy);
+
+            var result = and.ShouldProcess(Item);
+
+            result.Should().Be(expectedResult);
+        }
     }
 }

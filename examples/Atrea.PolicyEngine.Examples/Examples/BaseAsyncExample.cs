@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Atrea.PolicyEngine.Examples.Mocks.Policies.Input;
+using Atrea.PolicyEngine.Examples.Mocks.Policies.Input.Async;
 using Atrea.PolicyEngine.Examples.Mocks.Policies.Output;
 using Atrea.PolicyEngine.Examples.Mocks.Processors;
 

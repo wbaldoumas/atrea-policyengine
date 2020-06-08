@@ -26,6 +26,23 @@ namespace Atrea.PolicyEngine.Tests.Policies.Input
 
         [Test]
         [TestCaseSource(nameof(TestCases))]
+        public async Task Extension_Constructed_Or_Returns_Expected_Result_Based_On_Component_Return_Values(
+            InputPolicyResult leftReturn,
+            InputPolicyResult rightReturn,
+            InputPolicyResult expectedResult)
+        {
+            _mockLeftInputPolicy.ShouldProcessAsync(Item).Returns(Task.FromResult(leftReturn));
+            _mockRightInputPolicy.ShouldProcessAsync(Item).Returns(Task.FromResult(rightReturn));
+
+            var or = _mockLeftInputPolicy.Or(_mockRightInputPolicy);
+
+            var result = await or.ShouldProcessAsync(Item);
+
+            result.Should().Be(expectedResult);
+        }
+
+        [Test]
+        [TestCaseSource(nameof(TestCases))]
         public async Task Or_Returns_Expected_Result_Based_On_Component_Return_Values(
             InputPolicyResult leftReturn,
             InputPolicyResult rightReturn,

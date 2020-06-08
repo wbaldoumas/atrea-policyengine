@@ -14,18 +14,9 @@ namespace Atrea.PolicyEngine.Examples.Examples
                 .WithInputPolicies(
                     // Ensure that the item has not yet been translated.
                     NotYetTranslated,
-                    // The engine should items if the translation being performed is for
+                    // The engine should process items if the translation being performed is for
                     // items from US English to UK English OR from UK English to US English.
-                    new Or<TranslatableItem>(
-                        new And<TranslatableItem>(
-                            FromUsEnglish,
-                            ToUkEnglish
-                        ),
-                        new And<TranslatableItem>(
-                            FromUkEnglish,
-                            ToUsEnglish
-                        )
-                    )
+                    FromUsEnglish.And(ToUkEnglish).Or(FromUkEnglish.And(ToUsEnglish))
                 ).WithProcessors(
                     // Use the SingleWordTranslator and DictionaryTranslator to perform translations.
                     SingleWordTranslator,

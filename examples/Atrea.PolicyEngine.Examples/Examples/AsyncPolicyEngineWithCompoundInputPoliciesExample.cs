@@ -15,24 +15,15 @@ namespace Atrea.PolicyEngine.Examples.Examples
                 .WithAsyncInputPolicies(
                     // Ensure that the item has not yet been translated.
                     NotYetTranslated,
-                    // The engine should items if the translation being performed is for
+                    // The engine should process items if the translation being performed is for
                     // items from US English to UK English OR from UK English to US English.
-                    new AsyncOr<TranslatableItem>(
-                        new AsyncAnd<TranslatableItem>(
-                            FromUsEnglish,
-                            ToUkEnglish
-                        ),
-                        new AsyncAnd<TranslatableItem>(
-                            FromUkEnglish,
-                            ToUsEnglish
-                        )
-                    )
+                    FromUsEnglish.And(ToUkEnglish).Or(FromUkEnglish.And(ToUsEnglish))
                 ).WithParallelProcessors(
                     // Use the SingleWordTranslator and DictionaryTranslator to perform translations.
                     // Note: translators will run in parallel.
                     SingleWordTranslator,
                     DictionaryTranslator
-                ).WithOutputPolicies(
+                ).WithParallelOutputPolicies(
                     // After processing, publish the translation, mark the item as translated, and 
                     // send a translation success email to the user who requested it.
                     // Note: output policies will run in parallel.

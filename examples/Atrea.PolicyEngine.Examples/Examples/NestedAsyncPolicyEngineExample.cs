@@ -16,7 +16,7 @@ namespace Atrea.PolicyEngine.Examples.Examples
             var aggregateTranslationEngine = AsyncPolicyEngineBuilder<TranslatableItem>
                 .Configure()
                 // Only process items which have not yet been translated.
-                .WithInputPolicies(NotYetTranslated)
+                .WithAsyncInputPolicies(NotYetTranslated)
                 .WithParallelProcessors(
                     // Use the Canadian French, English, and Numeric translation engines to
                     // perform translations.
@@ -38,11 +38,11 @@ namespace Atrea.PolicyEngine.Examples.Examples
         private static IAsyncPolicyEngine<TranslatableItem> BuildCanadianFrenchTranslationEngine() =>
             AsyncPolicyEngineBuilder<TranslatableItem>
                 .Configure()
-                .WithInputPolicies(
+                .WithAsyncInputPolicies(
                     // Only process items which have not yet been translated and are translations
                     // that are either from Canadian French XOR to Canadian French.
                     NotYetTranslated,
-                    new Xor<TranslatableItem>(FromCanadianFrench, ToCanadianFrench)
+                    FromCanadianFrench.Xor(ToCanadianFrench)
                 ).WithAsyncProcessors(
                     // Use the GoogleTranslator, MicrosoftTranslator, and CacheTranslator to perform
                     // translations.
@@ -61,14 +61,11 @@ namespace Atrea.PolicyEngine.Examples.Examples
         private static IAsyncPolicyEngine<TranslatableItem> BuildEnglishTranslationEngine() =>
             AsyncPolicyEngineBuilder<TranslatableItem>
                 .Configure()
-                .WithInputPolicies(
+                .WithAsyncInputPolicies(
                     // Only process items which have not yet been translated and are translations
                     // that are from US English AND to UK English, OR are from UK English AND to US English.
                     NotYetTranslated,
-                    new Or<TranslatableItem>(
-                        new And<TranslatableItem>(FromUsEnglish, ToUkEnglish),
-                        new And<TranslatableItem>(FromUkEnglish, ToUsEnglish)
-                    )
+                    FromUsEnglish.And(ToUkEnglish).Or(FromUkEnglish.And(ToUsEnglish))
                 ).WithAsyncProcessors(
                     // Use the SingleWordTranslator and DictionaryTranslator to perform translations.
                     SingleWordTranslator,
@@ -84,7 +81,7 @@ namespace Atrea.PolicyEngine.Examples.Examples
         private static IAsyncPolicyEngine<TranslatableItem> BuildNumericTranslationEngine() =>
             AsyncPolicyEngineBuilder<TranslatableItem>
                 .Configure()
-                .WithInputPolicies(
+                .WithAsyncInputPolicies(
                     // Only process items which have not yet been translated and are translations which
                     // contain numeric text.
                     NotYetTranslated,
