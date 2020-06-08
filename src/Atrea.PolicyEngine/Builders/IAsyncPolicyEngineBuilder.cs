@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Atrea.PolicyEngine.Policies.Input;
+﻿using Atrea.PolicyEngine.Policies.Input;
 using Atrea.PolicyEngine.Policies.Output;
 using Atrea.PolicyEngine.Processors;
 
@@ -15,7 +14,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithInputPoliciesProcessorAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithInputPoliciesProcessorAsyncPolicyEngineBuilder<T> WithInputPolicies(
-            IEnumerable<IInputPolicy<T>> inputPolicies
+            params IInputPolicy<T>[] inputPolicies
         );
 
         /// <summary>
@@ -29,7 +28,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder<T> WithAsyncInputPolicies(
-            IEnumerable<IAsyncInputPolicy<T>> asyncInputPolicies
+            params IAsyncInputPolicy<T>[] asyncInputPolicies
         );
 
         /// <summary>
@@ -43,7 +42,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder<T> WithParallelInputPolicies(
-            IEnumerable<IAsyncInputPolicy<T>> parallelInputPolicies
+            params IAsyncInputPolicy<T>[] parallelInputPolicies
         );
 
         /// <summary>
@@ -68,7 +67,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IProcessorAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithSynchronousAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder<T> WithAsyncInputPolicies(
-            IEnumerable<IAsyncInputPolicy<T>> asyncInputPolicies
+            params IAsyncInputPolicy<T>[] asyncInputPolicies
         );
 
         /// <summary>
@@ -82,7 +81,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder<T> WithParallelInputPolicies(
-            IEnumerable<IAsyncInputPolicy<T>> parallelInputPolicies
+            params IAsyncInputPolicy<T>[] parallelInputPolicies
         );
     }
 
@@ -101,7 +100,8 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IProcessorAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IProcessorAsyncPolicyEngineBuilder<T> WithParallelInputPolicies(
-            IEnumerable<IAsyncInputPolicy<T>> parallelInputPolicies);
+            params IAsyncInputPolicy<T>[] parallelInputPolicies
+        );
     }
 
     public interface IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder<T> :
@@ -115,7 +115,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IProcessorAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithSynchronousAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder<T> WithInputPolicies(
-            IEnumerable<IInputPolicy<T>> inputPolicies);
+            params IInputPolicy<T>[] inputPolicies);
 
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder<T> WithParallelInputPolicies(
-            IEnumerable<IAsyncInputPolicy<T>> parallelInputPolicies
+            params IAsyncInputPolicy<T>[] parallelInputPolicies
         );
     }
 
@@ -144,7 +144,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder<T> WithInputPolicies(
-            IEnumerable<IInputPolicy<T>> inputPolicies);
+            params IInputPolicy<T>[] inputPolicies);
 
         /// <summary>
         ///     Configure the <see cref="IAsyncPolicyEngine{T}" /> with the given asynchronous input policies.
@@ -157,7 +157,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder<T> WithAsyncInputPolicies(
-            IEnumerable<IAsyncInputPolicy<T>> asyncInputPolicies
+            params IAsyncInputPolicy<T>[] asyncInputPolicies
         );
     }
 
@@ -175,7 +175,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IProcessorAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IProcessorAsyncPolicyEngineBuilder<T> WithAsyncInputPolicies(
-            IEnumerable<IAsyncInputPolicy<T>> asyncInputPolicies
+            params IAsyncInputPolicy<T>[] asyncInputPolicies
         );
     }
 
@@ -189,7 +189,7 @@ namespace Atrea.PolicyEngine.Builders
         /// <returns>
         ///     <see cref="IProcessorAsyncPolicyEngineBuilder{T}" />
         /// </returns>
-        IProcessorAsyncPolicyEngineBuilder<T> WithInputPolicies(IEnumerable<IInputPolicy<T>> inputPolicies);
+        IProcessorAsyncPolicyEngineBuilder<T> WithInputPolicies(params IInputPolicy<T>[] inputPolicies);
     }
 
     public interface IProcessorAsyncPolicyEngineBuilder<T>
@@ -201,7 +201,7 @@ namespace Atrea.PolicyEngine.Builders
         /// <returns>
         ///     <see cref="IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}" />
         /// </returns>
-        IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder<T> WithProcessors(IEnumerable<IProcessor<T>> processors);
+        IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder<T> WithProcessors(params IProcessor<T>[] processors);
 
         /// <summary>
         ///     Configure the <see cref="IAsyncPolicyEngine{T}" /> with the given asynchronous processors.
@@ -211,7 +211,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder<T> WithAsyncProcessors(
-            IEnumerable<IAsyncProcessor<T>> asyncProcessors
+            params IAsyncProcessor<T>[] asyncProcessors
         );
 
         /// <summary>
@@ -222,7 +222,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder<T> WithParallelProcessors(
-            IEnumerable<IAsyncProcessor<T>> parallelProcessors
+            params IAsyncProcessor<T>[] parallelProcessors
         );
 
         /// <summary>
@@ -245,7 +245,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder<T> WithAsyncProcessors(
-            IEnumerable<IAsyncProcessor<T>> asyncProcessors
+            params IAsyncProcessor<T>[] asyncProcessors
         );
 
         /// <summary>
@@ -256,7 +256,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder<T> WithParallelProcessors(
-            IEnumerable<IAsyncProcessor<T>> parallelProcessors
+            params IAsyncProcessor<T>[] parallelProcessors
         );
     }
 
@@ -271,7 +271,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder<T> WithProcessors(
-            IEnumerable<IProcessor<T>> processors
+            params IProcessor<T>[] processors
         );
 
         /// <summary>
@@ -282,7 +282,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder<T> WithParallelProcessors(
-            IEnumerable<IAsyncProcessor<T>> parallelProcessors
+            params IAsyncProcessor<T>[] parallelProcessors
         );
     }
 
@@ -297,7 +297,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder<T> WithProcessors(
-            IEnumerable<IProcessor<T>> processors
+            params IProcessor<T>[] processors
         );
 
         /// <summary>
@@ -308,7 +308,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder<T> WithAsyncProcessors(
-            IEnumerable<IAsyncProcessor<T>> asyncProcessors
+            params IAsyncProcessor<T>[] asyncProcessors
         );
     }
 
@@ -323,7 +323,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IOutputPolicyAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IOutputPolicyAsyncPolicyEngineBuilder<T> WithParallelProcessors(
-            IEnumerable<IAsyncProcessor<T>> parallelProcessors
+            params IAsyncProcessor<T>[] parallelProcessors
         );
     }
 
@@ -337,7 +337,7 @@ namespace Atrea.PolicyEngine.Builders
         /// <returns>
         ///     <see cref="IOutputPolicyAsyncPolicyEngineBuilder{T}" />
         /// </returns>
-        IOutputPolicyAsyncPolicyEngineBuilder<T> WithAsyncProcessors(IEnumerable<IAsyncProcessor<T>> asyncProcessors);
+        IOutputPolicyAsyncPolicyEngineBuilder<T> WithAsyncProcessors(params IAsyncProcessor<T>[] asyncProcessors);
     }
 
     public interface IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder<T> :
@@ -350,7 +350,7 @@ namespace Atrea.PolicyEngine.Builders
         /// <returns>
         ///     <see cref="IOutputPolicyAsyncPolicyEngineBuilder{T}" />
         /// </returns>
-        IOutputPolicyAsyncPolicyEngineBuilder<T> WithProcessors(IEnumerable<IProcessor<T>> processors);
+        IOutputPolicyAsyncPolicyEngineBuilder<T> WithProcessors(params IProcessor<T>[] processors);
     }
 
     public interface IOutputPolicyAsyncPolicyEngineBuilder<T>
@@ -365,7 +365,7 @@ namespace Atrea.PolicyEngine.Builders
         /// <returns>
         ///     <see cref="IWithOutputPoliciesAsyncPolicyEngineBuilder{T}" />
         /// </returns>
-        IWithOutputPoliciesAsyncPolicyEngineBuilder<T> WithOutputPolicies(IEnumerable<IOutputPolicy<T>> outputPolicies);
+        IWithOutputPoliciesAsyncPolicyEngineBuilder<T> WithOutputPolicies(params IOutputPolicy<T>[] outputPolicies);
 
         /// <summary>
         ///     Configure the <see cref="IAsyncPolicyEngine{T}" /> with the given asynchronous output policies.
@@ -378,7 +378,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder<T> WithAsyncOutputPolicies(
-            IEnumerable<IAsyncOutputPolicy<T>> asyncOutputPolicies
+            params IAsyncOutputPolicy<T>[] asyncOutputPolicies
         );
 
         /// <summary>
@@ -392,7 +392,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithParallelOutputPoliciesAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithParallelOutputPoliciesAsyncPolicyEngineBuilder<T> WithParallelOutputPolicies(
-            IEnumerable<IAsyncOutputPolicy<T>> parallelOutputPolicies
+            params IAsyncOutputPolicy<T>[] parallelOutputPolicies
         );
 
         /// <summary>
@@ -417,7 +417,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder{T}" />
         /// </returns>
         IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder<T> WithAsyncOutputPolicies(
-            IEnumerable<IAsyncOutputPolicy<T>> asyncOutputPolicies
+            params IAsyncOutputPolicy<T>[] asyncOutputPolicies
         );
 
         /// <summary>
@@ -431,7 +431,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder<T> WithParallelOutputPolicies(
-            IEnumerable<IAsyncOutputPolicy<T>> parallelOutputPolicies
+            params IAsyncOutputPolicy<T>[] parallelOutputPolicies
         );
     }
 
@@ -448,7 +448,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder{T}" />
         /// </returns>
         IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder<T> WithOutputPolicies(
-            IEnumerable<IOutputPolicy<T>> outputPolicies
+            params IOutputPolicy<T>[] outputPolicies
         );
 
         /// <summary>
@@ -462,7 +462,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder<T> WithParallelOutputPolicies(
-            IEnumerable<IAsyncOutputPolicy<T>> parallelOutputPolicies
+            params IAsyncOutputPolicy<T>[] parallelOutputPolicies
         );
     }
 
@@ -479,7 +479,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder<T> WithOutputPolicies(
-            IEnumerable<IOutputPolicy<T>> outputPolicies
+            params IOutputPolicy<T>[] outputPolicies
         );
 
         /// <summary>
@@ -493,7 +493,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder<T> WithAsyncOutputPolicies(
-            IEnumerable<IAsyncOutputPolicy<T>> asyncOutputPolicies
+            params IAsyncOutputPolicy<T>[] asyncOutputPolicies
         );
     }
 
@@ -510,7 +510,7 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IAsyncPolicyEngineBuilder<T> WithParallelOutputPolicies(
-            IEnumerable<IAsyncOutputPolicy<T>> parallelOutputPolicies
+            params IAsyncOutputPolicy<T>[] parallelOutputPolicies
         );
     }
 
@@ -527,7 +527,7 @@ namespace Atrea.PolicyEngine.Builders
         /// <returns>
         ///     <see cref="IAsyncPolicyEngineBuilder{T}" />
         /// </returns>
-        IAsyncPolicyEngineBuilder<T> WithAsyncOutputPolicies(IEnumerable<IAsyncOutputPolicy<T>> asyncOutputPolicies);
+        IAsyncPolicyEngineBuilder<T> WithAsyncOutputPolicies(params IAsyncOutputPolicy<T>[] asyncOutputPolicies);
     }
 
     public interface IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder<T> :
@@ -543,7 +543,7 @@ namespace Atrea.PolicyEngine.Builders
         /// <returns>
         ///     <see cref="IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder{T}" />
         /// </returns>
-        IAsyncPolicyEngineBuilder<T> WithOutputPolicies(IEnumerable<IOutputPolicy<T>> outputPolicies);
+        IAsyncPolicyEngineBuilder<T> WithOutputPolicies(params IOutputPolicy<T>[] outputPolicies);
     }
 
     public interface IAsyncPolicyEngineBuilder<in T>

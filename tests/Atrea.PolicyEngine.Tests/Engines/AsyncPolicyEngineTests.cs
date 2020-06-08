@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Atrea.PolicyEngine.Builders;
+﻿using Atrea.PolicyEngine.Builders;
 using Atrea.PolicyEngine.Policies.Input;
 using Atrea.PolicyEngine.Policies.Output;
 using Atrea.PolicyEngine.Processors;
 using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
+using System;
+using System.Threading.Tasks;
 
 namespace Atrea.PolicyEngine.Tests.Engines
 {
@@ -65,15 +64,13 @@ namespace Atrea.PolicyEngine.Tests.Engines
                 .Returns(Task.FromResult(InputPolicyResult.Continue));
 
             var engine = AsyncPolicyEngineBuilder<int>.Configure()
-                .WithAsyncInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockAsyncInputPolicyA, _mockAsyncInputPolicyB })
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
-                .WithParallelInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockParallelInputPolicyA, _mockParallelInputPolicyB })
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithAsyncProcessors(new List<IAsyncProcessor<int>> { _mockAsyncProcessor })
-                .WithAsyncOutputPolicies(new List<IAsyncOutputPolicy<int>> { _mockAsyncOutputPolicy })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .WithAsyncInputPolicies(_mockAsyncInputPolicyA, _mockAsyncInputPolicyB)
+                .WithInputPolicies(_mockInputPolicyA, _mockInputPolicyB)
+                .WithParallelInputPolicies(_mockParallelInputPolicyA, _mockParallelInputPolicyB)
+                .WithProcessors(_mockProcessor)
+                .WithAsyncProcessors(_mockAsyncProcessor)
+                .WithAsyncOutputPolicies(_mockAsyncOutputPolicy)
+                .WithOutputPolicies(_mockOutputPolicy)
                 .Build();
 
             // act
@@ -121,15 +118,13 @@ namespace Atrea.PolicyEngine.Tests.Engines
                 .Returns(Task.FromResult(InputPolicyResult.Continue));
 
             var engine = AsyncPolicyEngineBuilder<int>.Configure()
-                .WithAsyncInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockAsyncInputPolicyA, _mockAsyncInputPolicyB })
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
-                .WithParallelInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockParallelInputPolicyA, _mockParallelInputPolicyB })
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithAsyncProcessors(new List<IAsyncProcessor<int>> { _mockAsyncProcessor })
-                .WithAsyncOutputPolicies(new List<IAsyncOutputPolicy<int>> { _mockAsyncOutputPolicy })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .WithAsyncInputPolicies(_mockAsyncInputPolicyA, _mockAsyncInputPolicyB)
+                .WithInputPolicies(_mockInputPolicyA, _mockInputPolicyB)
+                .WithParallelInputPolicies(_mockParallelInputPolicyA, _mockParallelInputPolicyB)
+                .WithProcessors(_mockProcessor)
+                .WithAsyncProcessors(_mockAsyncProcessor)
+                .WithAsyncOutputPolicies(_mockAsyncOutputPolicy)
+                .WithOutputPolicies(_mockOutputPolicy)
                 .Build();
 
             // act
@@ -176,15 +171,13 @@ namespace Atrea.PolicyEngine.Tests.Engines
                 .Returns(Task.FromResult(InputPolicyResult.Continue));
 
             var engine = AsyncPolicyEngineBuilder<int>.Configure()
-                .WithAsyncInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockAsyncInputPolicyA, _mockAsyncInputPolicyB })
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
-                .WithParallelInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockParallelInputPolicyA, _mockParallelInputPolicyB })
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithAsyncProcessors(new List<IAsyncProcessor<int>> { _mockAsyncProcessor })
-                .WithAsyncOutputPolicies(new List<IAsyncOutputPolicy<int>> { _mockAsyncOutputPolicy })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .WithAsyncInputPolicies(_mockAsyncInputPolicyA, _mockAsyncInputPolicyB)
+                .WithInputPolicies(_mockInputPolicyA, _mockInputPolicyB)
+                .WithParallelInputPolicies(_mockParallelInputPolicyA, _mockParallelInputPolicyB)
+                .WithProcessors(_mockProcessor)
+                .WithAsyncProcessors(_mockAsyncProcessor)
+                .WithAsyncOutputPolicies(_mockAsyncOutputPolicy)
+                .WithOutputPolicies(_mockOutputPolicy)
                 .Build();
 
             // act
@@ -223,15 +216,13 @@ namespace Atrea.PolicyEngine.Tests.Engines
                 .Returns(Task.FromResult(InputPolicyResult.Continue));
 
             var engine = AsyncPolicyEngineBuilder<int>.Configure()
-                .WithAsyncInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockAsyncInputPolicyA, _mockAsyncInputPolicyB })
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
-                .WithParallelInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockParallelInputPolicyA, _mockParallelInputPolicyB })
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithAsyncProcessors(new List<IAsyncProcessor<int>> { _mockAsyncProcessor })
-                .WithAsyncOutputPolicies(new List<IAsyncOutputPolicy<int>> { _mockAsyncOutputPolicy })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .WithAsyncInputPolicies(_mockAsyncInputPolicyA, _mockAsyncInputPolicyB)
+                .WithInputPolicies(_mockInputPolicyA, _mockInputPolicyB)
+                .WithParallelInputPolicies(_mockParallelInputPolicyA, _mockParallelInputPolicyB)
+                .WithProcessors(_mockProcessor)
+                .WithAsyncProcessors(_mockAsyncProcessor)
+                .WithAsyncOutputPolicies(_mockAsyncOutputPolicy)
+                .WithOutputPolicies(_mockOutputPolicy)
                 .Build();
 
             // act
@@ -271,15 +262,13 @@ namespace Atrea.PolicyEngine.Tests.Engines
                 .Returns(Task.FromResult(InputPolicyResult.Continue));
 
             var engine = AsyncPolicyEngineBuilder<int>.Configure()
-                .WithAsyncInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockAsyncInputPolicyA, _mockAsyncInputPolicyB })
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
-                .WithParallelInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockParallelInputPolicyA, _mockParallelInputPolicyB })
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithAsyncProcessors(new List<IAsyncProcessor<int>> { _mockAsyncProcessor })
-                .WithAsyncOutputPolicies(new List<IAsyncOutputPolicy<int>> { _mockAsyncOutputPolicy })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .WithAsyncInputPolicies(_mockAsyncInputPolicyA, _mockAsyncInputPolicyB)
+                .WithInputPolicies(_mockInputPolicyA, _mockInputPolicyB)
+                .WithParallelInputPolicies(_mockParallelInputPolicyA, _mockParallelInputPolicyB)
+                .WithProcessors(_mockProcessor)
+                .WithAsyncProcessors(_mockAsyncProcessor)
+                .WithAsyncOutputPolicies(_mockAsyncOutputPolicy)
+                .WithOutputPolicies(_mockOutputPolicy)
                 .Build();
 
             // act
@@ -324,15 +313,13 @@ namespace Atrea.PolicyEngine.Tests.Engines
                 .Returns(Task.FromResult(InputPolicyResult.Continue));
 
             var engine = AsyncPolicyEngineBuilder<int>.Configure()
-                .WithAsyncInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockAsyncInputPolicyA, _mockAsyncInputPolicyB })
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
-                .WithParallelInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockParallelInputPolicyA, _mockParallelInputPolicyB })
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithAsyncProcessors(new List<IAsyncProcessor<int>> { _mockAsyncProcessor })
-                .WithAsyncOutputPolicies(new List<IAsyncOutputPolicy<int>> { _mockAsyncOutputPolicy })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .WithAsyncInputPolicies(_mockAsyncInputPolicyA, _mockAsyncInputPolicyB)
+                .WithInputPolicies(_mockInputPolicyA, _mockInputPolicyB)
+                .WithParallelInputPolicies(_mockParallelInputPolicyA, _mockParallelInputPolicyB)
+                .WithProcessors(_mockProcessor)
+                .WithAsyncProcessors(_mockAsyncProcessor)
+                .WithAsyncOutputPolicies(_mockAsyncOutputPolicy)
+                .WithOutputPolicies(_mockOutputPolicy)
                 .Build();
 
             // act
@@ -375,15 +362,13 @@ namespace Atrea.PolicyEngine.Tests.Engines
                 .Returns(Task.FromResult(InputPolicyResult.Continue));
 
             var engine = AsyncPolicyEngineBuilder<int>.Configure()
-                .WithAsyncInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockAsyncInputPolicyA, _mockAsyncInputPolicyB })
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
-                .WithParallelInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockParallelInputPolicyA, _mockParallelInputPolicyB })
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithAsyncProcessors(new List<IAsyncProcessor<int>> { _mockAsyncProcessor })
-                .WithAsyncOutputPolicies(new List<IAsyncOutputPolicy<int>> { _mockAsyncOutputPolicy })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .WithAsyncInputPolicies(_mockAsyncInputPolicyA, _mockAsyncInputPolicyB)
+                .WithInputPolicies(_mockInputPolicyA, _mockInputPolicyB)
+                .WithParallelInputPolicies(_mockParallelInputPolicyA, _mockParallelInputPolicyB)
+                .WithProcessors(_mockProcessor)
+                .WithAsyncProcessors(_mockAsyncProcessor)
+                .WithAsyncOutputPolicies(_mockAsyncOutputPolicy)
+                .WithOutputPolicies(_mockOutputPolicy)
                 .Build();
 
             // act
@@ -427,15 +412,13 @@ namespace Atrea.PolicyEngine.Tests.Engines
                 .Returns(Task.FromResult(InputPolicyResult.Continue));
 
             var engine = AsyncPolicyEngineBuilder<int>.Configure()
-                .WithAsyncInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockAsyncInputPolicyA, _mockAsyncInputPolicyB })
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
-                .WithParallelInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockParallelInputPolicyA, _mockParallelInputPolicyB })
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithAsyncProcessors(new List<IAsyncProcessor<int>> { _mockAsyncProcessor })
-                .WithAsyncOutputPolicies(new List<IAsyncOutputPolicy<int>> { _mockAsyncOutputPolicy })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .WithAsyncInputPolicies(_mockAsyncInputPolicyA, _mockAsyncInputPolicyB)
+                .WithInputPolicies(_mockInputPolicyA, _mockInputPolicyB)
+                .WithParallelInputPolicies(_mockParallelInputPolicyA, _mockParallelInputPolicyB)
+                .WithProcessors(_mockProcessor)
+                .WithAsyncProcessors(_mockAsyncProcessor)
+                .WithAsyncOutputPolicies(_mockAsyncOutputPolicy)
+                .WithOutputPolicies(_mockOutputPolicy)
                 .Build();
 
             // act
@@ -474,15 +457,13 @@ namespace Atrea.PolicyEngine.Tests.Engines
                 .Returns(Task.FromResult(InputPolicyResult.Continue));
 
             var engine = AsyncPolicyEngineBuilder<int>.Configure()
-                .WithAsyncInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockAsyncInputPolicyA, _mockAsyncInputPolicyB })
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
-                .WithParallelInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockParallelInputPolicyA, _mockParallelInputPolicyB })
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithAsyncProcessors(new List<IAsyncProcessor<int>> { _mockAsyncProcessor })
-                .WithAsyncOutputPolicies(new List<IAsyncOutputPolicy<int>> { _mockAsyncOutputPolicy })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .WithAsyncInputPolicies(_mockAsyncInputPolicyA, _mockAsyncInputPolicyB)
+                .WithInputPolicies(_mockInputPolicyA, _mockInputPolicyB)
+                .WithParallelInputPolicies(_mockParallelInputPolicyA, _mockParallelInputPolicyB)
+                .WithProcessors(_mockProcessor)
+                .WithAsyncProcessors(_mockAsyncProcessor)
+                .WithAsyncOutputPolicies(_mockAsyncOutputPolicy)
+                .WithOutputPolicies(_mockOutputPolicy)
                 .Build();
 
             // act

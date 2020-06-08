@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Atrea.PolicyEngine.Builders;
+﻿using Atrea.PolicyEngine.Builders;
 using Atrea.PolicyEngine.Policies.Input;
 using Atrea.PolicyEngine.Policies.Output;
 using Atrea.PolicyEngine.Processors;
@@ -32,9 +31,9 @@ namespace Atrea.PolicyEngine.Tests.Builders
         {
             var policyEngine = PolicyEngineBuilder<int>
                 .Configure()
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicy })
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .WithInputPolicies(_mockInputPolicy)
+                .WithProcessors(_mockProcessor)
+                .WithOutputPolicies(_mockOutputPolicy)
                 .Build();
 
             policyEngine.Process(Item);
@@ -54,8 +53,8 @@ namespace Atrea.PolicyEngine.Tests.Builders
             var policyEngine = PolicyEngineBuilder<int>
                 .Configure()
                 .WithoutInputPolicies()
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .WithProcessors(_mockProcessor)
+                .WithOutputPolicies(_mockOutputPolicy)
                 .Build();
 
             policyEngine.Process(Item);
@@ -73,8 +72,8 @@ namespace Atrea.PolicyEngine.Tests.Builders
         {
             var policyEngine = PolicyEngineBuilder<int>
                 .Configure()
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicy })
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
+                .WithInputPolicies(_mockInputPolicy)
+                .WithProcessors(_mockProcessor)
                 .WithoutOutputPolicies()
                 .Build();
 
@@ -93,9 +92,9 @@ namespace Atrea.PolicyEngine.Tests.Builders
         {
             var policyEngine = PolicyEngineBuilder<int>
                 .Configure()
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicy })
+                .WithInputPolicies(_mockInputPolicy)
                 .WithoutProcessors()
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .WithOutputPolicies(_mockOutputPolicy)
                 .Build();
 
             policyEngine.Process(Item);
