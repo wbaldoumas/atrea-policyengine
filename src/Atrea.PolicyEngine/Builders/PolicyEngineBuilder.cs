@@ -22,7 +22,7 @@ namespace Atrea.PolicyEngine.Builders
         private IEnumerable<IOutputPolicy<T>> _outputPolicies = new List<IOutputPolicy<T>>();
         private IEnumerable<IProcessor<T>> _processors = new List<IProcessor<T>>();
 
-        public IProcessorPolicyEngineBuilder<T> WithInputPolicies(IEnumerable<IInputPolicy<T>> inputPolicies)
+        public IProcessorPolicyEngineBuilder<T> WithInputPolicies(params IInputPolicy<T>[] inputPolicies)
         {
             _inputPolicies = inputPolicies;
 
@@ -42,7 +42,7 @@ namespace Atrea.PolicyEngine.Builders
             return policyEngine;
         }
 
-        public IPolicyEngineBuilder<T> WithOutputPolicies(IEnumerable<IOutputPolicy<T>> outputPolicies)
+        public IPolicyEngineBuilder<T> WithOutputPolicies(params IOutputPolicy<T>[] outputPolicies)
         {
             _outputPolicies = outputPolicies;
 
@@ -51,7 +51,7 @@ namespace Atrea.PolicyEngine.Builders
 
         public IPolicyEngineBuilder<T> WithoutOutputPolicies() => this;
 
-        public IOutputPolicyEngineBuilder<T> WithProcessors(IEnumerable<IProcessor<T>> processors)
+        public IOutputPolicyEngineBuilder<T> WithProcessors(params IProcessor<T>[] processors)
         {
             _processors = processors;
 

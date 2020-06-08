@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using Atrea.PolicyEngine.Builders;
+﻿using Atrea.PolicyEngine.Builders;
 using Atrea.PolicyEngine.Policies.Input;
 using Atrea.PolicyEngine.Policies.Output;
 using Atrea.PolicyEngine.Processors;
 using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
+using System;
 
 namespace Atrea.PolicyEngine.Tests.Engines
 {
@@ -40,9 +39,9 @@ namespace Atrea.PolicyEngine.Tests.Engines
 
             var policyEngine = PolicyEngineBuilder<int>
                 .Configure()
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .WithInputPolicies(_mockInputPolicyA, _mockInputPolicyB)
+                .WithProcessors(_mockProcessor)
+                .WithOutputPolicies(_mockOutputPolicy)
                 .Build();
 
             Action act = () => policyEngine.Process(Item);
@@ -67,9 +66,9 @@ namespace Atrea.PolicyEngine.Tests.Engines
 
             var policyEngine = PolicyEngineBuilder<int>
                 .Configure()
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .WithInputPolicies(_mockInputPolicyA, _mockInputPolicyB)
+                .WithProcessors(_mockProcessor)
+                .WithOutputPolicies(_mockOutputPolicy)
                 .Build();
 
             policyEngine.Process(Item);
@@ -91,9 +90,9 @@ namespace Atrea.PolicyEngine.Tests.Engines
 
             var policyEngine = PolicyEngineBuilder<int>
                 .Configure()
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .WithInputPolicies(_mockInputPolicyA, _mockInputPolicyB)
+                .WithProcessors(_mockProcessor)
+                .WithOutputPolicies(_mockOutputPolicy)
                 .Build();
 
             policyEngine.Process(Item);
@@ -115,9 +114,9 @@ namespace Atrea.PolicyEngine.Tests.Engines
 
             var policyEngine = PolicyEngineBuilder<int>
                 .Configure()
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .WithInputPolicies(_mockInputPolicyA, _mockInputPolicyB)
+                .WithProcessors(_mockProcessor)
+                .WithOutputPolicies(_mockOutputPolicy)
                 .Build();
 
             policyEngine.Process(Item);
@@ -140,9 +139,9 @@ namespace Atrea.PolicyEngine.Tests.Engines
 
             var policyEngine = PolicyEngineBuilder<int>
                 .Configure()
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .WithInputPolicies(_mockInputPolicyA, _mockInputPolicyB)
+                .WithProcessors(_mockProcessor)
+                .WithOutputPolicies(_mockOutputPolicy)
                 .Build();
 
             policyEngine.Process(Item);
@@ -162,9 +161,9 @@ namespace Atrea.PolicyEngine.Tests.Engines
 
             var policyEngine = PolicyEngineBuilder<int>
                 .Configure()
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .WithInputPolicies(_mockInputPolicyA, _mockInputPolicyB)
+                .WithProcessors(_mockProcessor)
+                .WithOutputPolicies(_mockOutputPolicy)
                 .Build();
 
             policyEngine.Process(Item);
@@ -185,8 +184,8 @@ namespace Atrea.PolicyEngine.Tests.Engines
             var policyEngine = PolicyEngineBuilder<int>
                 .Configure()
                 .WithoutInputPolicies()
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .WithProcessors(_mockProcessor)
+                .WithOutputPolicies(_mockOutputPolicy)
                 .Build();
 
             policyEngine.Process(Item);
