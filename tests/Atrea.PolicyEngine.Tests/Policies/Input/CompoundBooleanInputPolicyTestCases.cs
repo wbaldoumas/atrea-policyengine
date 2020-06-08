@@ -87,6 +87,12 @@ namespace Atrea.PolicyEngine.Tests.Policies.Input
                     InputPolicyResult.Continue,
                     InputPolicyResult.Continue
                 );
+
+                yield return new TestCaseData(
+                    InputPolicyResult.Reject,
+                    InputPolicyResult.Reject,
+                    InputPolicyResult.Reject
+                );
             }
         }
 
