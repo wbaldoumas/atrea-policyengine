@@ -47,6 +47,120 @@ namespace Atrea.PolicyEngine.Tests.Engines
         private IAsyncOutputPolicy<int> _mockAsyncOutputPolicy;
 
         [Test]
+        public async Task Exception_Thrown_When_Invalid_InputPolicyResult_Is_Returned_A()
+        {
+            // arrange
+            Assert.IsFalse(Enum.IsDefined(typeof(InputPolicyResult), int.MaxValue));
+            const InputPolicyResult badInputPolicyResult = (InputPolicyResult) int.MaxValue;
+
+            _mockInputPolicyA.ShouldProcess(Arg.Any<int>()).Returns(InputPolicyResult.Continue);
+            _mockInputPolicyB.ShouldProcess(Arg.Any<int>()).Returns(InputPolicyResult.Continue);
+            _mockAsyncInputPolicyA.ShouldProcessAsync(Arg.Any<int>())
+                .Returns(Task.FromResult(badInputPolicyResult));
+            _mockAsyncInputPolicyB.ShouldProcessAsync(Arg.Any<int>())
+                .Returns(Task.FromResult(InputPolicyResult.Continue));
+            _mockParallelInputPolicyA.ShouldProcessAsync(Arg.Any<int>())
+                .Returns(Task.FromResult(InputPolicyResult.Continue));
+            _mockParallelInputPolicyB.ShouldProcessAsync(Arg.Any<int>())
+                .Returns(Task.FromResult(InputPolicyResult.Continue));
+
+            var engine = AsyncPolicyEngineBuilder<int>.Configure()
+                .WithAsyncInputPolicies(new List<IAsyncInputPolicy<int>>
+                    { _mockAsyncInputPolicyA, _mockAsyncInputPolicyB })
+                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
+                .WithParallelInputPolicies(new List<IAsyncInputPolicy<int>>
+                    { _mockParallelInputPolicyA, _mockParallelInputPolicyB })
+                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
+                .WithAsyncProcessors(new List<IAsyncProcessor<int>> { _mockAsyncProcessor })
+                .WithAsyncOutputPolicies(new List<IAsyncOutputPolicy<int>> { _mockAsyncOutputPolicy })
+                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .Build();
+
+            // act
+            Func<Task> act = async () => await engine.ProcessAsync(Item);
+
+            act.Should().Throw<ArgumentOutOfRangeException>();
+
+            // assert
+            Received.InOrder(() => { _mockAsyncInputPolicyA.ShouldProcessAsync(Item); });
+
+            _mockInputPolicyA.DidNotReceiveWithAnyArgs().ShouldProcess(default);
+            _mockInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcess(default);
+
+            await _mockAsyncInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
+
+            await _mockParallelInputPolicyA.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
+            await _mockParallelInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
+
+            _mockProcessor.DidNotReceiveWithAnyArgs().Process(default);
+
+            await _mockAsyncProcessor.DidNotReceiveWithAnyArgs().ProcessAsync(default);
+            await _mockAsyncOutputPolicy.DidNotReceiveWithAnyArgs().ApplyAsync(default);
+
+            _mockOutputPolicy.DidNotReceiveWithAnyArgs().Apply(default);
+
+            await _mockAsyncOutputPolicy.DidNotReceiveWithAnyArgs().ApplyAsync(default);
+        }
+
+        [Test]
+        public async Task Exception_Thrown_When_Invalid_InputPolicyResult_Is_Returned_B()
+        {
+            // arrange
+            Assert.IsFalse(Enum.IsDefined(typeof(InputPolicyResult), int.MaxValue));
+            const InputPolicyResult badInputPolicyResult = (InputPolicyResult) int.MaxValue;
+
+            _mockInputPolicyA.ShouldProcess(Arg.Any<int>()).Returns(badInputPolicyResult);
+            _mockInputPolicyB.ShouldProcess(Arg.Any<int>()).Returns(InputPolicyResult.Continue);
+            _mockAsyncInputPolicyA.ShouldProcessAsync(Arg.Any<int>())
+                .Returns(Task.FromResult(InputPolicyResult.Continue));
+            _mockAsyncInputPolicyB.ShouldProcessAsync(Arg.Any<int>())
+                .Returns(Task.FromResult(InputPolicyResult.Continue));
+            _mockParallelInputPolicyA.ShouldProcessAsync(Arg.Any<int>())
+                .Returns(Task.FromResult(InputPolicyResult.Continue));
+            _mockParallelInputPolicyB.ShouldProcessAsync(Arg.Any<int>())
+                .Returns(Task.FromResult(InputPolicyResult.Continue));
+
+            var engine = AsyncPolicyEngineBuilder<int>.Configure()
+                .WithAsyncInputPolicies(new List<IAsyncInputPolicy<int>>
+                    { _mockAsyncInputPolicyA, _mockAsyncInputPolicyB })
+                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
+                .WithParallelInputPolicies(new List<IAsyncInputPolicy<int>>
+                    { _mockParallelInputPolicyA, _mockParallelInputPolicyB })
+                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
+                .WithAsyncProcessors(new List<IAsyncProcessor<int>> { _mockAsyncProcessor })
+                .WithAsyncOutputPolicies(new List<IAsyncOutputPolicy<int>> { _mockAsyncOutputPolicy })
+                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .Build();
+
+            // act
+            Func<Task> act = async () => await engine.ProcessAsync(Item);
+
+            act.Should().Throw<ArgumentOutOfRangeException>();
+
+            // assert
+            Received.InOrder(() =>
+            {
+                _mockAsyncInputPolicyA.ShouldProcessAsync(Item);
+                _mockAsyncInputPolicyB.ShouldProcessAsync(Item);
+                _mockInputPolicyA.ShouldProcess(Item);
+            });
+
+            _mockInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcess(default);
+
+            await _mockParallelInputPolicyA.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
+            await _mockParallelInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
+
+            _mockProcessor.DidNotReceiveWithAnyArgs().Process(default);
+
+            await _mockAsyncProcessor.DidNotReceiveWithAnyArgs().ProcessAsync(default);
+            await _mockAsyncOutputPolicy.DidNotReceiveWithAnyArgs().ApplyAsync(default);
+
+            _mockOutputPolicy.DidNotReceiveWithAnyArgs().Apply(default);
+
+            await _mockAsyncOutputPolicy.DidNotReceiveWithAnyArgs().ApplyAsync(default);
+        }
+
+        [Test]
         public async Task Fully_Configured_AsyncPolicyEngine_Runs_Components_In_Expected_Order()
         {
             // arrange
@@ -391,120 +505,6 @@ namespace Atrea.PolicyEngine.Tests.Engines
 
             await _mockParallelInputPolicyA.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
             await _mockParallelInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
-        }
-
-        [Test]
-        public async Task Exception_Thrown_When_Invalid_InputPolicyResult_Is_Returned_A()
-        {
-            // arrange
-            Assert.IsFalse(Enum.IsDefined(typeof(InputPolicyResult), int.MaxValue));
-            const InputPolicyResult badInputPolicyResult = (InputPolicyResult) int.MaxValue;
-
-            _mockInputPolicyA.ShouldProcess(Arg.Any<int>()).Returns(InputPolicyResult.Continue);
-            _mockInputPolicyB.ShouldProcess(Arg.Any<int>()).Returns(InputPolicyResult.Continue);
-            _mockAsyncInputPolicyA.ShouldProcessAsync(Arg.Any<int>())
-                .Returns(Task.FromResult(badInputPolicyResult));
-            _mockAsyncInputPolicyB.ShouldProcessAsync(Arg.Any<int>())
-                .Returns(Task.FromResult(InputPolicyResult.Continue));
-            _mockParallelInputPolicyA.ShouldProcessAsync(Arg.Any<int>())
-                .Returns(Task.FromResult(InputPolicyResult.Continue));
-            _mockParallelInputPolicyB.ShouldProcessAsync(Arg.Any<int>())
-                .Returns(Task.FromResult(InputPolicyResult.Continue));
-
-            var engine = AsyncPolicyEngineBuilder<int>.Configure()
-                .WithAsyncInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockAsyncInputPolicyA, _mockAsyncInputPolicyB })
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
-                .WithParallelInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockParallelInputPolicyA, _mockParallelInputPolicyB })
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithAsyncProcessors(new List<IAsyncProcessor<int>> { _mockAsyncProcessor })
-                .WithAsyncOutputPolicies(new List<IAsyncOutputPolicy<int>> { _mockAsyncOutputPolicy })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
-                .Build();
-
-            // act
-            Func<Task> act = async () => await engine.ProcessAsync(Item);
-
-            act.Should().Throw<ArgumentOutOfRangeException>();
-
-            // assert
-            Received.InOrder(() => { _mockAsyncInputPolicyA.ShouldProcessAsync(Item); });
-
-            _mockInputPolicyA.DidNotReceiveWithAnyArgs().ShouldProcess(default);
-            _mockInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcess(default);
-
-            await _mockAsyncInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
-
-            await _mockParallelInputPolicyA.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
-            await _mockParallelInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
-
-            _mockProcessor.DidNotReceiveWithAnyArgs().Process(default);
-
-            await _mockAsyncProcessor.DidNotReceiveWithAnyArgs().ProcessAsync(default);
-            await _mockAsyncOutputPolicy.DidNotReceiveWithAnyArgs().ApplyAsync(default);
-
-            _mockOutputPolicy.DidNotReceiveWithAnyArgs().Apply(default);
-
-            await _mockAsyncOutputPolicy.DidNotReceiveWithAnyArgs().ApplyAsync(default);
-        }
-
-        [Test]
-        public async Task Exception_Thrown_When_Invalid_InputPolicyResult_Is_Returned_B()
-        {
-            // arrange
-            Assert.IsFalse(Enum.IsDefined(typeof(InputPolicyResult), int.MaxValue));
-            const InputPolicyResult badInputPolicyResult = (InputPolicyResult) int.MaxValue;
-
-            _mockInputPolicyA.ShouldProcess(Arg.Any<int>()).Returns(badInputPolicyResult);
-            _mockInputPolicyB.ShouldProcess(Arg.Any<int>()).Returns(InputPolicyResult.Continue);
-            _mockAsyncInputPolicyA.ShouldProcessAsync(Arg.Any<int>())
-                .Returns(Task.FromResult(InputPolicyResult.Continue));
-            _mockAsyncInputPolicyB.ShouldProcessAsync(Arg.Any<int>())
-                .Returns(Task.FromResult(InputPolicyResult.Continue));
-            _mockParallelInputPolicyA.ShouldProcessAsync(Arg.Any<int>())
-                .Returns(Task.FromResult(InputPolicyResult.Continue));
-            _mockParallelInputPolicyB.ShouldProcessAsync(Arg.Any<int>())
-                .Returns(Task.FromResult(InputPolicyResult.Continue));
-
-            var engine = AsyncPolicyEngineBuilder<int>.Configure()
-                .WithAsyncInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockAsyncInputPolicyA, _mockAsyncInputPolicyB })
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
-                .WithParallelInputPolicies(new List<IAsyncInputPolicy<int>>
-                    { _mockParallelInputPolicyA, _mockParallelInputPolicyB })
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithAsyncProcessors(new List<IAsyncProcessor<int>> { _mockAsyncProcessor })
-                .WithAsyncOutputPolicies(new List<IAsyncOutputPolicy<int>> { _mockAsyncOutputPolicy })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
-                .Build();
-
-            // act
-            Func<Task> act = async () => await engine.ProcessAsync(Item);
-
-            act.Should().Throw<ArgumentOutOfRangeException>();
-
-            // assert
-            Received.InOrder(() =>
-            {
-                _mockAsyncInputPolicyA.ShouldProcessAsync(Item);
-                _mockAsyncInputPolicyB.ShouldProcessAsync(Item);
-                _mockInputPolicyA.ShouldProcess(Item);
-            });
-
-            _mockInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcess(default);
-
-            await _mockParallelInputPolicyA.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
-            await _mockParallelInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
-
-            _mockProcessor.DidNotReceiveWithAnyArgs().Process(default);
-
-            await _mockAsyncProcessor.DidNotReceiveWithAnyArgs().ProcessAsync(default);
-            await _mockAsyncOutputPolicy.DidNotReceiveWithAnyArgs().ApplyAsync(default);
-
-            _mockOutputPolicy.DidNotReceiveWithAnyArgs().Apply(default);
-
-            await _mockAsyncOutputPolicy.DidNotReceiveWithAnyArgs().ApplyAsync(default);
         }
     }
 }

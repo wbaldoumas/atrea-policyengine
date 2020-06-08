@@ -1,12 +1,12 @@
-﻿using Atrea.PolicyEngine.Builders;
+﻿using System;
+using System.Collections.Generic;
+using Atrea.PolicyEngine.Builders;
 using Atrea.PolicyEngine.Policies.Input;
 using Atrea.PolicyEngine.Policies.Output;
 using Atrea.PolicyEngine.Processors;
 using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
 
 namespace Atrea.PolicyEngine.Tests.Engines
 {
@@ -28,6 +28,36 @@ namespace Atrea.PolicyEngine.Tests.Engines
         private IInputPolicy<int> _mockInputPolicyB;
         private IProcessor<int> _mockProcessor;
         private IOutputPolicy<int> _mockOutputPolicy;
+
+        [Test]
+        public void Exception_Thrown_When_Invalid_InputPolicyResult_Is_Returned()
+        {
+            Assert.IsFalse(Enum.IsDefined(typeof(InputPolicyResult), int.MaxValue));
+            const InputPolicyResult badInputPolicyResult = (InputPolicyResult) int.MaxValue;
+
+            _mockInputPolicyA.ShouldProcess(Item).Returns(InputPolicyResult.Continue);
+            _mockInputPolicyB.ShouldProcess(Item).Returns(badInputPolicyResult);
+
+            var policyEngine = PolicyEngineBuilder<int>
+                .Configure()
+                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
+                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
+                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
+                .Build();
+
+            Action act = () => policyEngine.Process(Item);
+
+            act.Should().Throw<ArgumentOutOfRangeException>();
+
+            Received.InOrder(() =>
+            {
+                _mockInputPolicyA.ShouldProcess(Item);
+                _mockInputPolicyB.ShouldProcess(Item);
+            });
+
+            _mockProcessor.DidNotReceiveWithAnyArgs().Process(Arg.Any<int>());
+            _mockOutputPolicy.DidNotReceiveWithAnyArgs().Apply(Arg.Any<int>());
+        }
 
         [Test]
         public void Policy_Engine_Runs_Expected_Components_A()
@@ -166,36 +196,6 @@ namespace Atrea.PolicyEngine.Tests.Engines
                 _mockProcessor.Process(Item);
                 _mockOutputPolicy.Apply(Item);
             });
-        }
-
-        [Test]
-        public void Exception_Thrown_When_Invalid_InputPolicyResult_Is_Returned()
-        {
-            Assert.IsFalse(Enum.IsDefined(typeof(InputPolicyResult), int.MaxValue));
-            const InputPolicyResult badInputPolicyResult = (InputPolicyResult) int.MaxValue;
-
-            _mockInputPolicyA.ShouldProcess(Item).Returns(InputPolicyResult.Continue);
-            _mockInputPolicyB.ShouldProcess(Item).Returns(badInputPolicyResult);
-
-            var policyEngine = PolicyEngineBuilder<int>
-                .Configure()
-                .WithInputPolicies(new List<IInputPolicy<int>> { _mockInputPolicyA, _mockInputPolicyB })
-                .WithProcessors(new List<IProcessor<int>> { _mockProcessor })
-                .WithOutputPolicies(new List<IOutputPolicy<int>> { _mockOutputPolicy })
-                .Build();
-
-            Action act = () => policyEngine.Process(Item);
-
-            act.Should().Throw<ArgumentOutOfRangeException>();
-
-            Received.InOrder(() =>
-            {
-                _mockInputPolicyA.ShouldProcess(Item);
-                _mockInputPolicyB.ShouldProcess(Item);
-            });
-
-            _mockProcessor.DidNotReceiveWithAnyArgs().Process(Arg.Any<int>());
-            _mockOutputPolicy.DidNotReceiveWithAnyArgs().Apply(Arg.Any<int>());
         }
     }
 }
