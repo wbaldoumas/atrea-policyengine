@@ -6,10 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Examples\PolicyEngineWithCompoundInputPoliciesExampleRunner.cs~RF1273146.TMP" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Atrea.PolicyEngine" Version="2.0.0" />
   </ItemGroup>
 
