@@ -56,8 +56,8 @@ Once [input policies](#input-policies), [processors](#processors), and [output p
 var engine = PolicyEngineBuilder<TranslatableItem>
     .Configure()
     .WithInputPolicies(
-        // For this engine, we only want it to translate items which have not
-        // yet been translated and are translations from US English to UK English.
+        // Only translate items which have not yet been translated and are 
+        // translations from US English to UK English.
         new IsNotYetTranslated(),
         new IsFromUsEnglish(),
         new IsToUkEnglish()
