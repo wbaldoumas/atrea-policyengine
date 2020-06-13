@@ -23,6 +23,8 @@ A modular, composable policy engine for easy implementation of complex condition
   * [Input Policies](#input-policies)
   * [Processors](#processors)
   * [Output Policies](#output-policies)
+  * [Asynchronous and Parallel Processing](#asynchronous-and-parallel-processing)
+  * [Nesting Engines](#nesting-engines)
   * [Examples](#examples)
 * [Related Projects](#related-projects)
 
@@ -48,6 +50,35 @@ dotnet add package Atrea.PolicyEngine --version 2.1.0
 
 ### Basic Usage
 
+Once you've implemented your [input policies](#input-policies), [processors](#processors), and [output policies](#output-policies), you can build your policy engine using the [`PolicyEngineBuilder<T>`](https://github.com/itabaiyu/atrea-policyengine/blob/itabaiyu_usage_documentation/src/Atrea.PolicyEngine/Builders/PolicyEngineBuilder.cs). In the example below we are configuring a policy engine which performs translations between natural languages.
+
+```cs
+var engine = PolicyEngineBuilder<TranslatableItem>
+    .Configure()
+    .WithInputPolicies(
+        // For this engine, we only want it to translate items which have not
+        // yet been translated, and are translations from US English to UK English.
+        new IsNotYetTranslated(),
+        new IsFromUsEnglish(),
+        new IsToUkEnglish()
+    ).WithProcessors(
+        // Use the Google machine translation API and a proprietary single-word
+        // translator to perform translations.
+        new GoogleTranslator(),
+        new SingleWordTranslator()
+    ).WithOutputPolicies(
+        // Once an item is translated, publish the translation to an event stream
+        // and mark the item as translated.
+        new PublishTranslation(),
+        new MarkItemTranslated()
+    ).Build();
+
+var translatableItem = _repository.GetTranslatableItem();
+
+// Process the item.
+engine.Process(translatableItem);
+```
+
 <a name="input-policies"/>
 
 ### Input Policies
@@ -59,6 +90,45 @@ dotnet add package Atrea.PolicyEngine --version 2.1.0
 <a name="output-policies"/>
 
 ### Output Policies
+
+<a name="asynchronous-and-parallel-processing"/>
+
+### Asynchronous and Parallel Processing
+
+Async and parallel processing is also supported in a myriad of configurations by implementing the [`IAsyncInputPolicy<T>`](https://github.com/itabaiyu/atrea-policyengine/blob/master/src/Atrea.PolicyEngine/Policies/Input/IAsyncInputPolicy.cs), [`IAsyncProcessor<T>`](https://github.com/itabaiyu/atrea-policyengine/blob/master/src/Atrea.PolicyEngine/Processors/IAsyncProcessor.cs), and [`IAsyncOutputPolicy<T>`](https://github.com/itabaiyu/atrea-policyengine/blob/master/src/Atrea.PolicyEngine/Policies/Output/IAsyncOutputPolicy.cs) and using the [`AsyncPolicyEngineBuilder<T>`](https://github.com/itabaiyu/atrea-policyengine/blob/master/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs). Here we configure async input policies to be awaited in order, processors to be run in parallel, and output policies to be run in parallel.
+
+
+```cs
+var engine = AsyncPolicyEngineBuilder<TranslatableItem>
+    .Configure()
+    .WithAsyncInputPolicies(
+        // For this engine, we only want it to translate items which have not
+        // yet been translated, and are translations from Canadian French to US English.
+        new IsNotYetTranslated(),
+        new IsFromCanadianFrench(),
+        new IsToUsEnglish()
+    ).WithParallelProcessors(
+        // Use the Google and Microsoft machine translation APIs, and a proprietary cache-based
+        // translator to perform translations.
+        new GoogleTranslator(),
+        new MicrosoftTranslator(),
+        new CacheTranslator()
+    ).WithParallelOutputPolicies(
+        // Once an item is translated, publish the translation to an event stream
+        // and mark the item as translated.
+        new PublishTranslation(),
+        new MarkItemTranslated()
+    ).Build();
+
+var translatableItem = _repository.GetTranslatableItem();
+
+// Process the item.
+await engine.ProcessAsync(translatableItem);
+```
+
+<a name="nesting-engines"/>
+
+### Nesting Engines
 
 <a name="examples"/>
 
