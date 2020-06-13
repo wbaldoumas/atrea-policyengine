@@ -372,8 +372,37 @@ await engine.ProcessAsync(translatableItem);
 
 ### Nesting Engines
 
+Since the `IPolicyEngine<T>` interface implements `IProcessor<T>`, policy engines can composed together and nested within another encompassing policy engine and act as individual processors within that engine.
 
+In the example below, imagine that we have methods to build a policy engine that performs translation between US English and Canadian French, one to perform translations between US English and UK English, and one that specifically handles values containing numeric text. A full code example can be seen [here]((https://github.com/itabaiyu/atrea-policyengine/blob/itabaiyu_usage_documentation/examples/Atrea.PolicyEngine.Examples/Examples/NestedPolicyEngineExample.cs).
 
+```cs
+var canadianFrenchTranslationEngine = BuildCanadianFrenchTranslationEngine();
+var englishTranslationEngine = BuildEnglishTranslationEngine();
+var numericTranslationEngine = BuildNumericTranslationEngine();
+
+var translationEngine = PolicyEngineBuilder<TranslatableItem>
+    .Configure()
+    // Only process items which have not yet been translated.
+    .WithInputPolicies(NotYetTranslated)
+    .WithProcessors(
+        // Use the Canadian French, English, and numeric translation engines to
+        // perform translations.
+        canadianFrenchTranslationEngine,
+        englishTranslationEngine,
+        numericTranslationEngine
+    )
+    // No output policies needed, since each individual engine handles its own
+    // post-processing steps.
+    .WithOutputPolicies()
+    .Build();
+
+var translatableItem = _repository.GetTranslatableItem();
+
+translationEngine.Process(translatableItem);
+```
+
+This nesting of policy engines as processors is also possible with asynchronous by using the `AsyncPolicyEngineBuilder<T>` (see code example below).
 
 <a name="code-examples"/>
 
@@ -397,4 +426,4 @@ Full code examples can be found in this repository at the following links:
 * [Atrea.Extensions](https://github.com/itabaiyu/atrea-extensions)
 * [Atrea.Utilities](https://github.com/itabaiyu/atrea-utilities)
 
-**Show your support by contributing or starring the repo!** :star::star::star::star::star: 
+**Show your support by contributing or starring the repo!** :star: :star: :star: :star: :star: 
