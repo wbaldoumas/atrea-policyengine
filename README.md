@@ -24,8 +24,8 @@ A modular, composable policy engine for easy implementation of complex condition
   * [Processors](#processors)
   * [Output Policies](#output-policies)
   * [Asynchronous and Parallel Processing](#asynchronous-and-parallel-processing)
-  * [Nesting Engines](#nesting-engines)
-  * [Examples](#code-examples)
+  * [Nesting Policy Engines](#nesting-policy-engines)
+  * [Code Examples](#code-examples)
 * [Related Projects](#related-projects)
 
 <a name="installation"/>
@@ -95,7 +95,11 @@ The `IInputPolicy<T>` interface is implemented by a given input policy, whose `S
 
 Input policies are run in the order that they are passed to the `PolicyEngineBuilder<T>.WithInputPolicies(...)` or `AsyncPolicyEngineBuilder<T>.WithAsyncInputPolicies(...)` methods. 
 
-:warning: Note that when an async policy engine is configured with `AsyncPolicyEngineBuilder<T>.WithParallelInputPolicies(...)`, all input policies are run in parallel and there is no meaningful difference between `InputPolicyResult.Continue` and `InputPolicyResult.Accept`.
+Note that when an async policy engine is configured with `AsyncPolicyEngineBuilder<T>.WithParallelInputPolicies(...)`:
+
+* All input policies are run and they are all run in parallel. 
+* There is no meaningful difference between `InputPolicyResult.Continue` and `InputPolicyResult.Accept` amongst the individual input policies. 
+* If one input policy evaluates to `InputPolicyResult.Reject` but another evaluates to `InputPolicyResult.Accept`, the item is accepted for processing by the policy engine and _not_ rejected.
 
 <a name="implementing-input-policies"/>
 
@@ -276,7 +280,7 @@ var isAlreadyTranslated = new Not<TranslatableItem>(new IsNotYetTranslated());
 | `InputPolicyResult.Accept` | `InputPolicyResult.Reject`
 | `InputPolicyResult.Reject` | `InputPolicyResult.Continue`
 
-Versions of these compound input policies that support `async` operations are also avaible with `AsyncAnd<T>`, `AsyncOr<T>`, `AsyncXor<T>`, and `AsyncNot<T>`.
+Versions of these compound input policies that support `async` operations are also available with `AsyncAnd<T>`, `AsyncOr<T>`, `AsyncXor<T>`, and `AsyncNot<T>`.
 
 <a name="processors"/>
 
@@ -368,13 +372,13 @@ var translatableItem = _repository.GetTranslatableItem();
 await engine.ProcessAsync(translatableItem);
 ```
 
-<a name="nesting-engines"/>
+<a name="nesting-policy-engines"/>
 
-### Nesting Engines
+### Nesting Policy Engines
 
-Since the `IPolicyEngine<T>` interface implements `IProcessor<T>`, policy engines can composed together and nested within another encompassing policy engine and act as individual processors within that engine.
+Since the `IPolicyEngine<T>` interface implements `IProcessor<T>`, policy engines can be composed together and nested within another encompassing policy engine and act as individual processors within that engine.
 
-In the example below, imagine that we have methods to build a policy engine that performs translation between US English and Canadian French, one to perform translations between US English and UK English, and one that specifically handles values containing numeric text. A full code example can be seen [here]((https://github.com/itabaiyu/atrea-policyengine/blob/itabaiyu_usage_documentation/examples/Atrea.PolicyEngine.Examples/Examples/NestedPolicyEngineExample.cs).
+In the example below, imagine that we have methods to build a policy engine that performs translation between US English and Canadian French, one to perform translations between US English and UK English, and one that specifically handles values containing numeric text. A full code example can be seen [here](https://github.com/itabaiyu/atrea-policyengine/blob/itabaiyu_usage_documentation/examples/Atrea.PolicyEngine.Examples/Examples/NestedPolicyEngineExample.cs).
 
 ```cs
 var canadianFrenchTranslationEngine = BuildCanadianFrenchTranslationEngine();
