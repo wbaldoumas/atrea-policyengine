@@ -83,6 +83,25 @@ engine.Process(translatableItem);
 
 ### Input Policies
 
+Input policies can be thought of as the gatekeepers that guard the rest of a policy engine's processing and post-processing steps. They should be used to check whether a given item that has entered the policy engine should be processed by it or not. The [`IInputPolicy<T>`](https://github.com/itabaiyu/atrea-policyengine/blob/master/src/Atrea.PolicyEngine/Policies/Input/IInputPolicy.cs) interface is implemented by a given input policy, whose `ShouldProcess(T item)` method can return one of three [`InputPolicyResult`](https://github.com/itabaiyu/atrea-policyengine/blob/master/src/Atrea.PolicyEngine/Policies/Input/InputPolicyResult.cs) values: `Continue`, `Accept`, and `Reject`. How the policy engine handles these input policy results is described below.
+
+
+| **Value** | **Behavior** |
+| --------- | ------------ |
+| `Continue` | Accept the item by this specific input policy - continue evaluating remaining input policies, or begin processing the item if this is the last input policy evaluated.
+| `Accept` | Accept the item for processing - skip evaluation of any remaining input policies, and begin processing the item.
+| `Reject` | Reject the item for processing - skip evaulation of any remaining input policies, do not process the item with the engine's processors nor apply post-processing with the engine's output policies.
+
+:warning: When input policies are configured to run in parallel, all input policies are run and there is no meaningful difference between InputPolicyResult.Continue and `InputPolicyResult.Accept`.
+
+<a name="implementing-input-policies"/>
+
+#### Implementing Input Policies
+
+<a name="compound-input-policies/>
+
+#### Compound Input Policies
+
 <a name="processors"/>
 
 ### Processors
@@ -95,7 +114,7 @@ engine.Process(translatableItem);
 
 ### Asynchronous and Parallel Processing
 
-Async and parallel processing is also supported in a myriad of configurations by implementing the [`IAsyncInputPolicy<T>`](https://github.com/itabaiyu/atrea-policyengine/blob/master/src/Atrea.PolicyEngine/Policies/Input/IAsyncInputPolicy.cs), [`IAsyncProcessor<T>`](https://github.com/itabaiyu/atrea-policyengine/blob/master/src/Atrea.PolicyEngine/Processors/IAsyncProcessor.cs), and [`IAsyncOutputPolicy<T>`](https://github.com/itabaiyu/atrea-policyengine/blob/master/src/Atrea.PolicyEngine/Policies/Output/IAsyncOutputPolicy.cs) and using the [`AsyncPolicyEngineBuilder<T>`](https://github.com/itabaiyu/atrea-policyengine/blob/master/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs). Here we configure async input policies to be awaited in order, processors to be run in parallel, and output policies to be run in parallel.
+Async and parallel processing is also supported in a myriad of configurations by implementing the [`IAsyncInputPolicy<T>`](https://github.com/itabaiyu/atrea-policyengine/blob/master/src/Atrea.PolicyEngine/Policies/Input/IAsyncInputPolicy.cs), [`IAsyncProcessor<T>`](https://github.com/itabaiyu/atrea-policyengine/blob/master/src/Atrea.PolicyEngine/Processors/IAsyncProcessor.cs), and [`IAsyncOutputPolicy<T>`](https://github.com/itabaiyu/atrea-policyengine/blob/master/src/Atrea.PolicyEngine/Policies/Output/IAsyncOutputPolicy.cs) interfaces and using the [`AsyncPolicyEngineBuilder<T>`](https://github.com/itabaiyu/atrea-policyengine/blob/master/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs). Here we configure async input policies to be awaited in order, processors to be run in parallel, and output policies to be run in parallel.
 
 
 ```cs
