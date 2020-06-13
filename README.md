@@ -85,11 +85,11 @@ engine.Process(translatableItem);
 
 Input policies can be thought of as the gatekeepers that guard the rest of a policy engine's processing and post-processing steps. They should be used to check whether a given item that has entered the policy engine should be processed or not.
 
-The `IInputPolicy<T>` interface is implemented by a given input policy, whose `ShouldProcess(T item)` method can return one of three `InputPolicyResult` values: `Continue`, `Accept`, or `Reject`. How the policy engine handles these input policy results is described below.
+The `IInputPolicy<T>` interface is implemented by a given input policy, whose `ShouldProcess(T item)` method can return one of three `InputPolicyResult` values: `Continue`, `Accept`, or `Reject`. How the policy engine handles these input policy results is outlined in the table below.
 
 | **Value** | **Behavior** |
 | --------- | ------------ |
-| `InputPolicyResult.Continue` | Accept the item by this specific input policy - continue evaluating remaining input policies, or begin processing the item if this is the last input policy evaluated.
+| `InputPolicyResult.Continue` | Accept the item by this specific input policy - continue evaluation of remaining input policies, or begin processing the item if this is the last input policy evaluated.
 | `InputPolicyResult.Accept` | Accept the item for processing - skip evaluation of any remaining input policies, and begin processing the item.
 | `InputPolicyResult.Reject` | Reject the item for processing - skip evaluation of any remaining input policies, do not process the item with the engine's processors nor apply post-processing with the engine's output policies.
 
