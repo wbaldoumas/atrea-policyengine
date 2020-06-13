@@ -7,6 +7,7 @@ A modular, composable policy engine for easy implementation of complex condition
 
 [![NuGet Badge](https://buildstats.info/nuget/atrea.policyengine)](https://www.nuget.org/packages/atrea.policyengine/)
 ![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/atrea.policyengine)
+[![Nuget](https://img.shields.io/nuget/dt/Atrea.PolicyEngine)](https://www.nuget.org/packages/Atrea.PolicyEngine)
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/itabaiyu/atrea-policyengine) 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/itabaiyu/atrea-policyengine)
@@ -14,10 +15,8 @@ A modular, composable policy engine for easy implementation of complex condition
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/itabaiyu/atrea-policyengine)
 
 ![Size](https://img.shields.io/github/repo-size/itabaiyu/atrea-policyengine)
-
 [![GitHub](https://img.shields.io/github/license/itabaiyu/atrea-policyengine)](https://github.com/itabaiyu/atrea-policyengine/blob/master/LICENSE)
 
-##### Table of Contents  
 * [Installation](#installation)
 * [Documentation](#installation)
   * [Basic Usage](#basic-usage)
