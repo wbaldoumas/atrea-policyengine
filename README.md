@@ -25,7 +25,7 @@ A modular, composable policy engine for easy implementation of complex condition
   * [Output Policies](#output-policies)
   * [Asynchronous and Parallel Processing](#asynchronous-and-parallel-processing)
   * [Nesting Engines](#nesting-engines)
-  * [Examples](#examples)
+  * [Examples](#code-examples)
 * [Related Projects](#related-projects)
 
 <a name="installation"/>
@@ -50,7 +50,7 @@ dotnet add package Atrea.PolicyEngine --version 2.1.0
 
 ### Basic Usage
 
-Once you've implemented some [input policies](#input-policies), [processors](#processors), and [output policies](#output-policies), a policy engine can be built using the [`PolicyEngineBuilder<T>`](https://github.com/itabaiyu/atrea-policyengine/blob/itabaiyu_usage_documentation/src/Atrea.PolicyEngine/Builders/PolicyEngineBuilder.cs). In the example below we are configuring a policy engine which performs translations between natural languages.
+Once [input policies](#input-policies), [processors](#processors), and [output policies](#output-policies) have been implemented, a policy engine can be built using the `PolicyEngineBuilder<T>`. In the example below we configure a policy engine which performs translations between natural languages.
 
 ```cs
 var engine = PolicyEngineBuilder<TranslatableItem>
@@ -83,7 +83,9 @@ engine.Process(translatableItem);
 
 ### Input Policies
 
-Input policies can be thought of as the gatekeepers that guard the rest of a policy engine's processing and post-processing steps. They should be used to check whether a given item that has entered the policy engine should be processed by it or not. The [`IInputPolicy<T>`](https://github.com/itabaiyu/atrea-policyengine/blob/master/src/Atrea.PolicyEngine/Policies/Input/IInputPolicy.cs) interface is implemented by a given input policy, whose `ShouldProcess(T item)` method can return one of three [`InputPolicyResult`](https://github.com/itabaiyu/atrea-policyengine/blob/master/src/Atrea.PolicyEngine/Policies/Input/InputPolicyResult.cs) values: `Continue`, `Accept`, and `Reject`. How the policy engine handles these input policy results is described below.
+Input policies can be thought of as the gatekeepers that guard the rest of a policy engine's processing and post-processing steps. They should be used to check whether a given item that has entered the policy engine should be processed or not.
+
+The `IInputPolicy<T>` interface is implemented by a given input policy, whose `ShouldProcess(T item)` method can return one of three `InputPolicyResult` values: `Continue`, `Accept`, or `Reject`. How the policy engine handles these input policy results is described below.
 
 | **Value** | **Behavior** |
 | --------- | ------------ |
@@ -93,7 +95,7 @@ Input policies can be thought of as the gatekeepers that guard the rest of a pol
 
 Input policies are run in the order that they are passed to the `PolicyEngineBuilder<T>.WithInputPolicies(...)` or `AsyncPolicyEngineBuilder<T>.WithAsyncInputPolicies(...)` methods. 
 
-Note that when an async policy engine is configured with `AsyncPolicyEngineBuilder<T>.WithParallelInputPolicies(...)`, all input policies are run in parallel and there is no meaningful difference between `InputPolicyResult.Continue` and `InputPolicyResult.Accept`.
+:warning: Note that when an async policy engine is configured with `AsyncPolicyEngineBuilder<T>.WithParallelInputPolicies(...)`, all input policies are run in parallel and there is no meaningful difference between `InputPolicyResult.Continue` and `InputPolicyResult.Accept`.
 
 <a name="implementing-input-policies"/>
 
@@ -104,7 +106,7 @@ Input policies should aim to follow the [Single-Responsibility Principle](https:
 Here is an example of a **_poorly_** implemented input policy that is doing too much:
 
 ```cs
-public class ShouldCanadianFrenchToEnglishEngineProcess : IInputPolicy<TranslatableItem>
+public class ShouldCanadianFrenchToUsEnglishEngineProcess : IInputPolicy<TranslatableItem>
 {
     public InputPolicyResult ShouldProcess(TranslatableItem item)
     {
@@ -118,12 +120,12 @@ public class ShouldCanadianFrenchToEnglishEngineProcess : IInputPolicy<Translata
             return InputPolicyResult.Accept;
         }
 
-        if (item.FromLanguage != LanguageType.CaFr)
+        if (item.FromLanguage != LanguageCode.CaFr)
         {
             return InputPolicyResult.Reject;
         }
 
-        if (item.ToLanguage != LanguageType.UsEn)
+        if (item.ToLanguage != LanguageCode.UsEn)
         {
             return InputPolicyResult.Reject;
         }
@@ -139,7 +141,7 @@ Here are just some of the problems with the input policy implementation above:
 * It doesn't follow the [Single-Responsibility Principle](https://en.wikipedia.org/wiki/Single-responsibility_principle).
 * It is hard to unit test all possible branches for this input policy.
 
-This can be refactored into a cleaner implementation by essentially breaking down each of the `if` blocks above into separate input policies:
+This can be refactored into a cleaner implementation by breaking down each of the checks above into separate input policies:
 
 ```cs
 public class IsNotYetTranslated : IInputPolicy<TranslatableItem>
@@ -176,7 +178,7 @@ public class IsFromCanadianFrench : IInputPolicy<TranslatableItem>
 {
     public InputPolicyResult ShouldProcess(TranslatableItem item)
     {
-        if (item.FromLanguage != LanguageType.CaFr)
+        if (item.FromLanguage != LanguageCode.CaFr)
         {
             return InputPolicyResult.Reject;
         }
@@ -191,7 +193,7 @@ public class IsToUsEnglish : IInputPolicy<TranslatableItem>
 {
     public InputPolicyResult ShouldProcess(TranslatableItem item)
     {
-        if (item.ToLanguage != LanguageType.UsEn)
+        if (item.ToLanguage != LanguageCode.UsEn)
         {
             return InputPolicyResult.Reject;
         }
@@ -201,7 +203,7 @@ public class IsToUsEnglish : IInputPolicy<TranslatableItem>
 }
 ```
 
-Note that although this produces more classes and source files, each input policy follows the Single-Responsibility Principal, is reusable within the context of other policy engines, and is extremely easy to unit test! :heavy_check_mark: :heavy_check_mark: :heavy_check_mark:
+Note that although this produces more code, classes, and source files, each input policy follows the Single-Responsibility Principal, is reusable within the context of other policy engines, and is extremely easy to unit test! :heavy_check_mark: :heavy_check_mark: :heavy_check_mark:
 
 These can then be passed to the policy engine builder's `WithInputPolicies(...)` method as such:
 
@@ -221,15 +223,15 @@ var engine = PolicyEngineBuilder<TranslatableItem>
 
 #### Async Input Policies
 
-If some of your input policies are more complex and have dependencies that perform `async` operations, the `IAsyncInputPolicy<T>` interface can be implemented instead. See more about [Asynchronous and Parallel Processing](#asynchronous-and-parallel-processing) below.
+If some input policies are more complex and have dependencies that perform `async` operations, the `IAsyncInputPolicy<T>` interface can be implemented instead. See more about [asynchronous and parallel processing](#asynchronous-and-parallel-processing) below.
 
 <a name="compound-input-policies/>
 
 #### Compound Input Policies
 
-The Atrea.PolicyEngine library provides a handful of useful compound input policies. These currently include `And<T>`, `Or<T>`, and `Xor<T>`.
+The Atrea.PolicyEngine library also provides a handful of useful compound input policies. These currently include `And<T>`, `Or<T>`, and `Xor<T>`.
 
-These compound input policies can be created by passing other input policies into their constructors:
+These compound input policies can be created by passing other input policies constructor arguments:
 
 ```cs
 var isFromCanadianFrenchAndToUsEnglish = new And<TranslatableItem>(
@@ -238,10 +240,10 @@ var isFromCanadianFrenchAndToUsEnglish = new And<TranslatableItem>(
 )
 ```
 
-or by using the built-in extension methods:
+or by using the built-in `IInputPolicy<T>` extension methods:
 
 ```cs
-var isFromCanadianFrenchAndToUsEnglish = new IsFromCanadianFrench().And(new IsToUsEnglish());
+var isFromCanadianFrenchToUsEnglish = new IsFromCanadianFrench().And(new IsToUsEnglish());
 ```
 
 Using these compound input policies allows for creation of complex input policies on the fly by composing together more granular input policies in an intuitive way.
@@ -265,6 +267,14 @@ A `Not<T>` input policy is also available to easily reverse the output of any gi
 ```cs
 var isAlreadyTranslated = new Not<TranslatableItem>(new IsNotYetTranslated());
 ```
+
+`Not<T>` is implemented in such a way that it produces the following `InputPolicyResult` values.
+
+| **InputPolicyResult** | **Not\<T> InputPolicyResult**
+| --- | --- |
+| `InputPolicyResult.Continue` | `InputPolicyResult.Reject` 
+| `InputPolicyResult.Accept` | `InputPolicyResult.Reject`
+| `InputPolicyResult.Reject` | `InputPolicyResult.Continue`
 
 Versions of these compound input policies that support `async` operations are also avaible with `AsyncAnd<T>`, `AsyncOr<T>`, `AsyncXor<T>`, and `AsyncNot<T>`.
 
@@ -304,12 +314,29 @@ Processors can be configured to run synchronously, asynchronously, and in parall
 A policy engine's output policies can be thought of as light post-processors that should be run after the engine's main processing step has been completed. They shouldn't be doing any heavy lifting. In our example we have an output policy that is pushing messages to an event stream.
 
 ```cs
+public class PublishTranslation : IOutputPolicy<TranslatableItem>
+{
+    private readonly IKafkaProducer<TranslatableItemMessage> _messageProducer;
 
+    public PublishTranslation(IKafkaProducer<TranslatableItemMessage> messageProducer)
+    {
+        _messageProducer = messageProducer;
+    }
+
+    public void Apply(TranslatableItem item)
+    {
+        var message = new TranslatableItemMessage(item);
+
+        _messageProducer.Produce(message);
+    }
+}
 ```
+
+Output policies can be configured to run synchronously, asynchronously, and in parallel. See more about [asynchronous and parallel processing](#asynchronous-and-parallel-processing) below.
 
 ### Asynchronous and Parallel Processing
 
-Async and parallel processing is also supported in a myriad of configurations by implementing the [`IAsyncInputPolicy<T>`](https://github.com/itabaiyu/atrea-policyengine/blob/master/src/Atrea.PolicyEngine/Policies/Input/IAsyncInputPolicy.cs), [`IAsyncProcessor<T>`](https://github.com/itabaiyu/atrea-policyengine/blob/master/src/Atrea.PolicyEngine/Processors/IAsyncProcessor.cs), and [`IAsyncOutputPolicy<T>`](https://github.com/itabaiyu/atrea-policyengine/blob/master/src/Atrea.PolicyEngine/Policies/Output/IAsyncOutputPolicy.cs) interfaces and using the [`AsyncPolicyEngineBuilder<T>`](https://github.com/itabaiyu/atrea-policyengine/blob/master/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs). 
+Async and parallel processing is supported in a myriad of configurations by implementing the `IAsyncInputPolicy<T>`, `IAsyncProcessor<T>`, and `IAsyncOutputPolicy<T>` interfaces and using the `AsyncPolicyEngineBuilder<T>`. 
 
 Here we configure async input policies to be awaited in order, processors to be run in parallel, and output policies to be run in parallel.
 
@@ -345,9 +372,21 @@ await engine.ProcessAsync(translatableItem);
 
 ### Nesting Engines
 
-<a name="examples"/>
 
-### Examples
+
+
+<a name="code-examples"/>
+
+### Code Examples
+
+Full code examples can be found in this repository at the following links:
+
+* [Simple `PolicyEngineBuilder<T>` usage](https://github.com/itabaiyu/atrea-policyengine/blob/itabaiyu_usage_documentation/examples/Atrea.PolicyEngine.Examples/Examples/SimplePolicyEngineExample.cs)
+* [Simple `AsyncPolicyEngineBuilder<T>` usage](https://github.com/itabaiyu/atrea-policyengine/blob/itabaiyu_usage_documentation/examples/Atrea.PolicyEngine.Examples/Examples/SimpleAsyncPolicyEngineExample.cs)
+* [`PolicyEngineBuilder<T>` usage with compound input policies](https://github.com/itabaiyu/atrea-policyengine/blob/itabaiyu_usage_documentation/examples/Atrea.PolicyEngine.Examples/Examples/PolicyEngineWithCompoundInputPoliciesExample.cs)
+* [`AsyncPolicyEngineBuilder<T>` usage with compound input policies](https://github.com/itabaiyu/atrea-policyengine/blob/itabaiyu_usage_documentation/examples/Atrea.PolicyEngine.Examples/Examples/AsyncPolicyEngineWithCompoundInputPoliciesExample.cs)
+* [Nested policy engine configuration](https://github.com/itabaiyu/atrea-policyengine/blob/itabaiyu_usage_documentation/examples/Atrea.PolicyEngine.Examples/Examples/NestedPolicyEngineExample.cs)
+* [Nested async policy engine configuration](https://github.com/itabaiyu/atrea-policyengine/blob/itabaiyu_usage_documentation/examples/Atrea.PolicyEngine.Examples/Examples/NestedAsyncPolicyEngineExample.cs)
 
 ---
 
