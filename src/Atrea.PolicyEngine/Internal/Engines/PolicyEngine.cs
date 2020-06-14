@@ -1,4 +1,5 @@
-﻿using Atrea.PolicyEngine.Internal.PolicyRunners.Input;
+﻿using System.Collections.Generic;
+using Atrea.PolicyEngine.Internal.PolicyRunners.Input;
 using Atrea.PolicyEngine.Internal.PolicyRunners.Output;
 using Atrea.PolicyEngine.Internal.ProcessorRunners;
 using Atrea.PolicyEngine.Policies.Input;
@@ -20,6 +21,14 @@ namespace Atrea.PolicyEngine.Internal.Engines
 
             _processorRunner.Process(item);
             _outputPolicyRunner.Apply(item);
+        }
+
+        public void Process(IEnumerable<T> items)
+        {
+            foreach (var item in items)
+            {
+                Process(item);
+            }
         }
 
         public void SetInputPolicyRunner(IInputPolicyRunner<T> inputPolicyRunner)

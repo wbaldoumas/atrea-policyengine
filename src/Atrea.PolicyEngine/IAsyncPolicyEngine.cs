@@ -1,4 +1,6 @@
-﻿using Atrea.PolicyEngine.Builders;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Atrea.PolicyEngine.Builders;
 using Atrea.PolicyEngine.Processors;
 
 namespace Atrea.PolicyEngine
@@ -11,5 +13,18 @@ namespace Atrea.PolicyEngine
     ///     See <see cref="AsyncPolicyEngineBuilder{T}" /> for configuration of this async policy engine.
     /// </summary>
     /// <typeparam name="T">The type of the item to be processed.</typeparam>
-    public interface IAsyncPolicyEngine<in T> : IAsyncProcessor<T> { }
+    public interface IAsyncPolicyEngine<in T> : IAsyncProcessor<T>
+    {
+        /// <summary>
+        ///     Process items.
+        /// </summary>
+        /// <param name="items">The items to be processed.</param>
+        Task ProcessAsync(IEnumerable<T> items);
+
+        /// <summary>
+        ///     Process items.
+        /// </summary>
+        /// <param name="items">The items to be processed.</param>
+        Task ProcessParallel(IEnumerable<T> items);
+    }
 }
