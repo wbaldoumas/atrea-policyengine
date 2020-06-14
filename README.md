@@ -6,8 +6,6 @@ A modular, composable policy engine for easy implementation of complex condition
 [![Coverage Status](https://coveralls.io/repos/github/itabaiyu/atrea-policyengine/badge.png?branch=master)](https://coveralls.io/github/itabaiyu/atrea-policyengine?branch=master)
 
 [![NuGet Badge](https://buildstats.info/nuget/atrea.policyengine)](https://www.nuget.org/packages/atrea.policyengine/)
-![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/atrea.policyengine)
-[![Nuget](https://img.shields.io/nuget/dt/Atrea.PolicyEngine)](https://www.nuget.org/packages/Atrea.PolicyEngine)
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/itabaiyu/atrea-policyengine) 
 
