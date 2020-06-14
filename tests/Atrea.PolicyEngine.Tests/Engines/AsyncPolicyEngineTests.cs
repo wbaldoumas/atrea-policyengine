@@ -1,12 +1,13 @@
-﻿using Atrea.PolicyEngine.Builders;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Atrea.PolicyEngine.Builders;
 using Atrea.PolicyEngine.Policies.Input;
 using Atrea.PolicyEngine.Policies.Output;
 using Atrea.PolicyEngine.Processors;
 using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
-using System;
-using System.Threading.Tasks;
 
 namespace Atrea.PolicyEngine.Tests.Engines
 {
@@ -89,7 +90,7 @@ namespace Atrea.PolicyEngine.Tests.Engines
             await _mockParallelInputPolicyA.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
             await _mockParallelInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
 
-            _mockProcessor.DidNotReceiveWithAnyArgs().Process(default);
+            _mockProcessor.DidNotReceiveWithAnyArgs().Process(Arg.Any<int>());
 
             await _mockAsyncProcessor.DidNotReceiveWithAnyArgs().ProcessAsync(default);
             await _mockAsyncOutputPolicy.DidNotReceiveWithAnyArgs().ApplyAsync(default);
@@ -145,7 +146,7 @@ namespace Atrea.PolicyEngine.Tests.Engines
             await _mockParallelInputPolicyA.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
             await _mockParallelInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
 
-            _mockProcessor.DidNotReceiveWithAnyArgs().Process(default);
+            _mockProcessor.DidNotReceiveWithAnyArgs().Process(Arg.Any<int>());
 
             await _mockAsyncProcessor.DidNotReceiveWithAnyArgs().ProcessAsync(default);
             await _mockAsyncOutputPolicy.DidNotReceiveWithAnyArgs().ApplyAsync(default);
@@ -287,7 +288,7 @@ namespace Atrea.PolicyEngine.Tests.Engines
             await _mockParallelInputPolicyA.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
             await _mockParallelInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
 
-            _mockProcessor.DidNotReceiveWithAnyArgs().Process(default);
+            _mockProcessor.DidNotReceiveWithAnyArgs().Process(Arg.Any<int>());
 
             await _mockAsyncProcessor.DidNotReceiveWithAnyArgs().ProcessAsync(default);
             await _mockAsyncOutputPolicy.DidNotReceiveWithAnyArgs().ApplyAsync(default);
@@ -336,7 +337,7 @@ namespace Atrea.PolicyEngine.Tests.Engines
             await _mockParallelInputPolicyA.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
             await _mockParallelInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
 
-            _mockProcessor.DidNotReceiveWithAnyArgs().Process(default);
+            _mockProcessor.DidNotReceiveWithAnyArgs().Process(Arg.Any<int>());
 
             await _mockAsyncProcessor.DidNotReceiveWithAnyArgs().ProcessAsync(default);
             await _mockAsyncOutputPolicy.DidNotReceiveWithAnyArgs().ApplyAsync(default);
@@ -386,7 +387,7 @@ namespace Atrea.PolicyEngine.Tests.Engines
             await _mockParallelInputPolicyA.Received(1).ShouldProcessAsync(Item);
             await _mockParallelInputPolicyB.Received(1).ShouldProcessAsync(Item);
 
-            _mockProcessor.DidNotReceiveWithAnyArgs().Process(default);
+            _mockProcessor.DidNotReceiveWithAnyArgs().Process(Arg.Any<int>());
 
             await _mockAsyncProcessor.DidNotReceiveWithAnyArgs().ProcessAsync(default);
             await _mockAsyncOutputPolicy.DidNotReceiveWithAnyArgs().ApplyAsync(default);
@@ -478,6 +479,115 @@ namespace Atrea.PolicyEngine.Tests.Engines
                 _mockAsyncOutputPolicy.ApplyAsync(Item);
                 _mockOutputPolicy.Apply(Item);
             });
+
+            _mockInputPolicyA.DidNotReceiveWithAnyArgs().ShouldProcess(default);
+            _mockInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcess(default);
+
+            await _mockAsyncInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
+
+            await _mockParallelInputPolicyA.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
+            await _mockParallelInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
+        }
+
+        [Test]
+        public async Task Fully_Configured_AsyncPolicyEngine_Runs_Components_In_Expected_Order_With_Multiple_Items()
+        {
+            // arrange
+            _mockInputPolicyA.ShouldProcess(Arg.Any<int>()).Returns(InputPolicyResult.Continue);
+            _mockInputPolicyB.ShouldProcess(Arg.Any<int>()).Returns(InputPolicyResult.Continue);
+            _mockAsyncInputPolicyA.ShouldProcessAsync(Arg.Any<int>())
+                .Returns(Task.FromResult(InputPolicyResult.Accept));
+            _mockAsyncInputPolicyB.ShouldProcessAsync(Arg.Any<int>())
+                .Returns(Task.FromResult(InputPolicyResult.Continue));
+            _mockParallelInputPolicyA.ShouldProcessAsync(Arg.Any<int>())
+                .Returns(Task.FromResult(InputPolicyResult.Accept));
+            _mockParallelInputPolicyB.ShouldProcessAsync(Arg.Any<int>())
+                .Returns(Task.FromResult(InputPolicyResult.Continue));
+
+            var engine = AsyncPolicyEngineBuilder<int>.Configure()
+                .WithAsyncInputPolicies(_mockAsyncInputPolicyA, _mockAsyncInputPolicyB)
+                .WithInputPolicies(_mockInputPolicyA, _mockInputPolicyB)
+                .WithParallelInputPolicies(_mockParallelInputPolicyA, _mockParallelInputPolicyB)
+                .WithProcessors(_mockProcessor)
+                .WithAsyncProcessors(_mockAsyncProcessor)
+                .WithAsyncOutputPolicies(_mockAsyncOutputPolicy)
+                .WithOutputPolicies(_mockOutputPolicy)
+                .Build();
+
+            const int item1 = 1;
+            const int item2 = 2;
+
+            // act
+            await engine.ProcessAsync(new List<int> { item1, item2 });
+
+            // assert
+            Received.InOrder(() =>
+            {
+                _mockAsyncInputPolicyA.ShouldProcessAsync(item1);
+                _mockProcessor.Process(item1);
+                _mockAsyncProcessor.ProcessAsync(item1);
+                _mockAsyncOutputPolicy.ApplyAsync(item1);
+                _mockOutputPolicy.Apply(item1);
+
+                _mockAsyncInputPolicyA.ShouldProcessAsync(item2);
+                _mockProcessor.Process(item2);
+                _mockAsyncProcessor.ProcessAsync(item2);
+                _mockAsyncOutputPolicy.ApplyAsync(item2);
+                _mockOutputPolicy.Apply(item2);
+            });
+
+            _mockInputPolicyA.DidNotReceiveWithAnyArgs().ShouldProcess(default);
+            _mockInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcess(default);
+
+            await _mockAsyncInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
+
+            await _mockParallelInputPolicyA.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
+            await _mockParallelInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
+        }
+
+        [Test]
+        public async Task Fully_Configured_AsyncPolicyEngine_Runs_Components_In_Expected_Order_With_Parallel_Items()
+        {
+            // arrange
+            _mockInputPolicyA.ShouldProcess(Arg.Any<int>()).Returns(InputPolicyResult.Continue);
+            _mockInputPolicyB.ShouldProcess(Arg.Any<int>()).Returns(InputPolicyResult.Continue);
+            _mockAsyncInputPolicyA.ShouldProcessAsync(Arg.Any<int>())
+                .Returns(Task.FromResult(InputPolicyResult.Accept));
+            _mockAsyncInputPolicyB.ShouldProcessAsync(Arg.Any<int>())
+                .Returns(Task.FromResult(InputPolicyResult.Continue));
+            _mockParallelInputPolicyA.ShouldProcessAsync(Arg.Any<int>())
+                .Returns(Task.FromResult(InputPolicyResult.Accept));
+            _mockParallelInputPolicyB.ShouldProcessAsync(Arg.Any<int>())
+                .Returns(Task.FromResult(InputPolicyResult.Continue));
+
+            var engine = AsyncPolicyEngineBuilder<int>.Configure()
+                .WithAsyncInputPolicies(_mockAsyncInputPolicyA, _mockAsyncInputPolicyB)
+                .WithInputPolicies(_mockInputPolicyA, _mockInputPolicyB)
+                .WithParallelInputPolicies(_mockParallelInputPolicyA, _mockParallelInputPolicyB)
+                .WithProcessors(_mockProcessor)
+                .WithAsyncProcessors(_mockAsyncProcessor)
+                .WithAsyncOutputPolicies(_mockAsyncOutputPolicy)
+                .WithOutputPolicies(_mockOutputPolicy)
+                .Build();
+
+            const int item1 = 1;
+            const int item2 = 2;
+
+            // act
+            await engine.ProcessParallel(new List<int> { item1, item2 });
+
+            // assert
+            await _mockAsyncInputPolicyA.Received(1).ShouldProcessAsync(item1);
+            _mockProcessor.Received(1).Process(item1);
+            await _mockAsyncProcessor.Received(1).ProcessAsync(item1);
+            await _mockAsyncOutputPolicy.Received(1).ApplyAsync(item1);
+            _mockOutputPolicy.Received(1).Apply(item1);
+
+            await _mockAsyncInputPolicyA.Received(1).ShouldProcessAsync(item2);
+            _mockProcessor.Received(1).Process(item2);
+            await _mockAsyncProcessor.Received(1).ProcessAsync(item2);
+            await _mockAsyncOutputPolicy.Received(1).ApplyAsync(item2);
+            _mockOutputPolicy.Received(1).Apply(item2);
 
             _mockInputPolicyA.DidNotReceiveWithAnyArgs().ShouldProcess(default);
             _mockInputPolicyB.DidNotReceiveWithAnyArgs().ShouldProcess(default);

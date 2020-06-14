@@ -1,11 +1,12 @@
-﻿using Atrea.PolicyEngine.Builders;
+﻿using System;
+using System.Collections.Generic;
+using Atrea.PolicyEngine.Builders;
 using Atrea.PolicyEngine.Policies.Input;
 using Atrea.PolicyEngine.Policies.Output;
 using Atrea.PolicyEngine.Processors;
 using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
-using System;
 
 namespace Atrea.PolicyEngine.Tests.Engines
 {
@@ -194,6 +195,38 @@ namespace Atrea.PolicyEngine.Tests.Engines
             {
                 _mockProcessor.Process(Item);
                 _mockOutputPolicy.Apply(Item);
+            });
+        }
+
+        [Test]
+        public void Policy_Engine_Runs_Expected_Components_With_Multiple_Items()
+        {
+            _mockInputPolicyA.ShouldProcess(Arg.Any<int>()).Returns(InputPolicyResult.Continue);
+            _mockInputPolicyB.ShouldProcess(Arg.Any<int>()).Returns(InputPolicyResult.Continue);
+
+            var policyEngine = PolicyEngineBuilder<int>
+                .Configure()
+                .WithInputPolicies(_mockInputPolicyA, _mockInputPolicyB)
+                .WithProcessors(_mockProcessor)
+                .WithOutputPolicies(_mockOutputPolicy)
+                .Build();
+
+            const int item1 = 1;
+            const int item2 = 2;
+
+            policyEngine.Process(new List<int> { item1, item2 });
+
+            Received.InOrder(() =>
+            {
+                _mockInputPolicyA.ShouldProcess(item1);
+                _mockInputPolicyB.ShouldProcess(item1);
+                _mockProcessor.Process(item1);
+                _mockOutputPolicy.Apply(item1);
+
+                _mockInputPolicyA.ShouldProcess(item2);
+                _mockInputPolicyB.ShouldProcess(item2);
+                _mockProcessor.Process(item2);
+                _mockOutputPolicy.Apply(item2);
             });
         }
     }

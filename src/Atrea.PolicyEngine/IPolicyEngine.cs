@@ -1,4 +1,5 @@
-﻿using Atrea.PolicyEngine.Builders;
+﻿using System.Collections.Generic;
+using Atrea.PolicyEngine.Builders;
 using Atrea.PolicyEngine.Processors;
 
 namespace Atrea.PolicyEngine
@@ -10,5 +11,12 @@ namespace Atrea.PolicyEngine
     ///     See <see cref="PolicyEngineBuilder{T}" /> for configuration of this policy engine.
     /// </summary>
     /// <typeparam name="T">The type of the item to be processed.</typeparam>
-    public interface IPolicyEngine<in T> : IProcessor<T> { }
+    public interface IPolicyEngine<in T> : IProcessor<T>
+    {
+        /// <summary>
+        ///     Process items.
+        /// </summary>
+        /// <param name="items">The items to be processed.</param>
+        void Process(IEnumerable<T> items);
+    }
 }

@@ -20010,7 +20010,7 @@ namespace Atrea.PolicyEngine.Tests.Builders
             await asyncPolicyEngine.ProcessAsync(Item);
 
             _mockInputPolicy.DidNotReceiveWithAnyArgs().ShouldProcess(default);
-            _mockProcessor.DidNotReceiveWithAnyArgs().Process(default);
+            _mockProcessor.DidNotReceiveWithAnyArgs().Process(Arg.Any<int>());
             _mockOutputPolicy.DidNotReceiveWithAnyArgs().Apply(default);
 
             await _mockAsyncInputPolicy.DidNotReceiveWithAnyArgs().ShouldProcessAsync(default);
