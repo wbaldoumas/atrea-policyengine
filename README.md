@@ -77,6 +77,11 @@ var translatableItem = _repository.GetTranslatableItem();
 
 // Process the item.
 engine.Process(translatableItem);
+
+// Process multiple items at once.
+var translatableItems =  _repository.GetTranslatableItems();
+
+engine.Process(translatableItems);
 ```
 
 <a name="input-policies"/>
