@@ -27,12 +27,12 @@
 
 Package manager:
 ```
-Install-Package Atrea.PolicyEngine -Version 2.1.0
+Install-Package Atrea.PolicyEngine -Version 2.2.0
 ```
 
 .NET CLI:
 ```
-dotnet add package Atrea.PolicyEngine --version 2.1.0
+dotnet add package Atrea.PolicyEngine --version 2.2.0
 ```
 
 <a name="documentation"/>
