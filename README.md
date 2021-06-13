@@ -413,12 +413,12 @@ This nesting of policy engines as processors is also possible with asynchronous 
 
 Full code examples can be found in this repository at the following links:
 
-* [Simple `PolicyEngineBuilder<T>` usage](https://github.com/itabaiyu/atrea-policyengine/blob/itabaiyu_usage_documentation/examples/Atrea.PolicyEngine.Examples/Examples/SimplePolicyEngineExample.cs)
-* [Simple `AsyncPolicyEngineBuilder<T>` usage](https://github.com/itabaiyu/atrea-policyengine/blob/itabaiyu_usage_documentation/examples/Atrea.PolicyEngine.Examples/Examples/SimpleAsyncPolicyEngineExample.cs)
-* [`PolicyEngineBuilder<T>` usage with compound input policies](https://github.com/itabaiyu/atrea-policyengine/blob/itabaiyu_usage_documentation/examples/Atrea.PolicyEngine.Examples/Examples/PolicyEngineWithCompoundInputPoliciesExample.cs)
-* [`AsyncPolicyEngineBuilder<T>` usage with compound input policies](https://github.com/itabaiyu/atrea-policyengine/blob/itabaiyu_usage_documentation/examples/Atrea.PolicyEngine.Examples/Examples/AsyncPolicyEngineWithCompoundInputPoliciesExample.cs)
-* [Nested policy engine configuration](https://github.com/itabaiyu/atrea-policyengine/blob/itabaiyu_usage_documentation/examples/Atrea.PolicyEngine.Examples/Examples/NestedPolicyEngineExample.cs)
-* [Nested async policy engine configuration](https://github.com/itabaiyu/atrea-policyengine/blob/itabaiyu_usage_documentation/examples/Atrea.PolicyEngine.Examples/Examples/NestedAsyncPolicyEngineExample.cs)
+* [Simple `PolicyEngineBuilder<T>` usage](https://github.com/itabaiyu/atrea-policyengine/blob/main/examples/Atrea.PolicyEngine.Examples/Examples/SimplePolicyEngineExample.cs)
+* [Simple `AsyncPolicyEngineBuilder<T>` usage](https://github.com/itabaiyu/atrea-policyengine/blob/main/examples/Atrea.PolicyEngine.Examples/Examples/SimpleAsyncPolicyEngineExample.cs)
+* [`PolicyEngineBuilder<T>` usage with compound input policies](https://github.com/itabaiyu/atrea-policyengine/blob/main/examples/Atrea.PolicyEngine.Examples/Examples/PolicyEngineWithCompoundInputPoliciesExample.cs)
+* [`AsyncPolicyEngineBuilder<T>` usage with compound input policies](https://github.com/itabaiyu/atrea-policyengine/blob/main/examples/Atrea.PolicyEngine.Examples/Examples/AsyncPolicyEngineWithCompoundInputPoliciesExample.cs)
+* [Nested policy engine configuration](https://github.com/itabaiyu/atrea-policyengine/blob/main/examples/Atrea.PolicyEngine.Examples/Examples/NestedPolicyEngineExample.cs)
+* [Nested async policy engine configuration](https://github.com/itabaiyu/atrea-policyengine/blob/main/examples/Atrea.PolicyEngine.Examples/Examples/NestedAsyncPolicyEngineExample.cs)
 
 ---
 
