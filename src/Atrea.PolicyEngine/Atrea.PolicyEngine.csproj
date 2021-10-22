@@ -7,12 +7,12 @@
     <Authors>William Baldoumas</Authors>
     <Company>William Baldoumas</Company>
     <Description>A modular, composable policy engine for easy implementation of complex conditional processing pipelines.</Description>
-    <Copyright>Copyright ©2020 William Baldoumas</Copyright>
+    <Copyright>Copyright ©2021 William Baldoumas</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <RepositoryUrl>https://github.com/itabaiyu/atrea-policyengine.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/wbaldoumas/atrea-policyengine.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>policy engine, policy, engine, processing, conditional processing, modular, composable, extensible, rules engine, async</PackageTags>
-    <PackageProjectUrl>https://github.com/itabaiyu/atrea-policyengine</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/wbaldoumas/atrea-policyengine</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
