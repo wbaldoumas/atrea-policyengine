@@ -1,18 +1,47 @@
-# Atrea.PolicyEngine
+<div id="top"></div>
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/itabaiyu/atrea-policyengine/.NET%20Core%20Build%20&%20Test)](https://github.com/itabaiyu/atrea-policyengine/actions?query=workflow%3A%22.NET+Core+Build+%26+Test%22)
-[![Coverage Status](https://coveralls.io/repos/github/itabaiyu/atrea-policyengine/badge.png?branch=master)](https://coveralls.io/github/itabaiyu/atrea-policyengine?branch=master)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/itabaiyu/atrea-policyengine.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/itabaiyu/atrea-policyengine/alerts/)
+[![Build][github-workflow-shield]][github-workflow-url]
+[![Coverage][coverage-shield]][coverage-url]
+[![Alerts][lgtm-alerts-shield]][lgtm-alerts-url]
 
-[![NuGet Badge](https://buildstats.info/nuget/atrea.policyengine)](https://www.nuget.org/packages/atrea.policyengine/)
+[![Version][nuget-version-shield]][nuget-url]
+[![Downloads][nuget-downloads-shield]][nuget-url]
 
-![GitHub last commit](https://img.shields.io/github/last-commit/itabaiyu/atrea-policyengine) 
+[![Contributors][contributors-shield]][contributors-url]
+[![Commits][last-commit-shield]][last-commit-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
-![Size](https://img.shields.io/github/repo-size/itabaiyu/atrea-policyengine)
-[![GitHub](https://img.shields.io/github/license/itabaiyu/atrea-policyengine)](https://github.com/itabaiyu/atrea-policyengine/blob/master/LICENSE)
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <h1 align="center">Atrea.PolicyEngine</h1>
+  <p align="center">
+    A modular, composable policy engine for easy implementation of complex conditional processing pipelines.
+    <br />
+    <a href="#documentation"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/tree/main/examples/Atrea.PolicyEngine.Examples/Examples">View Examples</a>
+    ·
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/issues">Request Feature</a>
+  </p>
+  <a href="https://github.com/wbaldoumas/atrea-policyengine">
+    <img src="images/engine.png" alt="Engine" >
+  </a>
+</div>
+
+<details>
+  <summary>Table of Contents</summary>
 
 * [Installation](#installation)
-* [Documentation](#installation)
+* [Documentation](#documentation)
   * [Basic Usage](#basic-usage)
   * [Input Policies](#input-policies)
   * [Processors](#processors)
@@ -20,7 +49,12 @@
   * [Asynchronous and Parallel Processing](#asynchronous-and-parallel-processing)
   * [Nesting Policy Engines](#nesting-policy-engines)
   * [Code Examples](#code-examples)
-* [Related Projects](#related-projects)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
+
+</details>
 
 <a name="installation"/>
 
@@ -35,6 +69,8 @@ Install-Package Atrea.PolicyEngine -Version 2.2.0
 ```
 dotnet add package Atrea.PolicyEngine --version 2.2.0
 ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <a name="documentation"/>
 
@@ -78,6 +114,8 @@ var translatableItems =  _repository.GetTranslatableItems();
 engine.Process(translatableItems);
 ```
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 <a name="input-policies"/>
 
 ### Input Policies
@@ -99,6 +137,8 @@ Note that when an async policy engine is configured with `AsyncPolicyEngineBuild
 * All input policies are run and they are all run in parallel. 
 * There is no meaningful difference between `InputPolicyResult.Continue` and `InputPolicyResult.Accept` amongst the individual input policies. 
 * If one input policy evaluates to `InputPolicyResult.Reject` but another evaluates to `InputPolicyResult.Accept`, the item is accepted for processing by the policy engine and _not_ rejected.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <a name="implementing-input-policies"/>
 
@@ -228,6 +268,8 @@ var engine = PolicyEngineBuilder<TranslatableItem>
 
 If some input policies are more complex and have dependencies that perform `async` operations, the `IAsyncInputPolicy<T>` interface can be implemented instead. See more about [asynchronous and parallel processing](#asynchronous-and-parallel-processing) below.
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 <a name="compound-input-policies/>
 
 #### Compound Input Policies
@@ -280,6 +322,8 @@ var isAlreadyTranslated = new Not<TranslatableItem>(new IsNotYetTranslated());
 | `InputPolicyResult.Reject` | `InputPolicyResult.Continue`
 
 Versions of these compound input policies that support `async` operations are also available with `AsyncAnd<T>`, `AsyncOr<T>`, `AsyncXor<T>`, and `AsyncNot<T>`.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <a name="processors"/>
 
@@ -371,6 +415,8 @@ var translatableItem = _repository.GetTranslatableItem();
 await engine.ProcessAsync(translatableItem);
 ```
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 <a name="nesting-policy-engines"/>
 
 ### Nesting Policy Engines
@@ -407,6 +453,8 @@ translationEngine.Process(translatableItem);
 
 This nesting of policy engines as processors is also possible with asynchronous by using the `AsyncPolicyEngineBuilder<T>` (see code example below).
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 <a name="code-examples"/>
 
 ### Code Examples
@@ -420,13 +468,67 @@ Full code examples can be found in this repository at the following links:
 * [Nested policy engine configuration](https://github.com/itabaiyu/atrea-policyengine/blob/main/examples/Atrea.PolicyEngine.Examples/Examples/NestedPolicyEngineExample.cs)
 * [Nested async policy engine configuration](https://github.com/itabaiyu/atrea-policyengine/blob/main/examples/Atrea.PolicyEngine.Examples/Examples/NestedAsyncPolicyEngineExample.cs)
 
----
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-<a name="related-projects"/>
+<a name="contributing"/>
 
-#### Related Projects:
+## Contributing
 
-* [Atrea.Extensions](https://github.com/itabaiyu/atrea-extensions)
-* [Atrea.Utilities](https://github.com/itabaiyu/atrea-utilities)
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**. For detailed contributing guidelines, please see [CONTRIBUTING.md](CONTRIBUTING.md)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<a name="license"/>
+
+## License
+
+Distributed under the `MIT` License. See `LICENSE` for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<a name="contact"/>
+
+## Contact
+
+William Baldoumas - william.baldoumas@gmail.com
+
+Project Link: [https://github.com/wbaldoumas/atrea-policyengine](https://github.com/wbaldoumas/atrea-policyengine)
+
+<a name="acknowledgements"/>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Acknowledgements
+
+This template was adapted from
+[https://github.com/othneildrew/Best-README-Template](https://github.com/othneildrew/Best-README-Template).
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 **Show your support by contributing or starring the repo!** :star: :star: :star: :star: :star: 
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/wbaldoumas/atrea-policyengine.svg?style=for-the-badge
+[contributors-url]: https://github.com/wbaldoumas/atrea-policyengine/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/wbaldoumas/atrea-policyengine.svg?style=for-the-badge
+[forks-url]: https://github.com/wbaldoumas/atrea-policyengine/network/members
+[stars-shield]: https://img.shields.io/github/stars/wbaldoumas/atrea-policyengine.svg?style=for-the-badge
+[stars-url]: https://github.com/wbaldoumas/atrea-policyengine/stargazers
+[issues-shield]: https://img.shields.io/github/issues/wbaldoumas/atrea-policyengine.svg?style=for-the-badge
+[issues-url]: https://github.com/wbaldoumas/atrea-policyengine/issues
+[license-shield]: https://img.shields.io/github/license/wbaldoumas/atrea-policyengine.svg?style=for-the-badge
+[license-url]: https://github.com/wbaldoumas/atrea-policyengine/blob/master/LICENSE
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/williambaldoumas
+[github-workflow-shield]: https://img.shields.io/github/workflow/status/wbaldoumas/atrea-policyengine/.NET%20Core%20Build%20&%20Test?style=for-the-badge
+[github-workflow-url]: https://github.com/wbaldoumas/atrea-policyengine/actions/workflows/dotnet-core.yml
+[coverage-shield]: https://img.shields.io/coveralls/github/wbaldoumas/atrea-policyengine?style=for-the-badge
+[coverage-url]: https://coveralls.io/github/wbaldoumas/atrea-policyengine?branch=main
+[lgtm-alerts-shield]: https://img.shields.io/lgtm/alerts/g/wbaldoumas/atrea-policyengine.svg?logo=lgtm&logoWidth=18&style=for-the-badge
+[lgtm-alerts-url]: https://lgtm.com/projects/g/wbaldoumas/atrea-policyengine
+[nuget-version-shield]: https://img.shields.io/nuget/v/atrea.policyengine?style=for-the-badge
+[nuget-downloads-shield]: https://img.shields.io/nuget/dt/atrea.policyengine?style=for-the-badge
+[nuget-url]: https://www.nuget.org/packages/atrea.policyengine/
+[last-commit-shield]: https://img.shields.io/github/last-commit/wbaldoumas/atrea-policyengine?style=for-the-badge
+[last-commit-url]: https://github.com/wbaldoumas/atrea-policyengine/commits/main
