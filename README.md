@@ -521,8 +521,8 @@ This template was adapted from
 [license-url]: https://github.com/wbaldoumas/atrea-policyengine/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/williambaldoumas
-[github-workflow-shield]: https://img.shields.io/github/workflow/status/wbaldoumas/atrea-policyengine/.NET%20Core%20Build%20&%20Test?style=for-the-badge
-[github-workflow-url]: https://github.com/wbaldoumas/atrea-policyengine/actions/workflows/dotnet-core.yml
+[github-workflow-shield]: https://img.shields.io/github/workflow/status/wbaldoumas/atrea-policyengine/.NET%20Build%20&%20Test?style=for-the-badge
+[github-workflow-url]: https://github.com/wbaldoumas/atrea-policyengine/actions/workflows/dotnet.yml
 [coverage-shield]: https://img.shields.io/coveralls/github/wbaldoumas/atrea-policyengine?style=for-the-badge
 [coverage-url]: https://coveralls.io/github/wbaldoumas/atrea-policyengine?branch=main
 [lgtm-alerts-shield]: https://img.shields.io/lgtm/alerts/g/wbaldoumas/atrea-policyengine.svg?logo=lgtm&logoWidth=18&style=for-the-badge
