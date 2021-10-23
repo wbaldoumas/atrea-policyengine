@@ -13,9 +13,15 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>policy engine, policy, engine, processing, conditional processing, modular, composable, extensible, rules engine, async</PackageTags>
     <PackageProjectUrl>https://github.com/wbaldoumas/atrea-policyengine</PackageProjectUrl>
+    <PackageIcon>engine_icon.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\..\images\engine_icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
     <None Include="..\..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
