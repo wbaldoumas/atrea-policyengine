@@ -32,7 +32,7 @@ jobs:
         cd ./tests/Atrea.PolicyEngine.Tests/
         dotnet test --framework=${{ matrix.dotnet }} --no-restore /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
     - name: Upload Code Coverage Results
-      run: pwd && ls -a
+      run: cd ./tests/Atrea.PolicyEngine.Tests/TestResults && pwd && ls -a
       # uses: actions/upload-artifact@v2
       # with:
       #   name: code-coverage-report
