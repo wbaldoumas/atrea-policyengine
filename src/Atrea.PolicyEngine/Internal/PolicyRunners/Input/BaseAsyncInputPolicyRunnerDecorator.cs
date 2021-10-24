@@ -25,7 +25,8 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
                 InputPolicyResult.Accept => InputPolicyResult.Accept,
                 InputPolicyResult.Reject => InputPolicyResult.Reject,
                 InputPolicyResult.Continue => await EvaluateInputPolicies(item),
-                _ => throw new ArgumentOutOfRangeException()
+                _ => throw new ArgumentOutOfRangeException(nameof(result),
+                    $"Input policies generated invalid {nameof(InputPolicyResult)}.")
             };
         }
 
