@@ -45,7 +45,7 @@ namespace Atrea.PolicyEngine.Tests.PolicyRunners
         }
 
         [Test]
-        public void When_inner_input_policy_result_is_invalid_ArgumentOutOfRangeException_is_thrown()
+        public async Task When_inner_input_policy_result_is_invalid_ArgumentOutOfRangeException_is_thrown()
         {
             // arrange
             _mockInnerAsyncInputPolicyRunner
@@ -61,7 +61,7 @@ namespace Atrea.PolicyEngine.Tests.PolicyRunners
             Func<Task> act = async () => await asyncInputPolicyRunnerDecorator.ShouldProcessAsync(1);
 
             // assert
-            act.Should().Throw<ArgumentOutOfRangeException>();
+            await act.Should().ThrowAsync<ArgumentOutOfRangeException>();
         }
 
         private static IEnumerable<TestCaseData> TestCases
