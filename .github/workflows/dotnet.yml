@@ -10,9 +10,11 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
         dotnet: [netcoreapp3.1, net5.0]
+
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
@@ -32,13 +34,24 @@ jobs:
         printenv
         cd ./tests/Atrea.PolicyEngine.Tests/
         dotnet test --framework=${{ matrix.dotnet }} --no-restore /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
-    - name: Archive Code Coverage Results
+    - name: Upload Code Coverage Results
       uses: actions/upload-artifact@v2
       with:
         name: code-coverage-report
         path: ./tests/Atrea.PolicyEngine.Tests/TestResults/coverage.info
+
+  coverage:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Download Code Coverage Results
+      uses: actions/download-artifact@v2
+      with:
+        name: code-coverage-report
     - name: Publish Coverage Report
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        path-to-lcov: code-coverage-report
+        path-to-lcov: coverage.info
