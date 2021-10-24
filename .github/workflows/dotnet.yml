@@ -39,6 +39,9 @@ jobs:
   coverage:
     needs: build
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet: [netcoreapp3.1, net5.0]
     steps:
     - uses: actions/checkout@v2
     - name: Download Code Coverage Results
