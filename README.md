@@ -19,6 +19,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
+  <a href="https://github.com/wbaldoumas/atrea-policyengine">
+    <img src="images/engine_icon.png" alt="Logo" width="80" height="80">
+  </a>
   <h1 align="center">Atrea.PolicyEngine</h1>
   <p align="center">
     A modular, composable policy engine for easy implementation of complex conditional processing pipelines.
