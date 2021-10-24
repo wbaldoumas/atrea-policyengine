@@ -32,8 +32,13 @@ jobs:
         printenv
         cd ./tests/Atrea.PolicyEngine.Tests/
         dotnet test --framework=${{ matrix.dotnet }} --no-restore /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
+    - name: Archive Code Coverage Results
+      uses: actions/upload-artifact@v2
+      with:
+        name: code-coverage-report
+        path: ./tests/Atrea.PolicyEngine.Tests/TestResults/coverage.info
     - name: Publish Coverage Report
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        path-to-lcov: ./tests/Atrea.PolicyEngine.Tests/TestResults/coverage.info
+        path-to-lcov: code-coverage-report
