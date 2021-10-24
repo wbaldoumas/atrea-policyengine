@@ -77,7 +77,7 @@ namespace Atrea.PolicyEngine.Tests.Engines
             // act
             Func<Task> act = async () => await engine.ProcessAsync(Item);
 
-            act.Should().Throw<ArgumentOutOfRangeException>();
+            await act.Should().ThrowAsync<ArgumentOutOfRangeException>();
 
             // assert
             Received.InOrder(() => { _mockAsyncInputPolicyA.ShouldProcessAsync(Item); });
@@ -131,7 +131,7 @@ namespace Atrea.PolicyEngine.Tests.Engines
             // act
             Func<Task> act = async () => await engine.ProcessAsync(Item);
 
-            act.Should().Throw<ArgumentOutOfRangeException>();
+            await act.Should().ThrowAsync<ArgumentOutOfRangeException>();
 
             // assert
             Received.InOrder(() =>
