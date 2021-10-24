@@ -33,22 +33,22 @@ jobs:
         dotnet test --framework=${{ matrix.dotnet }} --no-restore /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
     - name: Upload Code Coverage Results
       run: cd ./tests/Atrea.PolicyEngine.Tests/TestResults && pwd && ls -a
-      # uses: actions/upload-artifact@v2
-      # with:
-      #   name: code-coverage-report
-      #   path: ./tests/Atrea.PolicyEngine.Tests/TestResults/coverage.info
+      uses: actions/upload-artifact@v2
+      with:
+        name: code-coverage-report
+        path: ./tests/Atrea.PolicyEngine.Tests/TestResults/coverage.${{ matrix.dotnet }}.info
 
-  # coverage:
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - uses: actions/checkout@v2
-  #   - name: Download Code Coverage Results
-  #     uses: actions/download-artifact@v2
-  #     with:
-  #       name: code-coverage-report
-  #   - name: Publish Coverage Report
-  #     uses: coverallsapp/github-action@master
-  #     with:
-  #       github-token: ${{ secrets.GITHUB_TOKEN }}
-  #       path-to-lcov: coverage.info
+  coverage:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Download Code Coverage Results
+      uses: actions/download-artifact@v2
+      with:
+        name: code-coverage-report
+    - name: Publish Coverage Report
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        path-to-lcov: coverage.${{ matrix.dotnet }}.info
