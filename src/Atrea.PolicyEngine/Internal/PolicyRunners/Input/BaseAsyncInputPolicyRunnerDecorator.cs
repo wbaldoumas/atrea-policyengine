@@ -20,13 +20,22 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
                 result = await _asyncInputPolicyRunner.ShouldProcessAsync(item);
             }
 
-            return result switch
+            if (result == InputPolicyResult.Accept)
             {
-                InputPolicyResult.Accept => InputPolicyResult.Accept,
-                InputPolicyResult.Reject => InputPolicyResult.Reject,
-                InputPolicyResult.Continue => await EvaluateInputPolicies(item),
-                _ => throw new ArgumentOutOfRangeException()
-            };
+                return InputPolicyResult.Accept;
+            }
+
+            if (result == InputPolicyResult.Reject)
+            {
+                return InputPolicyResult.Reject;
+            }
+
+            if (result == InputPolicyResult.Continue)
+            {
+                return await EvaluateInputPolicies(item);
+            }
+
+            throw new ArgumentOutOfRangeException(nameof(result), $"Input policies generated invalid {nameof(InputPolicyResult)}.");
         }
 
         protected abstract Task<InputPolicyResult> EvaluateInputPolicies(T item);
