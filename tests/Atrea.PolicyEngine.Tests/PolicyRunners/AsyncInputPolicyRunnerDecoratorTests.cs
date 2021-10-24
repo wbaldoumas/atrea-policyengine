@@ -82,9 +82,18 @@ namespace Atrea.PolicyEngine.Tests.PolicyRunners
 
                 yield return new TestCaseData(
                     InputPolicyResult.Continue,
+                    InputPolicyResult.Accept
+                ).SetName($"When inner policy runner results in {InputPolicyResult.Continue}, {InputPolicyResult.Accept} is returned when input policies accept.");
+
+                yield return new TestCaseData(
+                    InputPolicyResult.Continue,
+                    InputPolicyResult.Reject
+                ).SetName($"When inner policy runner results in {InputPolicyResult.Continue}, {InputPolicyResult.Reject} is returned when input policies reject.");
+
+                yield return new TestCaseData(
+                    InputPolicyResult.Continue,
                     InputPolicyResult.Continue
-                ).SetName(
-                    $"When inner policy runner results in {InputPolicyResult.Continue}, {InputPolicyResult.Continue} is returned.");
+                ).SetName($"When inner policy runner results in {InputPolicyResult.Continue}, {InputPolicyResult.Continue} is returned when input policies continue.");
             }
         }
     }
