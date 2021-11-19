@@ -3,8 +3,13 @@
         {
             "src": [
                 {
-                    "files": [ "src/Atrea.PolicyEngine/Atrea.PolicyEngine.csproj" ],
-                    "exclude": [ "**/bin/**", "**/obj/**" ],
+                    "files": [
+                        "**/Atrea.PolicyEngine.csproj"
+                    ],
+                    "exclude": [
+                        "**/bin/**",
+                        "**/obj/**"
+                    ],
                     "src": "../src"
                 }
             ],
