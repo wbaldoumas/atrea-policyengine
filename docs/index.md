@@ -1,3 +1,5 @@
-# Docs
+# Atrea.PolicyEngine Documentation
 
-A spring-board index file for starting work on documentation via DocFx.
+Interactive documentation for the Atrea.PolicyEngine library. 
+
+Check out the API Documentation tab for detailed technical documentation with source code links!
