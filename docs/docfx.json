@@ -1,0 +1,42 @@
+{
+    "metadata": [
+        {
+            "src": [
+                {
+                    "files": [ "src/Atrea.PolicyEngine/Atrea.PolicyEngine.csproj" ],
+                    "exclude": [ "**/bin/**", "**/obj/**" ],
+                    "src": "../src"
+                }
+            ],
+            "dest": "../site/yml/api",
+            "properties": {
+                "TargetFramework": "netstandard2.1"
+            }
+        }
+    ],
+    "build": {
+        "content": [
+            {
+                "files": [ "**/*.yml" ],
+                "src": "../site/yml/api",
+                "dest": "api"
+            },
+            {
+                "files": [
+                    "*.md",
+                    "toc.yml"
+                ]
+            }
+        ],
+        "template": [
+            "default"
+        ],
+        "globalMetadata": {
+            "_appTitle": "Atrea.PolicyEngine",
+            "_enableSearch": true
+        },
+        "markdownEngineName": "markdig",
+        "dest": "../site/html",
+        "xrefService": [ "https://xref.docs.microsoft.com/query?uid={uid}" ]
+    }
+}
