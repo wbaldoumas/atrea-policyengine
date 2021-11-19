@@ -1,0 +1,2098 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class AsyncPolicyEngineBuilder&lt;T&gt;
+   | Atrea.PolicyEngine </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class AsyncPolicyEngineBuilder&lt;T&gt;
+   | Atrea.PolicyEngine ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1">
+  
+  
+  <h1 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1" class="text-break">Class AsyncPolicyEngineBuilder&lt;T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>A builder class for configuring and building an <a class="xref" href="Atrea.PolicyEngine.IAsyncPolicyEngine-1.html">IAsyncPolicyEngine&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">AsyncPolicyEngineBuilder&lt;T&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IInputPolicyAsyncPolicyEngineBuilder-1.html">IInputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IWithInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithInputPoliciesProcessorAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IWithSynchronousAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithSynchronousAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IProcessorAsyncPolicyEngineBuilder-1.html">IProcessorAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IOutputPolicyAsyncPolicyEngineBuilder-1.html">IOutputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IWithOutputPoliciesAsyncPolicyEngineBuilder-1.html">IWithOutputPoliciesAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder-1.html">IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IWithParallelOutputPoliciesAsyncPolicyEngineBuilder-1.html">IWithParallelOutputPoliciesAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder-1.html">IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder-1.html">IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder-1.html">IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+    <div><a class="xref" href="Atrea.PolicyEngine.Builders.IAsyncPolicyEngineBuilder-1.html">IAsyncPolicyEngineBuilder</a>&lt;T&gt;</div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Atrea.PolicyEngine.Builders.html">Atrea.PolicyEngine.Builders</a></h6>
+  <h6><strong>Assembly</strong>: Atrea.PolicyEngine.dll</h6>
+  <h5 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class AsyncPolicyEngineBuilder&lt;T&gt; : object, IInputPolicyAsyncPolicyEngineBuilder&lt;T&gt;, IWithInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;, IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;, IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;, IWithSynchronousAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;, IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;, IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;, IProcessorAsyncPolicyEngineBuilder&lt;T&gt;, IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;, IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;, IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;, IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;, IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;, IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;, IOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;, IWithOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;, IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;, IWithParallelOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;, IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder&lt;T&gt;, IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;, IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;, IAsyncPolicyEngineBuilder&lt;T&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the item to be processed by the <a class="xref" href="Atrea.PolicyEngine.IAsyncPolicyEngine-1.html">IAsyncPolicyEngine&lt;T&gt;</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Build.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Build%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L40">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Build_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Build*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Build" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Build">Build()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IAsyncPolicyEngine&lt;T&gt; Build()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.IAsyncPolicyEngine-1.html">IAsyncPolicyEngine</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Configure.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Configure%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L57">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Configure_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Configure*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Configure" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Configure">Configure()</h4>
+  <div class="markdown level1 summary"><p>Begin configuring a <a class="xref" href="Atrea.PolicyEngine.IAsyncPolicyEngine-1.html">IAsyncPolicyEngine&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IInputPolicyAsyncPolicyEngineBuilder&lt;T&gt; Configure()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IInputPolicyAsyncPolicyEngineBuilder-1.html">IInputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td><p><a class="xref" href="Atrea.PolicyEngine.Builders.IInputPolicyAsyncPolicyEngineBuilder-1.html">IInputPolicyAsyncPolicyEngineBuilder&lt;T&gt;</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_WithoutInputPolicies.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.WithoutInputPolicies%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L90">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_WithoutInputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.WithoutInputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_WithoutInputPolicies" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.WithoutInputPolicies">WithoutInputPolicies()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IProcessorAsyncPolicyEngineBuilder&lt;T&gt; WithoutInputPolicies()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IProcessorAsyncPolicyEngineBuilder-1.html">IProcessorAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_WithoutOutputPolicies.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.WithoutOutputPolicies%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L295">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_WithoutOutputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.WithoutOutputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_WithoutOutputPolicies" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.WithoutOutputPolicies">WithoutOutputPolicies()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IAsyncPolicyEngineBuilder&lt;T&gt; WithoutOutputPolicies()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IAsyncPolicyEngineBuilder-1.html">IAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_WithoutProcessors.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.WithoutProcessors%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L192">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_WithoutProcessors_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.WithoutProcessors*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_WithoutProcessors" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.WithoutProcessors">WithoutProcessors()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt; WithoutProcessors()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IOutputPolicyAsyncPolicyEngineBuilder-1.html">IOutputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_WithParallelInputPolicies_Atrea_PolicyEngine_Policies_Input_IAsyncInputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.WithParallelInputPolicies(Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L144">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_WithParallelInputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.WithParallelInputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_WithParallelInputPolicies_Atrea_PolicyEngine_Policies_Input_IAsyncInputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.WithParallelInputPolicies(Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy{`0}[])">WithParallelInputPolicies(IAsyncInputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IProcessorAsyncPolicyEngineBuilder&lt;T&gt; WithParallelInputPolicies(params IAsyncInputPolicy&lt;T&gt;[] parallelInputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy-1.html">IAsyncInputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">parallelInputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IProcessorAsyncPolicyEngineBuilder-1.html">IProcessorAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IInputPolicyAsyncPolicyEngineBuilder_T__WithAsyncInputPolicies_Atrea_PolicyEngine_Policies_Input_IAsyncInputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IInputPolicyAsyncPolicyEngineBuilder%7BT%7D%23WithAsyncInputPolicies(Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L106">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IInputPolicyAsyncPolicyEngineBuilder_T__WithAsyncInputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IInputPolicyAsyncPolicyEngineBuilder{T}#WithAsyncInputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IInputPolicyAsyncPolicyEngineBuilder_T__WithAsyncInputPolicies_Atrea_PolicyEngine_Policies_Input_IAsyncInputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IInputPolicyAsyncPolicyEngineBuilder{T}#WithAsyncInputPolicies(Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy{`0}[])">IInputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncInputPolicies(IAsyncInputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt; IInputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncInputPolicies(params IAsyncInputPolicy&lt;T&gt;[] asyncInputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy-1.html">IAsyncInputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">asyncInputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IInputPolicyAsyncPolicyEngineBuilder_T__WithInputPolicies_Atrea_PolicyEngine_Policies_Input_IInputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IInputPolicyAsyncPolicyEngineBuilder%7BT%7D%23WithInputPolicies(Atrea.PolicyEngine.Policies.Input.IInputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L61">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IInputPolicyAsyncPolicyEngineBuilder_T__WithInputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IInputPolicyAsyncPolicyEngineBuilder{T}#WithInputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IInputPolicyAsyncPolicyEngineBuilder_T__WithInputPolicies_Atrea_PolicyEngine_Policies_Input_IInputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IInputPolicyAsyncPolicyEngineBuilder{T}#WithInputPolicies(Atrea.PolicyEngine.Policies.Input.IInputPolicy{`0}[])">IInputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithInputPolicies(IInputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt; IInputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithInputPolicies(params IInputPolicy&lt;T&gt;[] inputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Input.IInputPolicy-1.html">IInputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">inputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithInputPoliciesProcessorAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IInputPolicyAsyncPolicyEngineBuilder_T__WithParallelInputPolicies_Atrea_PolicyEngine_Policies_Input_IAsyncInputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IInputPolicyAsyncPolicyEngineBuilder%7BT%7D%23WithParallelInputPolicies(Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L135">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IInputPolicyAsyncPolicyEngineBuilder_T__WithParallelInputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IInputPolicyAsyncPolicyEngineBuilder{T}#WithParallelInputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IInputPolicyAsyncPolicyEngineBuilder_T__WithParallelInputPolicies_Atrea_PolicyEngine_Policies_Input_IAsyncInputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IInputPolicyAsyncPolicyEngineBuilder{T}#WithParallelInputPolicies(Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy{`0}[])">IInputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelInputPolicies(IAsyncInputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt; IInputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelInputPolicies(params IAsyncInputPolicy&lt;T&gt;[] parallelInputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy-1.html">IAsyncInputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">parallelInputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IOutputPolicyAsyncPolicyEngineBuilder_T__WithAsyncOutputPolicies_Atrea_PolicyEngine_Policies_Output_IAsyncOutputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IOutputPolicyAsyncPolicyEngineBuilder%7BT%7D%23WithAsyncOutputPolicies(Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L314">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IOutputPolicyAsyncPolicyEngineBuilder_T__WithAsyncOutputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IOutputPolicyAsyncPolicyEngineBuilder{T}#WithAsyncOutputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IOutputPolicyAsyncPolicyEngineBuilder_T__WithAsyncOutputPolicies_Atrea_PolicyEngine_Policies_Output_IAsyncOutputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IOutputPolicyAsyncPolicyEngineBuilder{T}#WithAsyncOutputPolicies(Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy{`0}[])">IOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncOutputPolicies(IAsyncOutputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt; IOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncOutputPolicies(params IAsyncOutputPolicy&lt;T&gt;[] asyncOutputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy-1.html">IAsyncOutputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">asyncOutputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder-1.html">IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IOutputPolicyAsyncPolicyEngineBuilder_T__WithOutputPolicies_Atrea_PolicyEngine_Policies_Output_IOutputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IOutputPolicyAsyncPolicyEngineBuilder%7BT%7D%23WithOutputPolicies(Atrea.PolicyEngine.Policies.Output.IOutputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L280">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IOutputPolicyAsyncPolicyEngineBuilder_T__WithOutputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IOutputPolicyAsyncPolicyEngineBuilder{T}#WithOutputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IOutputPolicyAsyncPolicyEngineBuilder_T__WithOutputPolicies_Atrea_PolicyEngine_Policies_Output_IOutputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IOutputPolicyAsyncPolicyEngineBuilder{T}#WithOutputPolicies(Atrea.PolicyEngine.Policies.Output.IOutputPolicy{`0}[])">IOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithOutputPolicies(IOutputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt; IOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithOutputPolicies(params IOutputPolicy&lt;T&gt;[] outputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Output.IOutputPolicy-1.html">IOutputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">outputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithOutputPoliciesAsyncPolicyEngineBuilder-1.html">IWithOutputPoliciesAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IOutputPolicyAsyncPolicyEngineBuilder_T__WithParallelOutputPolicies_Atrea_PolicyEngine_Policies_Output_IAsyncOutputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IOutputPolicyAsyncPolicyEngineBuilder%7BT%7D%23WithParallelOutputPolicies(Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L347">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IOutputPolicyAsyncPolicyEngineBuilder_T__WithParallelOutputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IOutputPolicyAsyncPolicyEngineBuilder{T}#WithParallelOutputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IOutputPolicyAsyncPolicyEngineBuilder_T__WithParallelOutputPolicies_Atrea_PolicyEngine_Policies_Output_IAsyncOutputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IOutputPolicyAsyncPolicyEngineBuilder{T}#WithParallelOutputPolicies(Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy{`0}[])">IOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelOutputPolicies(IAsyncOutputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithParallelOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt; IOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelOutputPolicies(params IAsyncOutputPolicy&lt;T&gt;[] parallelOutputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy-1.html">IAsyncOutputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">parallelOutputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithParallelOutputPoliciesAsyncPolicyEngineBuilder-1.html">IWithParallelOutputPoliciesAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IProcessorAsyncPolicyEngineBuilder_T__WithAsyncProcessors_Atrea_PolicyEngine_Processors_IAsyncProcessor__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IProcessorAsyncPolicyEngineBuilder%7BT%7D%23WithAsyncProcessors(Atrea.PolicyEngine.Processors.IAsyncProcessor%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L198">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IProcessorAsyncPolicyEngineBuilder_T__WithAsyncProcessors_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IProcessorAsyncPolicyEngineBuilder{T}#WithAsyncProcessors*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IProcessorAsyncPolicyEngineBuilder_T__WithAsyncProcessors_Atrea_PolicyEngine_Processors_IAsyncProcessor__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IProcessorAsyncPolicyEngineBuilder{T}#WithAsyncProcessors(Atrea.PolicyEngine.Processors.IAsyncProcessor{`0}[])">IProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncProcessors(IAsyncProcessor&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt; IProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncProcessors(params IAsyncProcessor&lt;T&gt;[] asyncProcessors)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Processors.IAsyncProcessor-1.html">IAsyncProcessor</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">asyncProcessors</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IProcessorAsyncPolicyEngineBuilder_T__WithParallelProcessors_Atrea_PolicyEngine_Processors_IAsyncProcessor__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IProcessorAsyncPolicyEngineBuilder%7BT%7D%23WithParallelProcessors(Atrea.PolicyEngine.Processors.IAsyncProcessor%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L237">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IProcessorAsyncPolicyEngineBuilder_T__WithParallelProcessors_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IProcessorAsyncPolicyEngineBuilder{T}#WithParallelProcessors*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IProcessorAsyncPolicyEngineBuilder_T__WithParallelProcessors_Atrea_PolicyEngine_Processors_IAsyncProcessor__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IProcessorAsyncPolicyEngineBuilder{T}#WithParallelProcessors(Atrea.PolicyEngine.Processors.IAsyncProcessor{`0}[])">IProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelProcessors(IAsyncProcessor&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt; IProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelProcessors(params IAsyncProcessor&lt;T&gt;[] parallelProcessors)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Processors.IAsyncProcessor-1.html">IAsyncProcessor</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">parallelProcessors</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IProcessorAsyncPolicyEngineBuilder_T__WithProcessors_Atrea_PolicyEngine_Processors_IProcessor__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IProcessorAsyncPolicyEngineBuilder%7BT%7D%23WithProcessors(Atrea.PolicyEngine.Processors.IProcessor%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L173">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IProcessorAsyncPolicyEngineBuilder_T__WithProcessors_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IProcessorAsyncPolicyEngineBuilder{T}#WithProcessors*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IProcessorAsyncPolicyEngineBuilder_T__WithProcessors_Atrea_PolicyEngine_Processors_IProcessor__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IProcessorAsyncPolicyEngineBuilder{T}#WithProcessors(Atrea.PolicyEngine.Processors.IProcessor{`0}[])">IProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithProcessors(IProcessor&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt; IProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithProcessors(params IProcessor&lt;T&gt;[] processors)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Processors.IProcessor-1.html">IProcessor</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">processors</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithInputPolicies_Atrea_PolicyEngine_Policies_Input_IInputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder%7BT%7D%23WithInputPolicies(Atrea.PolicyEngine.Policies.Input.IInputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L74">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithInputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder{T}#WithInputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithInputPolicies_Atrea_PolicyEngine_Policies_Input_IInputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder{T}#WithInputPolicies(Atrea.PolicyEngine.Policies.Input.IInputPolicy{`0}[])">IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithInputPolicies(IInputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithSynchronousAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt; IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithInputPolicies(params IInputPolicy&lt;T&gt;[] inputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Input.IInputPolicy-1.html">IInputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">inputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithSynchronousAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithSynchronousAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithParallelInputPolicies_Atrea_PolicyEngine_Policies_Input_IAsyncInputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder%7BT%7D%23WithParallelInputPolicies(Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L139">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithParallelInputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder{T}#WithParallelInputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithParallelInputPolicies_Atrea_PolicyEngine_Policies_Input_IAsyncInputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder{T}#WithParallelInputPolicies(Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy{`0}[])">IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelInputPolicies(IAsyncInputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt; IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelInputPolicies(params IAsyncInputPolicy&lt;T&gt;[] parallelInputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy-1.html">IAsyncInputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">parallelInputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder_T__WithOutputPolicies_Atrea_PolicyEngine_Policies_Output_IOutputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder%7BT%7D%23WithOutputPolicies(Atrea.PolicyEngine.Policies.Output.IOutputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L266">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder_T__WithOutputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder{T}#WithOutputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder_T__WithOutputPolicies_Atrea_PolicyEngine_Policies_Output_IOutputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder{T}#WithOutputPolicies(Atrea.PolicyEngine.Policies.Output.IOutputPolicy{`0}[])">IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;.WithOutputPolicies(IOutputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IAsyncPolicyEngineBuilder&lt;T&gt; IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;.WithOutputPolicies(params IOutputPolicy&lt;T&gt;[] outputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Output.IOutputPolicy-1.html">IOutputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">outputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IAsyncPolicyEngineBuilder-1.html">IAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder_T__WithOutputPolicies_Atrea_PolicyEngine_Policies_Output_IOutputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder%7BT%7D%23WithOutputPolicies(Atrea.PolicyEngine.Policies.Output.IOutputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L270">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder_T__WithOutputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder{T}#WithOutputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder_T__WithOutputPolicies_Atrea_PolicyEngine_Policies_Output_IOutputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder{T}#WithOutputPolicies(Atrea.PolicyEngine.Policies.Output.IOutputPolicy{`0}[])">IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;.WithOutputPolicies(IOutputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder&lt;T&gt; IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;.WithOutputPolicies(params IOutputPolicy&lt;T&gt;[] outputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Output.IOutputPolicy-1.html">IOutputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">outputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder-1.html">IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder_T__WithParallelOutputPolicies_Atrea_PolicyEngine_Policies_Output_IAsyncOutputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder%7BT%7D%23WithParallelOutputPolicies(Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L333">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder_T__WithParallelOutputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder{T}#WithParallelOutputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder_T__WithParallelOutputPolicies_Atrea_PolicyEngine_Policies_Output_IAsyncOutputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder{T}#WithParallelOutputPolicies(Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy{`0}[])">IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelOutputPolicies(IAsyncOutputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt; IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelOutputPolicies(params IAsyncOutputPolicy&lt;T&gt;[] parallelOutputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy-1.html">IAsyncOutputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">parallelOutputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder-1.html">IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithProcessors_Atrea_PolicyEngine_Processors_IProcessor__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder%7BT%7D%23WithProcessors(Atrea.PolicyEngine.Processors.IProcessor%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L163">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithProcessors_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}#WithProcessors*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithProcessors_Atrea_PolicyEngine_Processors_IProcessor__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}#WithProcessors(Atrea.PolicyEngine.Processors.IProcessor{`0}[])">IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithProcessors(IProcessor&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt; IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithProcessors(params IProcessor&lt;T&gt;[] processors)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Processors.IProcessor-1.html">IProcessor</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">processors</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IOutputPolicyAsyncPolicyEngineBuilder-1.html">IOutputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithParallelProcessors_Atrea_PolicyEngine_Processors_IAsyncProcessor__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder%7BT%7D%23WithParallelProcessors(Atrea.PolicyEngine.Processors.IAsyncProcessor%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L232">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithParallelProcessors_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}#WithParallelProcessors*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithParallelProcessors_Atrea_PolicyEngine_Processors_IAsyncProcessor__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}#WithParallelProcessors(Atrea.PolicyEngine.Processors.IAsyncProcessor{`0}[])">IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelProcessors(IAsyncProcessor&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt; IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelProcessors(params IAsyncProcessor&lt;T&gt;[] parallelProcessors)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Processors.IAsyncProcessor-1.html">IAsyncProcessor</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">parallelProcessors</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithProcessors_Atrea_PolicyEngine_Processors_IProcessor__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder%7BT%7D%23WithProcessors(Atrea.PolicyEngine.Processors.IProcessor%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L168">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithProcessors_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}#WithProcessors*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithProcessors_Atrea_PolicyEngine_Processors_IProcessor__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}#WithProcessors(Atrea.PolicyEngine.Processors.IProcessor{`0}[])">IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithProcessors(IProcessor&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt; IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithProcessors(params IProcessor&lt;T&gt;[] processors)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Processors.IProcessor-1.html">IProcessor</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">processors</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithAsyncInputPolicies_Atrea_PolicyEngine_Policies_Input_IAsyncInputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithInputPoliciesProcessorAsyncPolicyEngineBuilder%7BT%7D%23WithAsyncInputPolicies(Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L96">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithAsyncInputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithInputPoliciesProcessorAsyncPolicyEngineBuilder{T}#WithAsyncInputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithAsyncInputPolicies_Atrea_PolicyEngine_Policies_Input_IAsyncInputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithInputPoliciesProcessorAsyncPolicyEngineBuilder{T}#WithAsyncInputPolicies(Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy{`0}[])">IWithInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncInputPolicies(IAsyncInputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithSynchronousAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt; IWithInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncInputPolicies(params IAsyncInputPolicy&lt;T&gt;[] asyncInputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy-1.html">IAsyncInputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">asyncInputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithSynchronousAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithSynchronousAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithParallelInputPolicies_Atrea_PolicyEngine_Policies_Input_IAsyncInputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithInputPoliciesProcessorAsyncPolicyEngineBuilder%7BT%7D%23WithParallelInputPolicies(Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L130">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithParallelInputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithInputPoliciesProcessorAsyncPolicyEngineBuilder{T}#WithParallelInputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithParallelInputPolicies_Atrea_PolicyEngine_Policies_Input_IAsyncInputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithInputPoliciesProcessorAsyncPolicyEngineBuilder{T}#WithParallelInputPolicies(Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy{`0}[])">IWithInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelInputPolicies(IAsyncInputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt; IWithInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelInputPolicies(params IAsyncInputPolicy&lt;T&gt;[] parallelInputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy-1.html">IAsyncInputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">parallelInputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder_T__WithParallelOutputPolicies_Atrea_PolicyEngine_Policies_Output_IAsyncOutputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder%7BT%7D%23WithParallelOutputPolicies(Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L338">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder_T__WithParallelOutputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder{T}#WithParallelOutputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder_T__WithParallelOutputPolicies_Atrea_PolicyEngine_Policies_Output_IAsyncOutputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder{T}#WithParallelOutputPolicies(Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy{`0}[])">IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder&lt;T&gt;.WithParallelOutputPolicies(IAsyncOutputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IAsyncPolicyEngineBuilder&lt;T&gt; IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder&lt;T&gt;.WithParallelOutputPolicies(params IAsyncOutputPolicy&lt;T&gt;[] parallelOutputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy-1.html">IAsyncOutputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">parallelOutputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IAsyncPolicyEngineBuilder-1.html">IAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder_T__WithAsyncOutputPolicies_Atrea_PolicyEngine_Policies_Output_IAsyncOutputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder%7BT%7D%23WithAsyncOutputPolicies(Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L301">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder_T__WithAsyncOutputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder{T}#WithAsyncOutputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder_T__WithAsyncOutputPolicies_Atrea_PolicyEngine_Policies_Output_IAsyncOutputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder{T}#WithAsyncOutputPolicies(Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy{`0}[])">IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncOutputPolicies(IAsyncOutputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IAsyncPolicyEngineBuilder&lt;T&gt; IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncOutputPolicies(params IAsyncOutputPolicy&lt;T&gt;[] asyncOutputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy-1.html">IAsyncOutputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">asyncOutputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IAsyncPolicyEngineBuilder-1.html">IAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithOutputPoliciesAsyncPolicyEngineBuilder_T__WithAsyncOutputPolicies_Atrea_PolicyEngine_Policies_Output_IAsyncOutputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithOutputPoliciesAsyncPolicyEngineBuilder%7BT%7D%23WithAsyncOutputPolicies(Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L305">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithOutputPoliciesAsyncPolicyEngineBuilder_T__WithAsyncOutputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithOutputPoliciesAsyncPolicyEngineBuilder{T}#WithAsyncOutputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithOutputPoliciesAsyncPolicyEngineBuilder_T__WithAsyncOutputPolicies_Atrea_PolicyEngine_Policies_Output_IAsyncOutputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithOutputPoliciesAsyncPolicyEngineBuilder{T}#WithAsyncOutputPolicies(Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy{`0}[])">IWithOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncOutputPolicies(IAsyncOutputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder&lt;T&gt; IWithOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncOutputPolicies(params IAsyncOutputPolicy&lt;T&gt;[] asyncOutputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy-1.html">IAsyncOutputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">asyncOutputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder-1.html">IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithOutputPoliciesAsyncPolicyEngineBuilder_T__WithParallelOutputPolicies_Atrea_PolicyEngine_Policies_Output_IAsyncOutputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithOutputPoliciesAsyncPolicyEngineBuilder%7BT%7D%23WithParallelOutputPolicies(Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L342">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithOutputPoliciesAsyncPolicyEngineBuilder_T__WithParallelOutputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithOutputPoliciesAsyncPolicyEngineBuilder{T}#WithParallelOutputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithOutputPoliciesAsyncPolicyEngineBuilder_T__WithParallelOutputPolicies_Atrea_PolicyEngine_Policies_Output_IAsyncOutputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithOutputPoliciesAsyncPolicyEngineBuilder{T}#WithParallelOutputPolicies(Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy{`0}[])">IWithOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelOutputPolicies(IAsyncOutputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt; IWithOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelOutputPolicies(params IAsyncOutputPolicy&lt;T&gt;[] parallelOutputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy-1.html">IAsyncOutputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">parallelOutputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder-1.html">IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithInputPolicies_Atrea_PolicyEngine_Policies_Input_IInputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder%7BT%7D%23WithInputPolicies(Atrea.PolicyEngine.Policies.Input.IInputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L70">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithInputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder{T}#WithInputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithInputPolicies_Atrea_PolicyEngine_Policies_Input_IInputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder{T}#WithInputPolicies(Atrea.PolicyEngine.Policies.Input.IInputPolicy{`0}[])">IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithInputPolicies(IInputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IProcessorAsyncPolicyEngineBuilder&lt;T&gt; IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithInputPolicies(params IInputPolicy&lt;T&gt;[] inputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Input.IInputPolicy-1.html">IInputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">inputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IProcessorAsyncPolicyEngineBuilder-1.html">IProcessorAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithAsyncInputPolicies_Atrea_PolicyEngine_Policies_Input_IAsyncInputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder%7BT%7D%23WithAsyncInputPolicies(Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L110">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithAsyncInputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder{T}#WithAsyncInputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithAsyncInputPolicies_Atrea_PolicyEngine_Policies_Input_IAsyncInputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder{T}#WithAsyncInputPolicies(Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy{`0}[])">IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncInputPolicies(IAsyncInputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IProcessorAsyncPolicyEngineBuilder&lt;T&gt; IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncInputPolicies(params IAsyncInputPolicy&lt;T&gt;[] asyncInputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy-1.html">IAsyncInputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">asyncInputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IProcessorAsyncPolicyEngineBuilder-1.html">IProcessorAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithAsyncInputPolicies_Atrea_PolicyEngine_Policies_Input_IAsyncInputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder%7BT%7D%23WithAsyncInputPolicies(Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L101">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithAsyncInputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder{T}#WithAsyncInputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithAsyncInputPolicies_Atrea_PolicyEngine_Policies_Input_IAsyncInputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder{T}#WithAsyncInputPolicies(Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy{`0}[])">IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncInputPolicies(IAsyncInputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt; IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncInputPolicies(params IAsyncInputPolicy&lt;T&gt;[] asyncInputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy-1.html">IAsyncInputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">asyncInputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithInputPolicies_Atrea_PolicyEngine_Policies_Input_IInputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder%7BT%7D%23WithInputPolicies(Atrea.PolicyEngine.Policies.Input.IInputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L65">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithInputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder{T}#WithInputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder_T__WithInputPolicies_Atrea_PolicyEngine_Policies_Input_IInputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder{T}#WithInputPolicies(Atrea.PolicyEngine.Policies.Input.IInputPolicy{`0}[])">IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithInputPolicies(IInputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt; IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;.WithInputPolicies(params IInputPolicy&lt;T&gt;[] inputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Input.IInputPolicy-1.html">IInputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">inputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelOutputPoliciesAsyncPolicyEngineBuilder_T__WithAsyncOutputPolicies_Atrea_PolicyEngine_Policies_Output_IAsyncOutputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithParallelOutputPoliciesAsyncPolicyEngineBuilder%7BT%7D%23WithAsyncOutputPolicies(Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L309">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelOutputPoliciesAsyncPolicyEngineBuilder_T__WithAsyncOutputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithParallelOutputPoliciesAsyncPolicyEngineBuilder{T}#WithAsyncOutputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelOutputPoliciesAsyncPolicyEngineBuilder_T__WithAsyncOutputPolicies_Atrea_PolicyEngine_Policies_Output_IAsyncOutputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithParallelOutputPoliciesAsyncPolicyEngineBuilder{T}#WithAsyncOutputPolicies(Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy{`0}[])">IWithParallelOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncOutputPolicies(IAsyncOutputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt; IWithParallelOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncOutputPolicies(params IAsyncOutputPolicy&lt;T&gt;[] asyncOutputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy-1.html">IAsyncOutputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">asyncOutputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder-1.html">IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelOutputPoliciesAsyncPolicyEngineBuilder_T__WithOutputPolicies_Atrea_PolicyEngine_Policies_Output_IOutputPolicy__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithParallelOutputPoliciesAsyncPolicyEngineBuilder%7BT%7D%23WithOutputPolicies(Atrea.PolicyEngine.Policies.Output.IOutputPolicy%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L275">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelOutputPoliciesAsyncPolicyEngineBuilder_T__WithOutputPolicies_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithParallelOutputPoliciesAsyncPolicyEngineBuilder{T}#WithOutputPolicies*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelOutputPoliciesAsyncPolicyEngineBuilder_T__WithOutputPolicies_Atrea_PolicyEngine_Policies_Output_IOutputPolicy__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithParallelOutputPoliciesAsyncPolicyEngineBuilder{T}#WithOutputPolicies(Atrea.PolicyEngine.Policies.Output.IOutputPolicy{`0}[])">IWithParallelOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;.WithOutputPolicies(IOutputPolicy&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt; IWithParallelOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;.WithOutputPolicies(params IOutputPolicy&lt;T&gt;[] outputPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Policies.Output.IOutputPolicy-1.html">IOutputPolicy</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">outputPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder-1.html">IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithAsyncProcessors_Atrea_PolicyEngine_Processors_IAsyncProcessor__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder%7BT%7D%23WithAsyncProcessors(Atrea.PolicyEngine.Processors.IAsyncProcessor%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L202">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithAsyncProcessors_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}#WithAsyncProcessors*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithAsyncProcessors_Atrea_PolicyEngine_Processors_IAsyncProcessor__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}#WithAsyncProcessors(Atrea.PolicyEngine.Processors.IAsyncProcessor{`0}[])">IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncProcessors(IAsyncProcessor&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt; IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncProcessors(params IAsyncProcessor&lt;T&gt;[] asyncProcessors)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Processors.IAsyncProcessor-1.html">IAsyncProcessor</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">asyncProcessors</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithProcessors_Atrea_PolicyEngine_Processors_IProcessor__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder%7BT%7D%23WithProcessors(Atrea.PolicyEngine.Processors.IProcessor%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L177">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithProcessors_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}#WithProcessors*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithProcessors_Atrea_PolicyEngine_Processors_IProcessor__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}#WithProcessors(Atrea.PolicyEngine.Processors.IProcessor{`0}[])">IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithProcessors(IProcessor&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt; IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithProcessors(params IProcessor&lt;T&gt;[] processors)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Processors.IProcessor-1.html">IProcessor</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">processors</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithParallelProcessors_Atrea_PolicyEngine_Processors_IAsyncProcessor__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder%7BT%7D%23WithParallelProcessors(Atrea.PolicyEngine.Processors.IAsyncProcessor%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L241">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithParallelProcessors_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}#WithParallelProcessors*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithParallelProcessors_Atrea_PolicyEngine_Processors_IAsyncProcessor__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}#WithParallelProcessors(Atrea.PolicyEngine.Processors.IAsyncProcessor{`0}[])">IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelProcessors(IAsyncProcessor&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt; IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelProcessors(params IAsyncProcessor&lt;T&gt;[] parallelProcessors)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Processors.IAsyncProcessor-1.html">IAsyncProcessor</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">parallelProcessors</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IOutputPolicyAsyncPolicyEngineBuilder-1.html">IOutputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithAsyncProcessors_Atrea_PolicyEngine_Processors_IAsyncProcessor__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder%7BT%7D%23WithAsyncProcessors(Atrea.PolicyEngine.Processors.IAsyncProcessor%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L207">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithAsyncProcessors_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}#WithAsyncProcessors*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithAsyncProcessors_Atrea_PolicyEngine_Processors_IAsyncProcessor__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}#WithAsyncProcessors(Atrea.PolicyEngine.Processors.IAsyncProcessor{`0}[])">IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncProcessors(IAsyncProcessor&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt; IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncProcessors(params IAsyncProcessor&lt;T&gt;[] asyncProcessors)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Processors.IAsyncProcessor-1.html">IAsyncProcessor</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">asyncProcessors</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IOutputPolicyAsyncPolicyEngineBuilder-1.html">IOutputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithAsyncProcessors_Atrea_PolicyEngine_Processors_IAsyncProcessor__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder%7BT%7D%23WithAsyncProcessors(Atrea.PolicyEngine.Processors.IAsyncProcessor%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L212">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithAsyncProcessors_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}#WithAsyncProcessors*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithAsyncProcessors_Atrea_PolicyEngine_Processors_IAsyncProcessor__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}#WithAsyncProcessors(Atrea.PolicyEngine.Processors.IAsyncProcessor{`0}[])">IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncProcessors(IAsyncProcessor&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt; IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithAsyncProcessors(params IAsyncProcessor&lt;T&gt;[] asyncProcessors)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Processors.IAsyncProcessor-1.html">IAsyncProcessor</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">asyncProcessors</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithParallelProcessors_Atrea_PolicyEngine_Processors_IAsyncProcessor__0____.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601.Atrea%23PolicyEngine%23Builders%23IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder%7BT%7D%23WithParallelProcessors(Atrea.PolicyEngine.Processors.IAsyncProcessor%7B%600%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L246">View Source</a>
+  </span>
+  <a id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithParallelProcessors_" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}#WithParallelProcessors*"></a>
+  <h4 id="Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1_Atrea_PolicyEngine_Builders_IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder_T__WithParallelProcessors_Atrea_PolicyEngine_Processors_IAsyncProcessor__0____" data-uid="Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder`1.Atrea#PolicyEngine#Builders#IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder{T}#WithParallelProcessors(Atrea.PolicyEngine.Processors.IAsyncProcessor{`0}[])">IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelProcessors(IAsyncProcessor&lt;T&gt;[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt; IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;.WithParallelProcessors(params IAsyncProcessor&lt;T&gt;[] parallelProcessors)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Processors.IAsyncProcessor-1.html">IAsyncProcessor</a>&lt;T&gt;[]</td>
+        <td><span class="parametername">parallelProcessors</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Atrea.PolicyEngine.Builders.IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IInputPolicyAsyncPolicyEngineBuilder-1.html">IInputPolicyAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IWithInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IWithSynchronousAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithSynchronousAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html">IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IProcessorAsyncPolicyEngineBuilder-1.html">IProcessorAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html">IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IOutputPolicyAsyncPolicyEngineBuilder-1.html">IOutputPolicyAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IWithOutputPoliciesAsyncPolicyEngineBuilder-1.html">IWithOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder-1.html">IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IWithParallelOutputPoliciesAsyncPolicyEngineBuilder-1.html">IWithParallelOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder-1.html">IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder-1.html">IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder-1.html">IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="Atrea.PolicyEngine.Builders.IAsyncPolicyEngineBuilder-1.html">IAsyncPolicyEngineBuilder&lt;T&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Builders_AsyncPolicyEngineBuilder_1.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Builders/AsyncPolicyEngineBuilder.cs/#L15" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

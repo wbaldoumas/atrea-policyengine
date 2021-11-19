@@ -1,0 +1,713 @@
+{
+  "homepages": [],
+  "source_base_path": "/github/workspace/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.AsyncPolicyEngineBuilder-1.html",
+          "hash": "zQq1EkR7Gzf7kkhFEImbMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IAsyncPolicyEngineBuilder-1.html",
+          "hash": "5vmTQbH78Mckyt/rvSSTjA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IInputPolicyAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IInputPolicyAsyncPolicyEngineBuilder-1.html",
+          "hash": "ZEoVmMGas7IoNOboWlfT4Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IInputPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IInputPolicyEngineBuilder-1.html",
+          "hash": "ewCaq87uu560e45F9ETpEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IOutputPolicyAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IOutputPolicyAsyncPolicyEngineBuilder-1.html",
+          "hash": "yW1NOFxM/4RuDRC+olHW5g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IOutputPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IOutputPolicyEngineBuilder-1.html",
+          "hash": "7/FxPgbsMxXkenhOFHvPgg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IPolicyEngineBuilder-1.html",
+          "hash": "6jvUmq7E7m+qjAz3TyCWJQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IProcessorAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IProcessorAsyncPolicyEngineBuilder-1.html",
+          "hash": "YQHlXZPyaYVcu9Kpr4dnMg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IProcessorPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IProcessorPolicyEngineBuilder-1.html",
+          "hash": "bLiZ83LE3BX3Hzo+z4M3lA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IWithAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html",
+          "hash": "FY+x74IJOQ9CY++zMLXM+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder-1.html",
+          "hash": "VTI/4Q3SQ8jzSum/+ym97A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IWithAsyncOutputPoliciesAsyncPolicyEngineBuilder-1.html",
+          "hash": "5RkH8ut2gMxdbTTDYAdq/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IWithAsyncProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html",
+          "hash": "Yusfb5zin8tgWaaNOACprQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IWithAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html",
+          "hash": "CR5lU+53zrVaD5j7n6wfPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IWithInputPoliciesProcessorAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IWithInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html",
+          "hash": "rZtMelmsv0UHNkHRzxSbdA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IWithOutputPoliciesAndAsyncOutputPoliciesPolicyEngineBuilder-1.html",
+          "hash": "HEuZxFUCxfAojGzQNxPgow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IWithOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder-1.html",
+          "hash": "t0cqZhhL3unPygHbZ7Thzw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IWithOutputPoliciesAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IWithOutputPoliciesAsyncPolicyEngineBuilder-1.html",
+          "hash": "lgsdS8Ci8pr/myHrOZASGQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IWithParallelAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html",
+          "hash": "LgK7BgNI7rELPRouU1MiLw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IWithParallelAndSynchronousInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html",
+          "hash": "QzNlrA5pyg3abw6xq/znPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IWithParallelInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html",
+          "hash": "+KBTJL/TMuWEuwDeTq2wpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IWithParallelOutputPoliciesAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IWithParallelOutputPoliciesAsyncPolicyEngineBuilder-1.html",
+          "hash": "196ZTzkRu0Cx1EtGxzmgOw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IWithParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html",
+          "hash": "XwFNui+57mom6vSZkBDI2g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IWithProcessorsAndAsyncProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html",
+          "hash": "UmCKuck8AiAH/ybEvaFBEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IWithProcessorsAndParallelProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html",
+          "hash": "KBx2zfnbeqCpYniK1xvW4g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IWithProcessorsOutputPolicyAsyncPolicyEngineBuilder-1.html",
+          "hash": "wIgyp3l+vWY5CS7Ijbe6hA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.IWithSynchronousAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.IWithSynchronousAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder-1.html",
+          "hash": "ZNDewHddvWsWVeEWed0gOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.PolicyEngineBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.PolicyEngineBuilder-1.html",
+          "hash": "AuOJ9NOfwo8p6L2d2dRGAA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Builders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Builders.html",
+          "hash": "NIm/UIEsMHUl3poLnr9vbA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.IAsyncPolicyEngine-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.IAsyncPolicyEngine-1.html",
+          "hash": "ZDb0B5bwJHI1SvJgf0eqcw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.IPolicyEngine-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.IPolicyEngine-1.html",
+          "hash": "J7CJF+FqWpI/DoOAKWeM0A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Policies.Input.And-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Policies.Input.And-1.html",
+          "hash": "pCOMKochgZ58s7YDEdNilw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Policies.Input.AsyncAnd-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Policies.Input.AsyncAnd-1.html",
+          "hash": "nAFi8HncSXVatllSrtonvw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Policies.Input.AsyncNot-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Policies.Input.AsyncNot-1.html",
+          "hash": "LMa8o5XCoy3b3ncV1ncmRw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Policies.Input.AsyncOr-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Policies.Input.AsyncOr-1.html",
+          "hash": "j5TQgsKp41o2reWjId2jug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Policies.Input.AsyncXor-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Policies.Input.AsyncXor-1.html",
+          "hash": "nFvp3pR488NfgjomGDAEiw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Policies.Input.IAsyncInputPolicy-1.html",
+          "hash": "qkH/Qw8m8/LQT2KoayBksw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Policies.Input.IInputPolicy-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Policies.Input.IInputPolicy-1.html",
+          "hash": "iLNHYzDcT7zwlKg1PzgrQQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Policies.Input.InputPolicyExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Policies.Input.InputPolicyExtensions.html",
+          "hash": "Qr2DVTRiCpCRt7n927Qt/Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Policies.Input.InputPolicyResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Policies.Input.InputPolicyResult.html",
+          "hash": "Nn4lF4Km85ONls6boZSyIw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Policies.Input.Not-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Policies.Input.Not-1.html",
+          "hash": "T+3SM9AUmlQQ0rsVuAEbAA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Policies.Input.Or-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Policies.Input.Or-1.html",
+          "hash": "p5VPOkrFJVfiiLW1/AvEZA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Policies.Input.Xor-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Policies.Input.Xor-1.html",
+          "hash": "7ZcytKeEHZho6xBV3Rhs3A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Policies.Input.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Policies.Input.html",
+          "hash": "9RS2UxOyCUSTZiEG+4l2tw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Policies.Output.IAsyncOutputPolicy-1.html",
+          "hash": "4QnyxKFr4d3mkKoJOKnVSg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Policies.Output.IOutputPolicy-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Policies.Output.IOutputPolicy-1.html",
+          "hash": "Z3JBv5cKIiOpU1pnN+LHsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Policies.Output.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Policies.Output.html",
+          "hash": "XG6CUu94kfsggAchFTfoHw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Processors.IAsyncProcessor-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Processors.IAsyncProcessor-1.html",
+          "hash": "lSeUA6C4v/FUMjGxRCSsgw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Processors.IProcessor-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Processors.IProcessor-1.html",
+          "hash": "b2yaAKEqi3r4+6fb1xoTwQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Processors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Processors.html",
+          "hash": "/Dv2u4Hy/JmWiiCaTBw3VA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.html",
+          "hash": "3fdgbhCYPWdDxb1Bh2Zugg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "../site/yml/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "0KCz4B0iqhgfEcTwVmaSBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "iZrUlkeVDzRGRZbG2A5EIA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "5jawKm6uHv5k3XETwuZjmw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 51,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
