@@ -31,4 +31,4 @@ jobs:
     - name: Publish NuGet
       run: cd src && dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_KEY} --skip-duplicate --no-symbols true
       env:
-        NUGET_KEY: ${{ secrets.NUGET_API_KEY }}
+        NUGET_KEY: ${{ secrets.PREVIEW_NUGET_API_KEY }}
