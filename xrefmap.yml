@@ -2037,24 +2037,24 @@ references:
   fullName.vb: Atrea.PolicyEngine.IAsyncPolicyEngine(Of T).ProcessAsync
   nameWithType: IAsyncPolicyEngine<T>.ProcessAsync
   nameWithType.vb: IAsyncPolicyEngine(Of T).ProcessAsync
-- uid: Atrea.PolicyEngine.IAsyncPolicyEngine`1.ProcessParallel(IEnumerable{`0})
-  name: ProcessParallel(IEnumerable<T>)
-  href: api/Atrea.PolicyEngine.IAsyncPolicyEngine-1.html#Atrea_PolicyEngine_IAsyncPolicyEngine_1_ProcessParallel_IEnumerable__0__
-  commentId: M:Atrea.PolicyEngine.IAsyncPolicyEngine`1.ProcessParallel(IEnumerable{`0})
-  name.vb: ProcessParallel(IEnumerable(Of T))
-  fullName: Atrea.PolicyEngine.IAsyncPolicyEngine<T>.ProcessParallel(IEnumerable<T>)
-  fullName.vb: Atrea.PolicyEngine.IAsyncPolicyEngine(Of T).ProcessParallel(IEnumerable(Of T))
-  nameWithType: IAsyncPolicyEngine<T>.ProcessParallel(IEnumerable<T>)
-  nameWithType.vb: IAsyncPolicyEngine(Of T).ProcessParallel(IEnumerable(Of T))
-- uid: Atrea.PolicyEngine.IAsyncPolicyEngine`1.ProcessParallel*
-  name: ProcessParallel
-  href: api/Atrea.PolicyEngine.IAsyncPolicyEngine-1.html#Atrea_PolicyEngine_IAsyncPolicyEngine_1_ProcessParallel_
-  commentId: Overload:Atrea.PolicyEngine.IAsyncPolicyEngine`1.ProcessParallel
+- uid: Atrea.PolicyEngine.IAsyncPolicyEngine`1.ProcessParallelAsync(IEnumerable{`0})
+  name: ProcessParallelAsync(IEnumerable<T>)
+  href: api/Atrea.PolicyEngine.IAsyncPolicyEngine-1.html#Atrea_PolicyEngine_IAsyncPolicyEngine_1_ProcessParallelAsync_IEnumerable__0__
+  commentId: M:Atrea.PolicyEngine.IAsyncPolicyEngine`1.ProcessParallelAsync(IEnumerable{`0})
+  name.vb: ProcessParallelAsync(IEnumerable(Of T))
+  fullName: Atrea.PolicyEngine.IAsyncPolicyEngine<T>.ProcessParallelAsync(IEnumerable<T>)
+  fullName.vb: Atrea.PolicyEngine.IAsyncPolicyEngine(Of T).ProcessParallelAsync(IEnumerable(Of T))
+  nameWithType: IAsyncPolicyEngine<T>.ProcessParallelAsync(IEnumerable<T>)
+  nameWithType.vb: IAsyncPolicyEngine(Of T).ProcessParallelAsync(IEnumerable(Of T))
+- uid: Atrea.PolicyEngine.IAsyncPolicyEngine`1.ProcessParallelAsync*
+  name: ProcessParallelAsync
+  href: api/Atrea.PolicyEngine.IAsyncPolicyEngine-1.html#Atrea_PolicyEngine_IAsyncPolicyEngine_1_ProcessParallelAsync_
+  commentId: Overload:Atrea.PolicyEngine.IAsyncPolicyEngine`1.ProcessParallelAsync
   isSpec: "True"
-  fullName: Atrea.PolicyEngine.IAsyncPolicyEngine<T>.ProcessParallel
-  fullName.vb: Atrea.PolicyEngine.IAsyncPolicyEngine(Of T).ProcessParallel
-  nameWithType: IAsyncPolicyEngine<T>.ProcessParallel
-  nameWithType.vb: IAsyncPolicyEngine(Of T).ProcessParallel
+  fullName: Atrea.PolicyEngine.IAsyncPolicyEngine<T>.ProcessParallelAsync
+  fullName.vb: Atrea.PolicyEngine.IAsyncPolicyEngine(Of T).ProcessParallelAsync
+  nameWithType: IAsyncPolicyEngine<T>.ProcessParallelAsync
+  nameWithType.vb: IAsyncPolicyEngine(Of T).ProcessParallelAsync
 - uid: Atrea.PolicyEngine.IPolicyEngine`1
   name: IPolicyEngine<T>
   href: api/Atrea.PolicyEngine.IPolicyEngine-1.html
