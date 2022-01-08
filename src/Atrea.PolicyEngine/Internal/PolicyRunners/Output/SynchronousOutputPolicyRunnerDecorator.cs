@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Atrea.PolicyEngine.Policies.Output;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using Atrea.PolicyEngine.Policies.Output;
 
 namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output
 {
@@ -10,10 +10,11 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output
 
         public SynchronousOutputPolicyRunnerDecorator(
             IAsyncOutputPolicyRunner<T> asyncOutputPolicyRunner,
-            IEnumerable<IOutputPolicy<T>> outputPolicies) : base(asyncOutputPolicyRunner) =>
+            IEnumerable<IOutputPolicy<T>> outputPolicies)
+            : base(asyncOutputPolicyRunner) =>
             _outputPolicies = outputPolicies;
 
-        protected override Task ApplyOutputPolicies(T item)
+        protected override Task ApplyOutputPoliciesAsync(T item)
         {
             var task = new Task(() =>
             {

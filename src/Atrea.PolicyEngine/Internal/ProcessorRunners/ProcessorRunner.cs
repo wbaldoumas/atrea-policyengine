@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Atrea.PolicyEngine.Processors;
+﻿using Atrea.PolicyEngine.Processors;
+using System.Collections.Generic;
 
 namespace Atrea.PolicyEngine.Internal.ProcessorRunners
 {

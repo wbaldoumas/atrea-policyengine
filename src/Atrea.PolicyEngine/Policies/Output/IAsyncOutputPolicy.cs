@@ -13,7 +13,7 @@ namespace Atrea.PolicyEngine.Policies.Output
         ///     Asynchronously apply post-processing to an item processed by the policy engine.
         /// </summary>
         /// <param name="item">The item to apply post-processing to.</param>
-        /// <returns></returns>
+        /// <returns>A <see cref="Task"/> to await</returns>
         Task ApplyAsync(T item);
     }
 }

@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Atrea.PolicyEngine.Builders;
+﻿using Atrea.PolicyEngine.Builders;
 using Atrea.PolicyEngine.Processors;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Atrea.PolicyEngine
 {
@@ -19,12 +19,14 @@ namespace Atrea.PolicyEngine
         ///     Process items.
         /// </summary>
         /// <param name="items">The items to be processed.</param>
+        /// <returns>A <see cref="Task"/> to await, processing the items</returns>
         Task ProcessAsync(IEnumerable<T> items);
 
         /// <summary>
         ///     Process items.
         /// </summary>
         /// <param name="items">The items to be processed.</param>
-        Task ProcessParallel(IEnumerable<T> items);
+        /// <returns>A <see cref="Task"/> to await, processing the items</returns>
+        Task ProcessParallelAsync(IEnumerable<T> items);
     }
 }

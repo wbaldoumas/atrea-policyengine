@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using Atrea.PolicyEngine.Policies.Input;
+﻿using Atrea.PolicyEngine.Policies.Input;
 using NUnit.Framework;
+using System.Collections.Generic;
 
 namespace Atrea.PolicyEngine.Tests.Policies.Input
 {

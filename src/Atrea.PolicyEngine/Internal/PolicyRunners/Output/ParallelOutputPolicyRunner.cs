@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Atrea.PolicyEngine.Policies.Output;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Atrea.PolicyEngine.Policies.Output;
 
 namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output
 {
@@ -11,10 +11,11 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output
 
         public ParallelOutputPolicyRunner(
             IAsyncOutputPolicyRunner<T> asyncOutputPolicyRunner,
-            IEnumerable<IAsyncOutputPolicy<T>> parallelOutputPolicies) : base(asyncOutputPolicyRunner) =>
+            IEnumerable<IAsyncOutputPolicy<T>> parallelOutputPolicies)
+            : base(asyncOutputPolicyRunner) =>
             _parallelOutputPolicies = parallelOutputPolicies;
 
-        protected override async Task ApplyOutputPolicies(T item)
+        protected override async Task ApplyOutputPoliciesAsync(T item)
         {
             var tasks = _parallelOutputPolicies.Select(outputPolicy => outputPolicy.ApplyAsync(item));
 

@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Atrea.PolicyEngine.Policies.Input;
+using System;
 using System.Collections.Generic;
-using Atrea.PolicyEngine.Policies.Input;
 
 namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
 {

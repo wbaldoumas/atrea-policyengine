@@ -1,5 +1,5 @@
-﻿using System.Threading.Tasks;
-using Atrea.PolicyEngine.Policies.Input;
+﻿using Atrea.PolicyEngine.Policies.Input;
+using System.Threading.Tasks;
 
 namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
 {

@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Atrea.PolicyEngine.Policies.Input;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Atrea.PolicyEngine.Policies.Input;
 
 namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
 {
@@ -9,13 +9,14 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
     {
         private readonly IEnumerable<IAsyncInputPolicy<T>> _parallelAsyncInputPolicies;
 
-        public ParallelInputPolicyRunnerDecorator(
+        internal ParallelInputPolicyRunnerDecorator(
             IAsyncInputPolicyRunner<T> asyncInputPolicyRunner,
-            IEnumerable<IAsyncInputPolicy<T>> parallelAsyncInputPolicies) : base(
+            IEnumerable<IAsyncInputPolicy<T>> parallelAsyncInputPolicies)
+            : base(
             asyncInputPolicyRunner) =>
             _parallelAsyncInputPolicies = parallelAsyncInputPolicies;
 
-        protected override async Task<InputPolicyResult> EvaluateInputPolicies(T item)
+        protected override async Task<InputPolicyResult> EvaluateInputPoliciesAsync(T item)
         {
             var tasks = _parallelAsyncInputPolicies.Select(inputPolicy => inputPolicy.ShouldProcessAsync(item));
 

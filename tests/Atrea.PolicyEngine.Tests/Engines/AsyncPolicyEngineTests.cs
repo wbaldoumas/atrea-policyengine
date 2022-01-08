@@ -1,19 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Atrea.PolicyEngine.Builders;
+﻿using Atrea.PolicyEngine.Builders;
 using Atrea.PolicyEngine.Policies.Input;
 using Atrea.PolicyEngine.Policies.Output;
 using Atrea.PolicyEngine.Processors;
 using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Atrea.PolicyEngine.Tests.Engines
 {
     [TestFixture]
     public class AsyncPolicyEngineTests
     {
+        private const int Item = 1;
+
         [SetUp]
         public void SetUp()
         {
@@ -31,8 +33,7 @@ namespace Atrea.PolicyEngine.Tests.Engines
             _mockAsyncOutputPolicy = Substitute.For<IAsyncOutputPolicy<int>>();
         }
 
-        private const int Item = 1;
-
+#nullable disable
         private IInputPolicy<int> _mockInputPolicyA;
         private IInputPolicy<int> _mockInputPolicyB;
         private IAsyncInputPolicy<int> _mockAsyncInputPolicyA;
@@ -45,13 +46,14 @@ namespace Atrea.PolicyEngine.Tests.Engines
 
         private IOutputPolicy<int> _mockOutputPolicy;
         private IAsyncOutputPolicy<int> _mockAsyncOutputPolicy;
+#nullable restore
 
         [Test]
         public async Task Exception_Thrown_When_Invalid_InputPolicyResult_Is_Returned_A()
         {
             // arrange
             Assert.IsFalse(Enum.IsDefined(typeof(InputPolicyResult), int.MaxValue));
-            const InputPolicyResult badInputPolicyResult = (InputPolicyResult) int.MaxValue;
+            const InputPolicyResult badInputPolicyResult = (InputPolicyResult)int.MaxValue;
 
             _mockInputPolicyA.ShouldProcess(Arg.Any<int>()).Returns(InputPolicyResult.Continue);
             _mockInputPolicyB.ShouldProcess(Arg.Any<int>()).Returns(InputPolicyResult.Continue);
@@ -105,7 +107,7 @@ namespace Atrea.PolicyEngine.Tests.Engines
         {
             // arrange
             Assert.IsFalse(Enum.IsDefined(typeof(InputPolicyResult), int.MaxValue));
-            const InputPolicyResult badInputPolicyResult = (InputPolicyResult) int.MaxValue;
+            const InputPolicyResult badInputPolicyResult = (InputPolicyResult)int.MaxValue;
 
             _mockInputPolicyA.ShouldProcess(Arg.Any<int>()).Returns(badInputPolicyResult);
             _mockInputPolicyB.ShouldProcess(Arg.Any<int>()).Returns(InputPolicyResult.Continue);
@@ -574,7 +576,7 @@ namespace Atrea.PolicyEngine.Tests.Engines
             const int item2 = 2;
 
             // act
-            await engine.ProcessParallel(new List<int> { item1, item2 });
+            await engine.ProcessParallelAsync(new List<int> { item1, item2 });
 
             // assert
             await _mockAsyncInputPolicyA.Received(1).ShouldProcessAsync(item1);

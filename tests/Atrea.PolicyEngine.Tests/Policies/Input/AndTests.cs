@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using Atrea.PolicyEngine.Policies.Input;
+﻿using Atrea.PolicyEngine.Policies.Input;
 using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
+using System.Collections.Generic;
 
 namespace Atrea.PolicyEngine.Tests.Policies.Input
 {
@@ -18,10 +18,12 @@ namespace Atrea.PolicyEngine.Tests.Policies.Input
 
         private const int Item = 1;
 
+#nullable disable
         private IInputPolicy<int> _mockLeftInputPolicy;
         private IInputPolicy<int> _mockRightInputPolicy;
+#nullable restore
 
-        public static IEnumerable<TestCaseData> TestCases = CompoundBooleanInputPolicyTestCases.AndTestCases;
+        private static readonly IEnumerable<TestCaseData> TestCases = CompoundBooleanInputPolicyTestCases.AndTestCases;
 
         [Test]
         [TestCaseSource(nameof(TestCases))]

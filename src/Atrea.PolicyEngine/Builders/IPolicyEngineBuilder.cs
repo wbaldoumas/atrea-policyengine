@@ -4,6 +4,15 @@ using Atrea.PolicyEngine.Processors;
 
 namespace Atrea.PolicyEngine.Builders
 {
+    public interface IPolicyEngineBuilder<in T>
+    {
+        /// <summary>
+        ///     Builds the configured <see cref="IPolicyEngine{T}" />.
+        /// </summary>
+        /// <returns>A configured <see cref="IPolicyEngine{T}" />.</returns>
+        IPolicyEngine<T> Build();
+    }
+
     public interface IInputPolicyEngineBuilder<T> : IPolicyEngineBuilder<T>
     {
         /// <summary>
@@ -62,14 +71,5 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IPolicyEngineBuilder{T}" />
         /// </returns>
         IPolicyEngineBuilder<T> WithoutOutputPolicies();
-    }
-
-    public interface IPolicyEngineBuilder<in T>
-    {
-        /// <summary>
-        ///     Builds the configured <see cref="IPolicyEngine{T}" />.
-        /// </summary>
-        /// <returns>A configured <see cref="IPolicyEngine{T}" />.</returns>
-        IPolicyEngine<T> Build();
     }
 }

@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Atrea.PolicyEngine.Policies.Input;
+﻿using Atrea.PolicyEngine.Policies.Input;
 using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Atrea.PolicyEngine.Tests.Policies.Input
 {
@@ -11,9 +11,11 @@ namespace Atrea.PolicyEngine.Tests.Policies.Input
     {
         private const int Item = 1;
 
-        public static IEnumerable<TestCaseData> TestCases = CompoundBooleanInputPolicyTestCases.NotTestCases;
+        private static readonly IEnumerable<TestCaseData> TestCases = CompoundBooleanInputPolicyTestCases.NotTestCases;
 
+#nullable disable
         private IAsyncInputPolicy<int> _mockInputPolicy;
+#nullable restore
 
         [SetUp]
         public void SetUp()

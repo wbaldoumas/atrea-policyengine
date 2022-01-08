@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Atrea.PolicyEngine.Policies.Output;
+﻿using Atrea.PolicyEngine.Policies.Output;
+using System.Collections.Generic;
 
 namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output
 {
