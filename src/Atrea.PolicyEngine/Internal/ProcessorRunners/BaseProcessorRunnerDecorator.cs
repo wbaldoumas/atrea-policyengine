@@ -18,9 +18,9 @@ namespace Atrea.PolicyEngine.Internal.ProcessorRunners
                 await _asyncProcessorRunner.ProcessAsync(item);
             }
 
-            await RunProcessors(item);
+            await RunProcessorsAsync(item);
         }
 
-        protected abstract Task RunProcessors(T item);
+        protected abstract Task RunProcessorsAsync(T item);
     }
 }

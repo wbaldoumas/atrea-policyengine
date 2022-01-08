@@ -16,7 +16,7 @@ namespace Atrea.PolicyEngine.Internal.ProcessorRunners
             asyncProcessorRunner) =>
             _parallelProcessors = parallelProcessors;
 
-        protected override async Task RunProcessors(T item)
+        protected override async Task RunProcessorsAsync(T item)
         {
             var tasks = _parallelProcessors.Select(processor => processor.ProcessAsync(item));
 

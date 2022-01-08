@@ -18,9 +18,9 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output
                 await _asyncOutputPolicyRunner.ApplyAsync(item);
             }
 
-            await ApplyOutputPolicies(item);
+            await ApplyOutputPoliciesAsync(item);
         }
 
-        protected abstract Task ApplyOutputPolicies(T item);
+        protected abstract Task ApplyOutputPoliciesAsync(T item);
     }
 }

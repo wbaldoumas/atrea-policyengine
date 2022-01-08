@@ -27,6 +27,6 @@ namespace Atrea.PolicyEngine
         /// </summary>
         /// <param name="items">The items to be processed.</param>
         /// <returns>A <see cref="Task"/> to await, processing the items</returns>
-        Task ProcessParallel(IEnumerable<T> items);
+        Task ProcessParallelAsync(IEnumerable<T> items);
     }
 }

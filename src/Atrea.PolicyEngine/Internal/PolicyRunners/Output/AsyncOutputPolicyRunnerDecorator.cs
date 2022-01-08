@@ -14,7 +14,7 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output
             : base(asyncOutputPolicyRunner) =>
             _asyncAsyncOutputPolicies = asyncOutputPolicies;
 
-        protected override async Task ApplyOutputPolicies(T item)
+        protected override async Task ApplyOutputPoliciesAsync(T item)
         {
             foreach (var asyncOutputPolicy in _asyncAsyncOutputPolicies)
             {

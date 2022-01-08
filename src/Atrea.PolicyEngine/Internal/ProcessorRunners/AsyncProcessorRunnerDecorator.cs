@@ -15,7 +15,7 @@ namespace Atrea.PolicyEngine.Internal.ProcessorRunners
             asyncProcessorRunner) =>
             _asyncProcessors = asyncProcessors;
 
-        protected override async Task RunProcessors(T item)
+        protected override async Task RunProcessorsAsync(T item)
         {
             foreach (var asyncProcessor in _asyncProcessors)
             {

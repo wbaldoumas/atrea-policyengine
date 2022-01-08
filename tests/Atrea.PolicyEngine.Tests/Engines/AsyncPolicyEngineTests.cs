@@ -576,7 +576,7 @@ namespace Atrea.PolicyEngine.Tests.Engines
             const int item2 = 2;
 
             // act
-            await engine.ProcessParallel(new List<int> { item1, item2 });
+            await engine.ProcessParallelAsync(new List<int> { item1, item2 });
 
             // assert
             await _mockAsyncInputPolicyA.Received(1).ShouldProcessAsync(item1);

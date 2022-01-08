@@ -16,7 +16,7 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
             asyncInputPolicyRunner) =>
             _parallelAsyncInputPolicies = parallelAsyncInputPolicies;
 
-        protected override async Task<InputPolicyResult> EvaluateInputPolicies(T item)
+        protected override async Task<InputPolicyResult> EvaluateInputPoliciesAsync(T item)
         {
             var tasks = _parallelAsyncInputPolicies.Select(inputPolicy => inputPolicy.ShouldProcessAsync(item));
 

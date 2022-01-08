@@ -15,7 +15,7 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
             : base(asyncInputPolicyRunner) =>
             _inputPolicies = inputPolicies;
 
-        protected override Task<InputPolicyResult> EvaluateInputPolicies(T item)
+        protected override Task<InputPolicyResult> EvaluateInputPoliciesAsync(T item)
         {
             var task = new Task<InputPolicyResult>(() =>
             {

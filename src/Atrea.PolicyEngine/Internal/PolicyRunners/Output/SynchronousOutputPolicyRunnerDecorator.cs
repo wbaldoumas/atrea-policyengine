@@ -14,7 +14,7 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output
             : base(asyncOutputPolicyRunner) =>
             _outputPolicies = outputPolicies;
 
-        protected override Task ApplyOutputPolicies(T item)
+        protected override Task ApplyOutputPoliciesAsync(T item)
         {
             var task = new Task(() =>
             {

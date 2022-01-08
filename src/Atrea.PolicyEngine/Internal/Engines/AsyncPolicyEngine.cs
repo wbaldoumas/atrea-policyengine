@@ -43,7 +43,7 @@ namespace Atrea.PolicyEngine.Internal.Engines
             }
         }
 
-        public async Task ProcessParallel(IEnumerable<T> items)
+        public async Task ProcessParallelAsync(IEnumerable<T> items)
         {
             var tasks = items.Select(ProcessAsync);
 
