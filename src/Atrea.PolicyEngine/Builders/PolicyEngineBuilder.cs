@@ -33,11 +33,11 @@ namespace Atrea.PolicyEngine.Builders
 
         public IPolicyEngine<T> Build()
         {
-            var policyEngine = new PolicyEngine<T>();
-
-            policyEngine.SetInputPolicyRunner(new InputPolicyRunner<T>(_inputPolicies));
-            policyEngine.SetProcessorRunner(new ProcessorRunner<T>(_processors));
-            policyEngine.SetOutputPolicyRunner(new OutputPolicyRunner<T>(_outputPolicies));
+            var policyEngine = new PolicyEngine<T>(
+                new InputPolicyRunner<T>(_inputPolicies),
+                new ProcessorRunner<T>(_processors),
+                new OutputPolicyRunner<T>(_outputPolicies)
+            );
 
             return policyEngine;
         }

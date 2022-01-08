@@ -37,16 +37,12 @@ namespace Atrea.PolicyEngine.Builders
         private IAsyncOutputPolicyRunner<T> _asyncOutputPolicyRunner = new RootAsyncOutputPolicyRunner<T>();
         private IAsyncProcessorRunner<T> _asyncProcessorRunner = new RootAsyncProcessorRunner<T>();
 
-        public IAsyncPolicyEngine<T> Build()
-        {
-            var policyEngine = new AsyncPolicyEngine<T>();
-
-            policyEngine.SetInputPolicyRunner(_asyncInputPolicyRunner);
-            policyEngine.SetProcessorRunner(_asyncProcessorRunner);
-            policyEngine.SetOutputPolicyRunner(_asyncOutputPolicyRunner);
-
-            return policyEngine;
-        }
+        public IAsyncPolicyEngine<T> Build() =>
+            new AsyncPolicyEngine<T>(
+                _asyncInputPolicyRunner,
+                _asyncProcessorRunner,
+                _asyncOutputPolicyRunner
+            );
 
         /// <summary>
         ///     Begin configuring a <see cref="IAsyncPolicyEngine{T}" />.

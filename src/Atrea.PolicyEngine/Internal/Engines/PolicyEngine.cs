@@ -8,9 +8,19 @@ namespace Atrea.PolicyEngine.Internal.Engines
 {
     internal class PolicyEngine<T> : IPolicyEngine<T>
     {
-        private IInputPolicyRunner<T> _inputPolicyRunner;
-        private IOutputPolicyRunner<T> _outputPolicyRunner;
-        private IProcessorRunner<T> _processorRunner;
+        private readonly IInputPolicyRunner<T> _inputPolicyRunner;
+        private readonly IProcessorRunner<T> _processorRunner;
+        private readonly IOutputPolicyRunner<T> _outputPolicyRunner;
+
+        public PolicyEngine(
+            IInputPolicyRunner<T> inputPolicyRunner, 
+            IProcessorRunner<T> processorRunner,
+            IOutputPolicyRunner<T> outputPolicyRunner)
+        {
+            _inputPolicyRunner = inputPolicyRunner;
+            _processorRunner = processorRunner;
+            _outputPolicyRunner = outputPolicyRunner;
+        }
 
         public void Process(T item)
         {
@@ -29,21 +39,6 @@ namespace Atrea.PolicyEngine.Internal.Engines
             {
                 Process(item);
             }
-        }
-
-        public void SetInputPolicyRunner(IInputPolicyRunner<T> inputPolicyRunner)
-        {
-            _inputPolicyRunner = inputPolicyRunner;
-        }
-
-        public void SetProcessorRunner(IProcessorRunner<T> processorRunner)
-        {
-            _processorRunner = processorRunner;
-        }
-
-        public void SetOutputPolicyRunner(IOutputPolicyRunner<T> outputPolicyRunner)
-        {
-            _outputPolicyRunner = outputPolicyRunner;
         }
     }
 }

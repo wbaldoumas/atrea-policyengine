@@ -16,6 +16,7 @@ namespace Atrea.PolicyEngine.Tests.Builders
     {
         private const int Item = 1;
 
+#nullable disable
         private IInputPolicy<int> _mockInputPolicy;
         private IAsyncInputPolicy<int> _mockAsyncInputPolicy;
         private IAsyncInputPolicy<int> _mockParallelInputPolicy;
@@ -27,6 +28,7 @@ namespace Atrea.PolicyEngine.Tests.Builders
         private IOutputPolicy<int> _mockOutputPolicy;
         private IAsyncOutputPolicy<int> _mockAsyncOutputPolicy;
         private IAsyncOutputPolicy<int> _mockParallelOutputPolicy;
+#nullable restore
 
         [SetUp]
         public void SetUp()

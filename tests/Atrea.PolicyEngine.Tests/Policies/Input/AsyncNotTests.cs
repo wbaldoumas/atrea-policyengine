@@ -11,9 +11,11 @@ namespace Atrea.PolicyEngine.Tests.Policies.Input
     {
         private const int Item = 1;
 
-        public static IEnumerable<TestCaseData> TestCases = CompoundBooleanInputPolicyTestCases.NotTestCases;
+        private static readonly IEnumerable<TestCaseData> TestCases = CompoundBooleanInputPolicyTestCases.NotTestCases;
 
+#nullable disable
         private IAsyncInputPolicy<int> _mockInputPolicy;
+#nullable restore
 
         [SetUp]
         public void SetUp()

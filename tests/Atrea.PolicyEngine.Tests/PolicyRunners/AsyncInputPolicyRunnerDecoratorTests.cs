@@ -12,7 +12,9 @@ namespace Atrea.PolicyEngine.Tests.PolicyRunners
     [TestFixture]
     public class AsyncInputPolicyRunnerDecoratorTests
     {
+#nullable disable
         private IAsyncInputPolicyRunner<int> _mockInnerAsyncInputPolicyRunner;
+#nullable restore
 
         [SetUp]
         public void SetUp()

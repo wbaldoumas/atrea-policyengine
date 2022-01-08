@@ -22,9 +22,11 @@ namespace Atrea.PolicyEngine.Tests.Builders
 
         private const int Item = 1;
 
+#nullable disable
         private IInputPolicy<int> _mockInputPolicy;
         private IProcessor<int> _mockProcessor;
         private IOutputPolicy<int> _mockOutputPolicy;
+#nullable restore
 
         [Test]
         public void Fully_Configured_Policy_Engine_Runs_All_Components()

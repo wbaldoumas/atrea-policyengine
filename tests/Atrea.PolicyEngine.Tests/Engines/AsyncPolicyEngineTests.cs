@@ -33,6 +33,7 @@ namespace Atrea.PolicyEngine.Tests.Engines
 
         private const int Item = 1;
 
+#nullable disable
         private IInputPolicy<int> _mockInputPolicyA;
         private IInputPolicy<int> _mockInputPolicyB;
         private IAsyncInputPolicy<int> _mockAsyncInputPolicyA;
@@ -45,6 +46,7 @@ namespace Atrea.PolicyEngine.Tests.Engines
 
         private IOutputPolicy<int> _mockOutputPolicy;
         private IAsyncOutputPolicy<int> _mockAsyncOutputPolicy;
+#nullable restore
 
         [Test]
         public async Task Exception_Thrown_When_Invalid_InputPolicyResult_Is_Returned_A()

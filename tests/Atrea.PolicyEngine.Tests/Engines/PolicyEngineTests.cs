@@ -24,10 +24,12 @@ namespace Atrea.PolicyEngine.Tests.Engines
 
         private const int Item = 1;
 
+#nullable disable
         private IInputPolicy<int> _mockInputPolicyA;
         private IInputPolicy<int> _mockInputPolicyB;
         private IProcessor<int> _mockProcessor;
         private IOutputPolicy<int> _mockOutputPolicy;
+#nullable restore
 
         [Test]
         public void Exception_Thrown_When_Invalid_InputPolicyResult_Is_Returned()

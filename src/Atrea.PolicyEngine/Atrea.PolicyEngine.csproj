@@ -1,31 +1,36 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.2.1</Version>
-    <Authors>William Baldoumas</Authors>
-    <Company>William Baldoumas</Company>
-    <Description>A modular, composable policy engine for easy implementation of complex conditional processing pipelines.</Description>
-    <Copyright>Copyright ©2021 William Baldoumas</Copyright>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <RepositoryUrl>https://github.com/wbaldoumas/atrea-policyengine.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageTags>policy engine, policy, engine, processing, conditional processing, modular, composable, extensible, rules engine, async</PackageTags>
-    <PackageProjectUrl>https://github.com/wbaldoumas/atrea-policyengine</PackageProjectUrl>
-    <PackageIcon>engine_icon.png</PackageIcon>
-    <PackageIconUrl />
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Version>2.2.1</Version>
+		<Authors>William Baldoumas</Authors>
+		<Company>William Baldoumas</Company>
+		<Description>A modular, composable policy engine for easy implementation of complex conditional processing pipelines.</Description>
+		<Copyright>Copyright ©2021 William Baldoumas</Copyright>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<RepositoryUrl>https://github.com/wbaldoumas/atrea-policyengine.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>policy engine, policy, engine, processing, conditional processing, modular, composable, extensible, rules engine, async</PackageTags>
+		<PackageProjectUrl>https://github.com/wbaldoumas/atrea-policyengine</PackageProjectUrl>
+		<PackageIcon>engine_icon.png</PackageIcon>
+		<PackageIconUrl />
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Include="..\..\images\engine_icon.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-    <None Include="..\..\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+	<PropertyGroup>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\images\engine_icon.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+		<None Include="..\..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
 
 </Project>

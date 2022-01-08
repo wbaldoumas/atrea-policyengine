@@ -10,9 +10,19 @@ namespace Atrea.PolicyEngine.Internal.Engines
 {
     internal class AsyncPolicyEngine<T> : IAsyncPolicyEngine<T>
     {
-        private IAsyncInputPolicyRunner<T> _inputPolicyRunner;
-        private IAsyncOutputPolicyRunner<T> _outputPolicyRunner;
-        private IAsyncProcessorRunner<T> _processorRunner;
+        private readonly IAsyncInputPolicyRunner<T> _inputPolicyRunner;
+        private readonly IAsyncProcessorRunner<T> _processorRunner;
+        private readonly IAsyncOutputPolicyRunner<T> _outputPolicyRunner;
+
+        internal AsyncPolicyEngine(
+            IAsyncInputPolicyRunner<T> inputPolicyRunner,
+            IAsyncProcessorRunner<T> processorRunner,
+            IAsyncOutputPolicyRunner<T> outputPolicyRunner)
+        {
+            _inputPolicyRunner = inputPolicyRunner;
+            _processorRunner = processorRunner;
+            _outputPolicyRunner = outputPolicyRunner;
+        }
 
         public async Task ProcessAsync(T item)
         {
@@ -38,21 +48,6 @@ namespace Atrea.PolicyEngine.Internal.Engines
             var tasks = items.Select(ProcessAsync);
 
             await Task.WhenAll(tasks);
-        }
-
-        public void SetInputPolicyRunner(IAsyncInputPolicyRunner<T> inputPolicyRunner)
-        {
-            _inputPolicyRunner = inputPolicyRunner;
-        }
-
-        public void SetProcessorRunner(IAsyncProcessorRunner<T> processorRunner)
-        {
-            _processorRunner = processorRunner;
-        }
-
-        public void SetOutputPolicyRunner(IAsyncOutputPolicyRunner<T> outputPolicyRunner)
-        {
-            _outputPolicyRunner = outputPolicyRunner;
         }
     }
 }

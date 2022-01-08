@@ -19,10 +19,12 @@ namespace Atrea.PolicyEngine.Tests.Policies.Input
 
         private const int Item = 1;
 
+#nullable disable
         private IAsyncInputPolicy<int> _mockLeftInputPolicy;
         private IAsyncInputPolicy<int> _mockRightInputPolicy;
+#nullable restore
 
-        public static IEnumerable<TestCaseData> TestCases = CompoundBooleanInputPolicyTestCases.OrTestCases;
+        private static readonly IEnumerable<TestCaseData> TestCases = CompoundBooleanInputPolicyTestCases.OrTestCases;
 
         [Test]
         [TestCaseSource(nameof(TestCases))]
