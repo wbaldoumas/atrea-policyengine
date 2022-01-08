@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using Atrea.PolicyEngine.Builders;
+﻿using Atrea.PolicyEngine.Builders;
 using Atrea.PolicyEngine.Processors;
+using System.Collections.Generic;
 
 namespace Atrea.PolicyEngine
 {

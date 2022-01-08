@@ -28,6 +28,7 @@ namespace Atrea.PolicyEngine.Policies.Input
         /// <param name="inputPolicy">The <see cref="IAsyncInputPolicy{T}" /> to compute the boolean NOT of.</param>
         public AsyncNot(IAsyncInputPolicy<T> inputPolicy) => _inputPolicy = inputPolicy;
 
+        /// <inheritdoc cref="IAsyncInputPolicy{T}.ShouldProcessAsync"/>
         public async Task<InputPolicyResult> ShouldProcessAsync(T item) =>
             await _inputPolicy.ShouldProcessAsync(item) == InputPolicyResult.Reject
                 ? InputPolicyResult.Continue

@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Atrea.PolicyEngine.Processors;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using Atrea.PolicyEngine.Processors;
 
 namespace Atrea.PolicyEngine.Internal.ProcessorRunners
 {
@@ -10,7 +10,8 @@ namespace Atrea.PolicyEngine.Internal.ProcessorRunners
 
         public SynchronousProcessorRunner(
             IAsyncProcessorRunner<T> asyncProcessorRunner,
-            IEnumerable<IProcessor<T>> processors) : base(asyncProcessorRunner) =>
+            IEnumerable<IProcessor<T>> processors)
+            : base(asyncProcessorRunner) =>
             _processors = processors;
 
         protected override Task RunProcessors(T item)

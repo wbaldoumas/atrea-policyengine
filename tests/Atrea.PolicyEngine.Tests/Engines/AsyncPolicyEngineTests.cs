@@ -1,19 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Atrea.PolicyEngine.Builders;
+﻿using Atrea.PolicyEngine.Builders;
 using Atrea.PolicyEngine.Policies.Input;
 using Atrea.PolicyEngine.Policies.Output;
 using Atrea.PolicyEngine.Processors;
 using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Atrea.PolicyEngine.Tests.Engines
 {
     [TestFixture]
     public class AsyncPolicyEngineTests
     {
+        private const int Item = 1;
+
         [SetUp]
         public void SetUp()
         {
@@ -30,8 +32,6 @@ namespace Atrea.PolicyEngine.Tests.Engines
             _mockOutputPolicy = Substitute.For<IOutputPolicy<int>>();
             _mockAsyncOutputPolicy = Substitute.For<IAsyncOutputPolicy<int>>();
         }
-
-        private const int Item = 1;
 
 #nullable disable
         private IInputPolicy<int> _mockInputPolicyA;
@@ -53,7 +53,7 @@ namespace Atrea.PolicyEngine.Tests.Engines
         {
             // arrange
             Assert.IsFalse(Enum.IsDefined(typeof(InputPolicyResult), int.MaxValue));
-            const InputPolicyResult badInputPolicyResult = (InputPolicyResult) int.MaxValue;
+            const InputPolicyResult badInputPolicyResult = (InputPolicyResult)int.MaxValue;
 
             _mockInputPolicyA.ShouldProcess(Arg.Any<int>()).Returns(InputPolicyResult.Continue);
             _mockInputPolicyB.ShouldProcess(Arg.Any<int>()).Returns(InputPolicyResult.Continue);
@@ -107,7 +107,7 @@ namespace Atrea.PolicyEngine.Tests.Engines
         {
             // arrange
             Assert.IsFalse(Enum.IsDefined(typeof(InputPolicyResult), int.MaxValue));
-            const InputPolicyResult badInputPolicyResult = (InputPolicyResult) int.MaxValue;
+            const InputPolicyResult badInputPolicyResult = (InputPolicyResult)int.MaxValue;
 
             _mockInputPolicyA.ShouldProcess(Arg.Any<int>()).Returns(badInputPolicyResult);
             _mockInputPolicyB.ShouldProcess(Arg.Any<int>()).Returns(InputPolicyResult.Continue);

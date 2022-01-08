@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using Atrea.PolicyEngine.Builders;
+﻿using Atrea.PolicyEngine.Builders;
 using Atrea.PolicyEngine.Policies.Input;
 using Atrea.PolicyEngine.Policies.Output;
 using Atrea.PolicyEngine.Processors;
 using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
+using System;
+using System.Collections.Generic;
 
 namespace Atrea.PolicyEngine.Tests.Engines
 {
@@ -35,7 +35,7 @@ namespace Atrea.PolicyEngine.Tests.Engines
         public void Exception_Thrown_When_Invalid_InputPolicyResult_Is_Returned()
         {
             Assert.IsFalse(Enum.IsDefined(typeof(InputPolicyResult), int.MaxValue));
-            const InputPolicyResult badInputPolicyResult = (InputPolicyResult) int.MaxValue;
+            const InputPolicyResult badInputPolicyResult = (InputPolicyResult)int.MaxValue;
 
             _mockInputPolicyA.ShouldProcess(Item).Returns(InputPolicyResult.Continue);
             _mockInputPolicyB.ShouldProcess(Item).Returns(badInputPolicyResult);

@@ -11,6 +11,8 @@ namespace Atrea.PolicyEngine.Internal.ProcessorRunners
 
         public async Task ProcessAsync(T item)
         {
+            // ReSharper disable once ConditionIsAlwaysTrueOrFalse
+            // This may be null if nullable reference types aren't enabled in dependent project.
             if (!(_asyncProcessorRunner is null))
             {
                 await _asyncProcessorRunner.ProcessAsync(item);

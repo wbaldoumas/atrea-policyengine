@@ -23,6 +23,7 @@ namespace Atrea.PolicyEngine.Policies.Input
             _right = right;
         }
 
+        /// <inheritdoc cref="IAsyncInputPolicy{T}.ShouldProcessAsync"/>
         public async Task<InputPolicyResult> ShouldProcessAsync(T item)
         {
             var leftResult = await _left.ShouldProcessAsync(item);

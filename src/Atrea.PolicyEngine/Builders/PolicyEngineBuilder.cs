@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using Atrea.PolicyEngine.Internal.Engines;
+﻿using Atrea.PolicyEngine.Internal.Engines;
 using Atrea.PolicyEngine.Internal.PolicyRunners.Input;
 using Atrea.PolicyEngine.Internal.PolicyRunners.Output;
 using Atrea.PolicyEngine.Internal.ProcessorRunners;
 using Atrea.PolicyEngine.Policies.Input;
 using Atrea.PolicyEngine.Policies.Output;
 using Atrea.PolicyEngine.Processors;
+using System.Collections.Generic;
 
 namespace Atrea.PolicyEngine.Builders
 {
@@ -21,6 +21,14 @@ namespace Atrea.PolicyEngine.Builders
         private IEnumerable<IInputPolicy<T>> _inputPolicies = new List<IInputPolicy<T>>();
         private IEnumerable<IOutputPolicy<T>> _outputPolicies = new List<IOutputPolicy<T>>();
         private IEnumerable<IProcessor<T>> _processors = new List<IProcessor<T>>();
+
+        /// <summary>
+        ///     Begin configuring a <see cref="IPolicyEngine{T}" />.
+        /// </summary>
+        /// <returns>
+        ///     <see cref="IInputPolicyEngineBuilder{T}" />
+        /// </returns>
+        public static IInputPolicyEngineBuilder<T> Configure() => new PolicyEngineBuilder<T>();
 
         public IProcessorPolicyEngineBuilder<T> WithInputPolicies(params IInputPolicy<T>[] inputPolicies)
         {
@@ -59,13 +67,5 @@ namespace Atrea.PolicyEngine.Builders
         }
 
         public IOutputPolicyEngineBuilder<T> WithoutProcessors() => this;
-
-        /// <summary>
-        ///     Begin configuring a <see cref="IPolicyEngine{T}" />.
-        /// </summary>
-        /// <returns>
-        ///     <see cref="IInputPolicyEngineBuilder{T}" />
-        /// </returns>
-        public static IInputPolicyEngineBuilder<T> Configure() => new PolicyEngineBuilder<T>();
     }
 }

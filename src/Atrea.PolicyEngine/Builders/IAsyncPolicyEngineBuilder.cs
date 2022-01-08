@@ -4,6 +4,15 @@ using Atrea.PolicyEngine.Processors;
 
 namespace Atrea.PolicyEngine.Builders
 {
+    public interface IAsyncPolicyEngineBuilder<in T>
+    {
+        /// <summary>
+        ///     Builds the configured <see cref="IAsyncPolicyEngine{T}" />.
+        /// </summary>
+        /// <returns>A configured <see cref="IAsyncPolicyEngine{T}" />.</returns>
+        IAsyncPolicyEngine<T> Build();
+    }
+
     public interface IInputPolicyAsyncPolicyEngineBuilder<T>
     {
         /// <summary>
@@ -85,7 +94,6 @@ namespace Atrea.PolicyEngine.Builders
         );
     }
 
-
     public interface IWithSynchronousAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder<T> :
         IProcessorAsyncPolicyEngineBuilder<T>
     {
@@ -116,7 +124,6 @@ namespace Atrea.PolicyEngine.Builders
         /// </returns>
         IWithSynchronousAndAsyncInputPoliciesProcessorAsyncPolicyEngineBuilder<T> WithInputPolicies(
             params IInputPolicy<T>[] inputPolicies);
-
 
         /// <summary>
         ///     Configure the <see cref="IAsyncPolicyEngine{T}" /> with the given parallel input policies.
@@ -544,14 +551,5 @@ namespace Atrea.PolicyEngine.Builders
         ///     <see cref="IWithAsyncOutputPoliciesAndParallelOutputPoliciesAsyncPolicyEngineBuilder{T}" />
         /// </returns>
         IAsyncPolicyEngineBuilder<T> WithOutputPolicies(params IOutputPolicy<T>[] outputPolicies);
-    }
-
-    public interface IAsyncPolicyEngineBuilder<in T>
-    {
-        /// <summary>
-        ///     Builds the configured <see cref="IAsyncPolicyEngine{T}" />.
-        /// </summary>
-        /// <returns>A configured <see cref="IAsyncPolicyEngine{T}" />.</returns>
-        IAsyncPolicyEngine<T> Build();
     }
 }

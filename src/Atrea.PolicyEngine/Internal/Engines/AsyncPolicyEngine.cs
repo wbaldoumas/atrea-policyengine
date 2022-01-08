@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Atrea.PolicyEngine.Internal.PolicyRunners.Input;
+﻿using Atrea.PolicyEngine.Internal.PolicyRunners.Input;
 using Atrea.PolicyEngine.Internal.PolicyRunners.Output;
 using Atrea.PolicyEngine.Internal.ProcessorRunners;
 using Atrea.PolicyEngine.Policies.Input;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Atrea.PolicyEngine.Internal.Engines
 {

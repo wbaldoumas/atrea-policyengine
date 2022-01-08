@@ -21,6 +21,7 @@
             _right = right;
         }
 
+        /// <inheritdoc cref="IInputPolicy{T}.ShouldProcess"/>
         public InputPolicyResult ShouldProcess(T item)
         {
             var leftResult = _left.ShouldProcess(item);

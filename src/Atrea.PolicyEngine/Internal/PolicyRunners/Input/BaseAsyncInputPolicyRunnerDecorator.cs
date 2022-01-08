@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Atrea.PolicyEngine.Policies.Input;
+using System;
 using System.Threading.Tasks;
-using Atrea.PolicyEngine.Policies.Input;
 
 namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
 {
@@ -15,6 +15,8 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
         {
             var result = InputPolicyResult.Continue;
 
+            // ReSharper disable once ConditionIsAlwaysTrueOrFalse
+            // This may be null if nullable reference types aren't enabled in dependent project.
             if (!(_asyncInputPolicyRunner is null))
             {
                 result = await _asyncInputPolicyRunner.ShouldProcessAsync(item);
@@ -25,8 +27,10 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
                 InputPolicyResult.Accept => InputPolicyResult.Accept,
                 InputPolicyResult.Reject => InputPolicyResult.Reject,
                 InputPolicyResult.Continue => await EvaluateInputPolicies(item),
-                _ => throw new ArgumentOutOfRangeException(nameof(result),
-                    $"Input policies generated invalid {nameof(InputPolicyResult)}.")
+                _ => throw new ArgumentOutOfRangeException(
+                    nameof(result),
+                    $"Input policies generated invalid {nameof(InputPolicyResult)}."
+                )
             };
         }
 

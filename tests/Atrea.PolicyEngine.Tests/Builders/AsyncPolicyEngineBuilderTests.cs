@@ -19999,7 +19999,6 @@ namespace Atrea.PolicyEngine.Tests.Builders
             });
         }
 
-
         [Test]
         public async Task AsyncPolicyEngine_Runs_Without_Configuring_Any_Components()
         {

@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Atrea.PolicyEngine.Processors;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Atrea.PolicyEngine.Processors;
 
 namespace Atrea.PolicyEngine.Internal.ProcessorRunners
 {
@@ -11,7 +11,8 @@ namespace Atrea.PolicyEngine.Internal.ProcessorRunners
 
         internal ParallelProcessorRunnerDecorator(
             IAsyncProcessorRunner<T> asyncProcessorRunner,
-            IEnumerable<IAsyncProcessor<T>> parallelProcessors) : base(
+            IEnumerable<IAsyncProcessor<T>> parallelProcessors)
+            : base(
             asyncProcessorRunner) =>
             _parallelProcessors = parallelProcessors;
 

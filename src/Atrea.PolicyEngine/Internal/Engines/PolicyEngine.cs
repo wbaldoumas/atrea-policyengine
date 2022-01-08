@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using Atrea.PolicyEngine.Internal.PolicyRunners.Input;
+﻿using Atrea.PolicyEngine.Internal.PolicyRunners.Input;
 using Atrea.PolicyEngine.Internal.PolicyRunners.Output;
 using Atrea.PolicyEngine.Internal.ProcessorRunners;
 using Atrea.PolicyEngine.Policies.Input;
+using System.Collections.Generic;
 
 namespace Atrea.PolicyEngine.Internal.Engines
 {
@@ -13,7 +13,7 @@ namespace Atrea.PolicyEngine.Internal.Engines
         private readonly IOutputPolicyRunner<T> _outputPolicyRunner;
 
         public PolicyEngine(
-            IInputPolicyRunner<T> inputPolicyRunner, 
+            IInputPolicyRunner<T> inputPolicyRunner,
             IProcessorRunner<T> processorRunner,
             IOutputPolicyRunner<T> outputPolicyRunner)
         {
