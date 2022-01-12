@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Atrea.PolicyEngine" Version="2.2.1" />
+    <PackageReference Include="Atrea.PolicyEngine" Version="3.0.0" />
   </ItemGroup>
 
 </Project>
