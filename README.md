@@ -493,7 +493,7 @@ Distributed under the `MIT` License. See `LICENSE` for more information.
 
 ## Contact
 
-William Baldoumas - william.baldoumas@gmail.com
+William Baldoumas - wbaldoumas.github@gmail.com
 
 Project Link: [https://github.com/wbaldoumas/atrea-policyengine](https://github.com/wbaldoumas/atrea-policyengine)
 
