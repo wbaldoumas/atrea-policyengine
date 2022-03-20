@@ -13,7 +13,7 @@ jobs:
       matrix:
         dotnet: [netcoreapp3.1, net5.0, net6.0]
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Setup .NET Core 3.1
       uses: actions/setup-dotnet@v2
       with:
@@ -47,7 +47,7 @@ jobs:
       matrix:
         dotnet: [netcoreapp3.1] # only upload one coverage report
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Download Code Coverage Results
       uses: actions/download-artifact@v2
       with:
