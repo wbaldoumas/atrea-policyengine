@@ -4,59 +4,58 @@ using NSubstitute;
 using NUnit.Framework;
 using System.Collections.Generic;
 
-namespace Atrea.PolicyEngine.Tests.Policies.Input
-{
-    [TestFixture]
-    public class OrTests
-    {
-        [SetUp]
-        public void SetUp()
-        {
-            _mockLeftInputPolicy = Substitute.For<IInputPolicy<int>>();
-            _mockRightInputPolicy = Substitute.For<IInputPolicy<int>>();
-        }
+namespace Atrea.PolicyEngine.Tests.Policies.Input;
 
-        private const int Item = 1;
+[TestFixture]
+public class OrTests
+{
+    [SetUp]
+    public void SetUp()
+    {
+        _mockLeftInputPolicy = Substitute.For<IInputPolicy<int>>();
+        _mockRightInputPolicy = Substitute.For<IInputPolicy<int>>();
+    }
+
+    private const int Item = 1;
 
 #nullable disable
-        private IInputPolicy<int> _mockLeftInputPolicy;
-        private IInputPolicy<int> _mockRightInputPolicy;
+    private IInputPolicy<int> _mockLeftInputPolicy;
+    private IInputPolicy<int> _mockRightInputPolicy;
 #nullable restore
 
-        private static readonly IEnumerable<TestCaseData> TestCases = CompoundBooleanInputPolicyTestCases.OrTestCases;
+    private static readonly IEnumerable<TestCaseData> TestCases = CompoundBooleanInputPolicyTestCases.OrTestCases;
 
-        [Test]
-        [TestCaseSource(nameof(TestCases))]
-        public void Extension_Constructed_Or_Returns_Expected_Result_Based_On_Component_Return_Values(
-            InputPolicyResult leftReturn,
-            InputPolicyResult rightReturn,
-            InputPolicyResult expectedResult)
-        {
-            _mockLeftInputPolicy.ShouldProcess(Item).Returns(leftReturn);
-            _mockRightInputPolicy.ShouldProcess(Item).Returns(rightReturn);
+    [Test]
+    [TestCaseSource(nameof(TestCases))]
+    public void Extension_Constructed_Or_Returns_Expected_Result_Based_On_Component_Return_Values(
+        InputPolicyResult leftReturn,
+        InputPolicyResult rightReturn,
+        InputPolicyResult expectedResult)
+    {
+        _mockLeftInputPolicy.ShouldProcess(Item).Returns(leftReturn);
+        _mockRightInputPolicy.ShouldProcess(Item).Returns(rightReturn);
 
-            var or = _mockLeftInputPolicy.Or(_mockRightInputPolicy);
+        var or = _mockLeftInputPolicy.Or(_mockRightInputPolicy);
 
-            var result = or.ShouldProcess(Item);
+        var result = or.ShouldProcess(Item);
 
-            result.Should().Be(expectedResult);
-        }
+        result.Should().Be(expectedResult);
+    }
 
-        [Test]
-        [TestCaseSource(nameof(TestCases))]
-        public void Or_Returns_Expected_Result_Based_On_Component_Return_Values(
-            InputPolicyResult leftReturn,
-            InputPolicyResult rightReturn,
-            InputPolicyResult expectedResult)
-        {
-            _mockLeftInputPolicy.ShouldProcess(Item).Returns(leftReturn);
-            _mockRightInputPolicy.ShouldProcess(Item).Returns(rightReturn);
+    [Test]
+    [TestCaseSource(nameof(TestCases))]
+    public void Or_Returns_Expected_Result_Based_On_Component_Return_Values(
+        InputPolicyResult leftReturn,
+        InputPolicyResult rightReturn,
+        InputPolicyResult expectedResult)
+    {
+        _mockLeftInputPolicy.ShouldProcess(Item).Returns(leftReturn);
+        _mockRightInputPolicy.ShouldProcess(Item).Returns(rightReturn);
 
-            var or = new Or<int>(_mockLeftInputPolicy, _mockRightInputPolicy);
+        var or = new Or<int>(_mockLeftInputPolicy, _mockRightInputPolicy);
 
-            var result = or.ShouldProcess(Item);
+        var result = or.ShouldProcess(Item);
 
-            result.Should().Be(expectedResult);
-        }
+        result.Should().Be(expectedResult);
     }
 }
