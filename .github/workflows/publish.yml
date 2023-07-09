@@ -20,7 +20,7 @@ jobs:
     - name: Build
       run: cd src && dotnet build --configuration Release --no-restore
     - name: Publish NuGet
-      uses: alirezanet/publish-nuget@v3.0.4
+      uses: alirezanet/publish-nuget@v3.1.0
       with:
         PROJECT_FILE_PATH: src/Atrea.PolicyEngine/Atrea.PolicyEngine.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
