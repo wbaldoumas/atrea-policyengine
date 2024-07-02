@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFrameworks>net7.0;net8.0</TargetFrameworks>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>4.0.0</Version>
+		<Version>4.0.1</Version>
 		<Authors>William Baldoumas</Authors>
 		<Company>William Baldoumas</Company>
 		<Description>A modular, composable policy engine for easy implementation of complex conditional processing pipelines.</Description>

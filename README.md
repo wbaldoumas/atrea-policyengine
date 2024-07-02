@@ -42,19 +42,22 @@
 <details>
   <summary>Table of Contents</summary>
 
-* [Installation](#installation)
-* [Documentation](#documentation)
-  * [Basic Usage](#basic-usage)
-  * [Input Policies](#input-policies)
-  * [Processors](#processors)
-  * [Output Policies](#output-policies)
-  * [Asynchronous and Parallel Processing](#asynchronous-and-parallel-processing)
-  * [Nesting Policy Engines](#nesting-policy-engines)
-  * [Code Examples](#code-examples)
-* [Contributing](#contributing)
-* [License](#license)
-* [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
+- [Installation](#installation)
+- [Documentation](#documentation)
+  - [Basic Usage](#basic-usage)
+  - [Input Policies](#input-policies)
+    - [Implementing Input Policies](#implementing-input-policies)
+    - [Async Input Policies](#async-input-policies)
+    - [Compound Input Policies](#compound-input-policies)
+  - [Processors](#processors)
+  - [Output Policies](#output-policies)
+  - [Asynchronous and Parallel Processing](#asynchronous-and-parallel-processing)
+  - [Nesting Policy Engines](#nesting-policy-engines)
+  - [Code Examples](#code-examples)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
 
 </details>
 
@@ -64,12 +67,12 @@
 
 Package manager:
 ```
-Install-Package Atrea.PolicyEngine -Version 4.0.0
+Install-Package Atrea.PolicyEngine -Version 4.0.1
 ```
 
 .NET CLI:
 ```
-dotnet add package Atrea.PolicyEngine --version 4.0.0
+dotnet add package Atrea.PolicyEngine --version 4.0.1
 ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
