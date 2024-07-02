@@ -3,43 +3,42 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input
+namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input;
+
+internal class SynchronousInputPolicyRunnerDecorator<T> : BaseAsyncInputPolicyRunnerDecorator<T>
 {
-    internal class SynchronousInputPolicyRunnerDecorator<T> : BaseAsyncInputPolicyRunnerDecorator<T>
+    private readonly IEnumerable<IInputPolicy<T>> _inputPolicies;
+
+    public SynchronousInputPolicyRunnerDecorator(
+        IAsyncInputPolicyRunner<T> asyncInputPolicyRunner,
+        IEnumerable<IInputPolicy<T>> inputPolicies)
+        : base(asyncInputPolicyRunner) =>
+        _inputPolicies = inputPolicies;
+
+    protected override Task<InputPolicyResult> EvaluateInputPoliciesAsync(T item)
     {
-        private readonly IEnumerable<IInputPolicy<T>> _inputPolicies;
-
-        public SynchronousInputPolicyRunnerDecorator(
-            IAsyncInputPolicyRunner<T> asyncInputPolicyRunner,
-            IEnumerable<IInputPolicy<T>> inputPolicies)
-            : base(asyncInputPolicyRunner) =>
-            _inputPolicies = inputPolicies;
-
-        protected override Task<InputPolicyResult> EvaluateInputPoliciesAsync(T item)
+        var task = new Task<InputPolicyResult>(() =>
         {
-            var task = new Task<InputPolicyResult>(() =>
+            foreach (var inputPolicy in _inputPolicies)
             {
-                foreach (var inputPolicy in _inputPolicies)
+                switch (inputPolicy.ShouldProcess(item))
                 {
-                    switch (inputPolicy.ShouldProcess(item))
-                    {
-                        case InputPolicyResult.Accept:
-                            return InputPolicyResult.Accept;
-                        case InputPolicyResult.Reject:
-                            return InputPolicyResult.Reject;
-                        case InputPolicyResult.Continue:
-                            continue;
-                        default:
-                            throw new ArgumentOutOfRangeException();
-                    }
+                    case InputPolicyResult.Accept:
+                        return InputPolicyResult.Accept;
+                    case InputPolicyResult.Reject:
+                        return InputPolicyResult.Reject;
+                    case InputPolicyResult.Continue:
+                        continue;
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
+            }
 
-                return InputPolicyResult.Continue;
-            });
+            return InputPolicyResult.Continue;
+        });
 
-            task.RunSynchronously(TaskScheduler.Default);
+        task.RunSynchronously(TaskScheduler.Default);
 
-            return task;
-        }
+        return task;
     }
 }

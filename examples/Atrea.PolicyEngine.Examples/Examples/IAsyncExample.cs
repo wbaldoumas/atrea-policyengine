@@ -1,9 +1,8 @@
 ﻿using System.Threading.Tasks;
 
-namespace Atrea.PolicyEngine.Examples.Examples
+namespace Atrea.PolicyEngine.Examples.Examples;
+
+public interface IAsyncExample
 {
-    public interface IAsyncExample
-    {
-        Task RunAsync();
-    }
+    Task RunAsync();
 }

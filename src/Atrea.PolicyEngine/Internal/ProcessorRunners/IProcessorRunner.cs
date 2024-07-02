@@ -1,7 +1,6 @@
-﻿namespace Atrea.PolicyEngine.Internal.ProcessorRunners
+﻿namespace Atrea.PolicyEngine.Internal.ProcessorRunners;
+
+internal interface IProcessorRunner<in T>
 {
-    internal interface IProcessorRunner<in T>
-    {
-        void Process(T item);
-    }
+    void Process(T item);
 }

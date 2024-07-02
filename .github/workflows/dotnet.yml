@@ -11,21 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dotnet: [net6.0, net7.0]
+        dotnet: [net7.0, net8.0]
     steps:
     - uses: actions/checkout@v4
-    - name: Setup .NET 6.0
+    - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 6.0.x
-    - name: Setup .NET 7.0
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 7.0.x             
+        dotnet-version: |
+          7.0.x
+          8.0.x         
     - name: Install dependencies
       run: cd src && dotnet restore
     - name: Build
       run: cd src && dotnet build --configuration Release --no-restore
+
     - name: Unit Test With Coverage Report
       run: |
         cd ./tests/Atrea.PolicyEngine.Tests/
@@ -41,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dotnet: [net6.0] # only upload one coverage report
+        dotnet: [net8.0] # only upload one coverage report
     steps:
     - uses: actions/checkout@v4
     - name: Download Code Coverage Results

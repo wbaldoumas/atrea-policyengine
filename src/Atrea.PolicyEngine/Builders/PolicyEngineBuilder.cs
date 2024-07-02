@@ -7,65 +7,64 @@ using Atrea.PolicyEngine.Policies.Output;
 using Atrea.PolicyEngine.Processors;
 using System.Collections.Generic;
 
-namespace Atrea.PolicyEngine.Builders
+namespace Atrea.PolicyEngine.Builders;
+
+/// <summary>
+///     A builder class for configuring and building an <see cref="IPolicyEngine{T}" />.
+/// </summary>
+/// <typeparam name="T">The type of the item to be processed by the <see cref="IPolicyEngine{T}" /></typeparam>
+public class PolicyEngineBuilder<T> :
+    IInputPolicyEngineBuilder<T>,
+    IProcessorPolicyEngineBuilder<T>,
+    IOutputPolicyEngineBuilder<T>
 {
+    private IEnumerable<IInputPolicy<T>> _inputPolicies = new List<IInputPolicy<T>>();
+    private IEnumerable<IOutputPolicy<T>> _outputPolicies = new List<IOutputPolicy<T>>();
+    private IEnumerable<IProcessor<T>> _processors = new List<IProcessor<T>>();
+
     /// <summary>
-    ///     A builder class for configuring and building an <see cref="IPolicyEngine{T}" />.
+    ///     Begin configuring a <see cref="IPolicyEngine{T}" />.
     /// </summary>
-    /// <typeparam name="T">The type of the item to be processed by the <see cref="IPolicyEngine{T}" /></typeparam>
-    public class PolicyEngineBuilder<T> :
-        IInputPolicyEngineBuilder<T>,
-        IProcessorPolicyEngineBuilder<T>,
-        IOutputPolicyEngineBuilder<T>
+    /// <returns>
+    ///     <see cref="IInputPolicyEngineBuilder{T}" />
+    /// </returns>
+    public static IInputPolicyEngineBuilder<T> Configure() => new PolicyEngineBuilder<T>();
+
+    public IProcessorPolicyEngineBuilder<T> WithInputPolicies(params IInputPolicy<T>[] inputPolicies)
     {
-        private IEnumerable<IInputPolicy<T>> _inputPolicies = new List<IInputPolicy<T>>();
-        private IEnumerable<IOutputPolicy<T>> _outputPolicies = new List<IOutputPolicy<T>>();
-        private IEnumerable<IProcessor<T>> _processors = new List<IProcessor<T>>();
+        _inputPolicies = inputPolicies;
 
-        /// <summary>
-        ///     Begin configuring a <see cref="IPolicyEngine{T}" />.
-        /// </summary>
-        /// <returns>
-        ///     <see cref="IInputPolicyEngineBuilder{T}" />
-        /// </returns>
-        public static IInputPolicyEngineBuilder<T> Configure() => new PolicyEngineBuilder<T>();
-
-        public IProcessorPolicyEngineBuilder<T> WithInputPolicies(params IInputPolicy<T>[] inputPolicies)
-        {
-            _inputPolicies = inputPolicies;
-
-            return this;
-        }
-
-        public IProcessorPolicyEngineBuilder<T> WithoutInputPolicies() => this;
-
-        public IPolicyEngine<T> Build()
-        {
-            var policyEngine = new PolicyEngine<T>(
-                new InputPolicyRunner<T>(_inputPolicies),
-                new ProcessorRunner<T>(_processors),
-                new OutputPolicyRunner<T>(_outputPolicies)
-            );
-
-            return policyEngine;
-        }
-
-        public IPolicyEngineBuilder<T> WithOutputPolicies(params IOutputPolicy<T>[] outputPolicies)
-        {
-            _outputPolicies = outputPolicies;
-
-            return this;
-        }
-
-        public IPolicyEngineBuilder<T> WithoutOutputPolicies() => this;
-
-        public IOutputPolicyEngineBuilder<T> WithProcessors(params IProcessor<T>[] processors)
-        {
-            _processors = processors;
-
-            return this;
-        }
-
-        public IOutputPolicyEngineBuilder<T> WithoutProcessors() => this;
+        return this;
     }
+
+    public IProcessorPolicyEngineBuilder<T> WithoutInputPolicies() => this;
+
+    public IPolicyEngine<T> Build()
+    {
+        var policyEngine = new PolicyEngine<T>(
+            new InputPolicyRunner<T>(_inputPolicies),
+            new ProcessorRunner<T>(_processors),
+            new OutputPolicyRunner<T>(_outputPolicies)
+        );
+
+        return policyEngine;
+    }
+
+    public IPolicyEngineBuilder<T> WithOutputPolicies(params IOutputPolicy<T>[] outputPolicies)
+    {
+        _outputPolicies = outputPolicies;
+
+        return this;
+    }
+
+    public IPolicyEngineBuilder<T> WithoutOutputPolicies() => this;
+
+    public IOutputPolicyEngineBuilder<T> WithProcessors(params IProcessor<T>[] processors)
+    {
+        _processors = processors;
+
+        return this;
+    }
+
+    public IOutputPolicyEngineBuilder<T> WithoutProcessors() => this;
 }

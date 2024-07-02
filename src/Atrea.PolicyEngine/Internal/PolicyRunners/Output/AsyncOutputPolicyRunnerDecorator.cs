@@ -2,24 +2,23 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output
+namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output;
+
+internal class AsyncOutputPolicyRunnerDecorator<T> : BaseAsyncOutputPolicyRunnerDecorator<T>
 {
-    internal class AsyncOutputPolicyRunnerDecorator<T> : BaseAsyncOutputPolicyRunnerDecorator<T>
+    private readonly IEnumerable<IAsyncOutputPolicy<T>> _asyncAsyncOutputPolicies;
+
+    public AsyncOutputPolicyRunnerDecorator(
+        IAsyncOutputPolicyRunner<T> asyncOutputPolicyRunner,
+        IEnumerable<IAsyncOutputPolicy<T>> asyncOutputPolicies)
+        : base(asyncOutputPolicyRunner) =>
+        _asyncAsyncOutputPolicies = asyncOutputPolicies;
+
+    protected override async Task ApplyOutputPoliciesAsync(T item)
     {
-        private readonly IEnumerable<IAsyncOutputPolicy<T>> _asyncAsyncOutputPolicies;
-
-        public AsyncOutputPolicyRunnerDecorator(
-            IAsyncOutputPolicyRunner<T> asyncOutputPolicyRunner,
-            IEnumerable<IAsyncOutputPolicy<T>> asyncOutputPolicies)
-            : base(asyncOutputPolicyRunner) =>
-            _asyncAsyncOutputPolicies = asyncOutputPolicies;
-
-        protected override async Task ApplyOutputPoliciesAsync(T item)
+        foreach (var asyncOutputPolicy in _asyncAsyncOutputPolicies)
         {
-            foreach (var asyncOutputPolicy in _asyncAsyncOutputPolicies)
-            {
-                await asyncOutputPolicy.ApplyAsync(item);
-            }
+            await asyncOutputPolicy.ApplyAsync(item);
         }
     }
 }

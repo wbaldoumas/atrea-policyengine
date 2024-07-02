@@ -1,9 +1,8 @@
 ﻿using System.Threading.Tasks;
 
-namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output
+namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output;
+
+internal interface IAsyncOutputPolicyRunner<in T>
 {
-    internal interface IAsyncOutputPolicyRunner<in T>
-    {
-        Task ApplyAsync(T item);
-    }
+    Task ApplyAsync(T item);
 }

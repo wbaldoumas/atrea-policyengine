@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output
+namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output;
+
+internal class SynchronousOutputPolicyRunnerDecorator<T> : BaseAsyncOutputPolicyRunnerDecorator<T>
 {
-    internal class SynchronousOutputPolicyRunnerDecorator<T> : BaseAsyncOutputPolicyRunnerDecorator<T>
+    private readonly IEnumerable<IOutputPolicy<T>> _outputPolicies;
+
+    public SynchronousOutputPolicyRunnerDecorator(
+        IAsyncOutputPolicyRunner<T> asyncOutputPolicyRunner,
+        IEnumerable<IOutputPolicy<T>> outputPolicies)
+        : base(asyncOutputPolicyRunner) =>
+        _outputPolicies = outputPolicies;
+
+    protected override Task ApplyOutputPoliciesAsync(T item)
     {
-        private readonly IEnumerable<IOutputPolicy<T>> _outputPolicies;
-
-        public SynchronousOutputPolicyRunnerDecorator(
-            IAsyncOutputPolicyRunner<T> asyncOutputPolicyRunner,
-            IEnumerable<IOutputPolicy<T>> outputPolicies)
-            : base(asyncOutputPolicyRunner) =>
-            _outputPolicies = outputPolicies;
-
-        protected override Task ApplyOutputPoliciesAsync(T item)
-        {
             var task = new Task(() =>
             {
                 foreach (var outputPolicy in _outputPolicies)
@@ -28,5 +28,4 @@ namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output
 
             return task;
         }
-    }
 }

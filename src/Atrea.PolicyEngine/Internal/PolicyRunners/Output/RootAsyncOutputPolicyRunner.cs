@@ -1,16 +1,15 @@
 ﻿using System.Threading.Tasks;
 
-namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output
+namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output;
+
+internal class RootAsyncOutputPolicyRunner<T> : IAsyncOutputPolicyRunner<T>
 {
-    internal class RootAsyncOutputPolicyRunner<T> : IAsyncOutputPolicyRunner<T>
+    public Task ApplyAsync(T item)
     {
-        public Task ApplyAsync(T item)
-        {
-            var task = new Task(() => { });
+        var task = new Task(() => { });
 
-            task.RunSynchronously(TaskScheduler.Default);
+        task.RunSynchronously(TaskScheduler.Default);
 
-            return task;
-        }
+        return task;
     }
 }

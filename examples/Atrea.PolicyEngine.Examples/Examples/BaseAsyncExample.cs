@@ -3,43 +3,41 @@ using Atrea.PolicyEngine.Examples.Mocks.Policies.Input.Async;
 using Atrea.PolicyEngine.Examples.Mocks.Policies.Output;
 using Atrea.PolicyEngine.Examples.Mocks.Processors;
 
-namespace Atrea.PolicyEngine.Examples.Examples
+namespace Atrea.PolicyEngine.Examples.Examples;
+
+public abstract class BaseAsyncExample : IAsyncExample
 {
-    public abstract class BaseAsyncExample : IAsyncExample
-    {
-        public abstract Task RunAsync();
+    public abstract Task RunAsync();
 
-        #region input policies
+    #region input policies
 
-        protected static readonly NotYetTranslated NotYetTranslated = new NotYetTranslated();
-        protected static readonly FromUkEnglish FromUkEnglish = new FromUkEnglish();
-        protected static readonly FromUsEnglish FromUsEnglish = new FromUsEnglish();
-        protected static readonly FromCanadianFrench FromCanadianFrench = new FromCanadianFrench();
-        protected static readonly ToUkEnglish ToUkEnglish = new ToUkEnglish();
-        protected static readonly ToUsEnglish ToUsEnglish = new ToUsEnglish();
-        protected static readonly ToCanadianFrench ToCanadianFrench = new ToCanadianFrench();
-        protected static readonly ContainsNumericText ContainsNumericText = new ContainsNumericText();
+    protected static readonly NotYetTranslated NotYetTranslated = new();
+    protected static readonly FromUkEnglish FromUkEnglish = new();
+    protected static readonly FromUsEnglish FromUsEnglish = new();
+    protected static readonly FromCanadianFrench FromCanadianFrench = new();
+    protected static readonly ToUkEnglish ToUkEnglish = new();
+    protected static readonly ToUsEnglish ToUsEnglish = new();
+    protected static readonly ToCanadianFrench ToCanadianFrench = new();
+    protected static readonly ContainsNumericText ContainsNumericText = new();
 
-        #endregion
+    #endregion
 
-        #region processors
+    #region processors
 
-        protected static readonly GoogleTranslator GoogleTranslator = new GoogleTranslator();
-        protected static readonly MicrosoftTranslator MicrosoftTranslator = new MicrosoftTranslator();
-        protected static readonly CacheTranslator CacheTranslator = new CacheTranslator();
-        protected static readonly SingleWordTranslator SingleWordTranslator = new SingleWordTranslator();
-        protected static readonly DictionaryTranslator DictionaryTranslator = new DictionaryTranslator();
+    protected static readonly GoogleTranslator GoogleTranslator = new();
+    protected static readonly MicrosoftTranslator MicrosoftTranslator = new();
+    protected static readonly CacheTranslator CacheTranslator = new();
+    protected static readonly SingleWordTranslator SingleWordTranslator = new();
+    protected static readonly DictionaryTranslator DictionaryTranslator = new();
 
-        #endregion
+    #endregion
 
-        #region output policies
+    #region output policies
 
-        protected static readonly PublishTranslation PublishTranslation = new PublishTranslation();
-        protected static readonly MarkItemTranslated MarkItemTranslated = new MarkItemTranslated();
+    protected static readonly PublishTranslation PublishTranslation = new();
+    protected static readonly MarkItemTranslated MarkItemTranslated = new();
 
-        protected static readonly SendTranslationSuccessEmail SendTranslationSuccessEmail =
-            new SendTranslationSuccessEmail();
+    protected static readonly SendTranslationSuccessEmail SendTranslationSuccessEmail = new();
 
-        #endregion
-    }
+    #endregion
 }
