@@ -52,7 +52,7 @@ public class AsyncPolicyEngineTests
     public async Task Exception_Thrown_When_Invalid_InputPolicyResult_Is_Returned_A()
     {
         // arrange
-        Assert.IsFalse(Enum.IsDefined(typeof(InputPolicyResult), int.MaxValue));
+        Assert.That(Enum.IsDefined(typeof(InputPolicyResult), int.MaxValue), Is.False);
         const InputPolicyResult badInputPolicyResult = (InputPolicyResult)int.MaxValue;
 
         _mockInputPolicyA.ShouldProcess(Arg.Any<int>()).Returns(InputPolicyResult.Continue);
@@ -106,7 +106,7 @@ public class AsyncPolicyEngineTests
     public async Task Exception_Thrown_When_Invalid_InputPolicyResult_Is_Returned_B()
     {
         // arrange
-        Assert.IsFalse(Enum.IsDefined(typeof(InputPolicyResult), int.MaxValue));
+        Assert.That(Enum.IsDefined(typeof(InputPolicyResult), int.MaxValue), Is.False);
         const InputPolicyResult badInputPolicyResult = (InputPolicyResult)int.MaxValue;
 
         _mockInputPolicyA.ShouldProcess(Arg.Any<int>()).Returns(badInputPolicyResult);
