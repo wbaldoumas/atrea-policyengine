@@ -34,7 +34,7 @@ public class PolicyEngineTests
     [Test]
     public void Exception_Thrown_When_Invalid_InputPolicyResult_Is_Returned()
     {
-        Assert.IsFalse(Enum.IsDefined(typeof(InputPolicyResult), int.MaxValue));
+        Assert.That(Enum.IsDefined(typeof(InputPolicyResult), int.MaxValue), Is.False);
         const InputPolicyResult badInputPolicyResult = (InputPolicyResult)int.MaxValue;
 
         _mockInputPolicyA.ShouldProcess(Item).Returns(InputPolicyResult.Continue);
