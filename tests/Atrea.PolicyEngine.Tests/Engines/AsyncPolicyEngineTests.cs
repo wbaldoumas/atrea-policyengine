@@ -77,7 +77,7 @@ public class AsyncPolicyEngineTests
             .Build();
 
         // act
-        Func<Task> act = async () => await engine.ProcessAsync(Item);
+        var act = async () => await engine.ProcessAsync(Item);
 
         await act.Should().ThrowAsync<ArgumentOutOfRangeException>();
 
@@ -131,7 +131,7 @@ public class AsyncPolicyEngineTests
             .Build();
 
         // act
-        Func<Task> act = async () => await engine.ProcessAsync(Item);
+        var act = async () => await engine.ProcessAsync(Item);
 
         await act.Should().ThrowAsync<ArgumentOutOfRangeException>();
 

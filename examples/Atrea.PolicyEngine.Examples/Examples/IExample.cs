@@ -1,7 +1,6 @@
-﻿namespace Atrea.PolicyEngine.Examples.Examples
+﻿namespace Atrea.PolicyEngine.Examples.Examples;
+
+public interface IExample
 {
-    public interface IExample
-    {
-        void Run();
-    }
+    void Run();
 }

@@ -1,9 +1,8 @@
 ﻿using System.Threading.Tasks;
 
-namespace Atrea.PolicyEngine.Examples
+namespace Atrea.PolicyEngine.Examples;
+
+internal class Program
 {
-    internal class Program
-    {
-        private static async Task Main() => await ExampleRunner.RunAsync();
-    }
+    private static async Task Main() => await ExampleRunner.RunAsync();
 }

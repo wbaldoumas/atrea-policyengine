@@ -1,25 +1,24 @@
-﻿namespace Atrea.PolicyEngine.Policies.Input
+﻿namespace Atrea.PolicyEngine.Policies.Input;
+
+/// <summary>
+///     A result of an <see cref="IInputPolicy{T}" />, to be used by the <see cref="IPolicyEngine{T}" />
+///     and <see cref="IAsyncPolicyEngine{T}" />.
+/// </summary>
+public enum InputPolicyResult
 {
     /// <summary>
-    ///     A result of an <see cref="IInputPolicy{T}" />, to be used by the <see cref="IPolicyEngine{T}" />
-    ///     and <see cref="IAsyncPolicyEngine{T}" />.
+    ///     Accept the item as input and skip remaining input policies.
     /// </summary>
-    public enum InputPolicyResult
-    {
-        /// <summary>
-        ///     Accept the item as input and skip remaining input policies.
-        /// </summary>
-        Accept,
+    Accept,
 
-        /// <summary>
-        ///     Reject the item as input - skip remaining input policies, processors, and output policies.
-        /// </summary>
-        Reject,
+    /// <summary>
+    ///     Reject the item as input - skip remaining input policies, processors, and output policies.
+    /// </summary>
+    Reject,
 
-        /// <summary>
-        ///     Accept the item for this given <see cref="IInputPolicy{T}" /> and continue evaluating remaining
-        ///     input policies, or begin processing if this is the result of the last input policy that has been run.
-        /// </summary>
-        Continue
-    }
+    /// <summary>
+    ///     Accept the item for this given <see cref="IInputPolicy{T}" /> and continue evaluating remaining
+    ///     input policies, or begin processing if this is the result of the last input policy that has been run.
+    /// </summary>
+    Continue
 }

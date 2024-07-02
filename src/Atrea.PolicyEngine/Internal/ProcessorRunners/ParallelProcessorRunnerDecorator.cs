@@ -3,24 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Atrea.PolicyEngine.Internal.ProcessorRunners
+namespace Atrea.PolicyEngine.Internal.ProcessorRunners;
+
+internal class ParallelProcessorRunnerDecorator<T> : BaseProcessorRunnerDecorator<T>
 {
-    internal class ParallelProcessorRunnerDecorator<T> : BaseProcessorRunnerDecorator<T>
-    {
-        private readonly IEnumerable<IAsyncProcessor<T>> _parallelProcessors;
+    private readonly IEnumerable<IAsyncProcessor<T>> _parallelProcessors;
 
-        internal ParallelProcessorRunnerDecorator(
-            IAsyncProcessorRunner<T> asyncProcessorRunner,
-            IEnumerable<IAsyncProcessor<T>> parallelProcessors)
-            : base(
+    internal ParallelProcessorRunnerDecorator(
+        IAsyncProcessorRunner<T> asyncProcessorRunner,
+        IEnumerable<IAsyncProcessor<T>> parallelProcessors)
+        : base(
             asyncProcessorRunner) =>
-            _parallelProcessors = parallelProcessors;
+        _parallelProcessors = parallelProcessors;
 
-        protected override async Task RunProcessorsAsync(T item)
-        {
-            var tasks = _parallelProcessors.Select(processor => processor.ProcessAsync(item));
+    protected override async Task RunProcessorsAsync(T item)
+    {
+        var tasks = _parallelProcessors.Select(processor => processor.ProcessAsync(item));
 
-            await Task.WhenAll(tasks);
-        }
+        await Task.WhenAll(tasks);
     }
 }
