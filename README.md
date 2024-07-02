@@ -1,8 +1,7 @@
 <div id="top"></div>
 
-[![Build][github-workflow-shield]][github-workflow-url]
+[![Build][github-checks-shield]][github-checks-url]
 [![Coverage][coverage-shield]][coverage-url]
-[![Alerts][lgtm-alerts-shield]][lgtm-alerts-url]
 
 [![Version][nuget-version-shield]][nuget-url]
 [![Downloads][nuget-downloads-shield]][nuget-url]
@@ -65,12 +64,12 @@
 
 Package manager:
 ```
-Install-Package Atrea.PolicyEngine -Version 2.2.0
+Install-Package Atrea.PolicyEngine -Version 4.0.0
 ```
 
 .NET CLI:
 ```
-dotnet add package Atrea.PolicyEngine --version 2.2.0
+dotnet add package Atrea.PolicyEngine --version 4.0.0
 ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -524,12 +523,10 @@ This template was adapted from
 [license-url]: https://github.com/wbaldoumas/atrea-policyengine/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/williambaldoumas
-[github-workflow-shield]: https://img.shields.io/github/workflow/status/wbaldoumas/atrea-policyengine/.NET%20Build%20&%20Test?style=for-the-badge
-[github-workflow-url]: https://github.com/wbaldoumas/atrea-policyengine/actions/workflows/dotnet.yml
+[github-checks-shield]: https://img.shields.io/github/actions/workflow/status/wbaldoumas/atrea-policyengine/dotnet.yml?style=for-the-badge
+[github-checks-url]: https://github.com/wbaldoumas/atrea-policyengine/actions
 [coverage-shield]: https://img.shields.io/coveralls/github/wbaldoumas/atrea-policyengine?style=for-the-badge
 [coverage-url]: https://coveralls.io/github/wbaldoumas/atrea-policyengine?branch=main
-[lgtm-alerts-shield]: https://img.shields.io/lgtm/alerts/g/wbaldoumas/atrea-policyengine.svg?logo=lgtm&logoWidth=18&style=for-the-badge
-[lgtm-alerts-url]: https://lgtm.com/projects/g/wbaldoumas/atrea-policyengine
 [nuget-version-shield]: https://img.shields.io/nuget/v/atrea.policyengine?style=for-the-badge
 [nuget-downloads-shield]: https://img.shields.io/nuget/dt/atrea.policyengine?style=for-the-badge
 [nuget-url]: https://www.nuget.org/packages/atrea.policyengine/
