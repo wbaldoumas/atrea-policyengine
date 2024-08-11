@@ -275,7 +275,7 @@ If some input policies are more complex and have dependencies that perform `asyn
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<a name="compound-input-policies/>
+<a name="compound-input-policies"/>
 
 #### Compound Input Policies
 
