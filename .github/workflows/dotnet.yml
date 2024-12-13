@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dotnet: [net7.0, net8.0]
+        dotnet: [net7.0, net8.0, net9.0]
     steps:
     - uses: actions/checkout@v4
     - name: Setup .NET
@@ -19,7 +19,8 @@ jobs:
       with:
         dotnet-version: |
           7.0.x
-          8.0.x         
+          8.0.x
+          9.0.x
     - name: Install dependencies
       run: cd src && dotnet restore
     - name: Build
@@ -40,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dotnet: [net8.0] # only upload one coverage report
+        dotnet: [net9.0] # only upload one coverage report
     steps:
     - uses: actions/checkout@v4
     - name: Download Code Coverage Results
