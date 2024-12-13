@@ -13,7 +13,7 @@ internal abstract class BaseAsyncOutputPolicyRunnerDecorator<T> : IAsyncOutputPo
     {
         // ReSharper disable once ConditionIsAlwaysTrueOrFalse
         // This may be null if nullable reference types aren't enabled in dependent project.
-        if (!(_asyncOutputPolicyRunner is null))
+        if (_asyncOutputPolicyRunner is not null)
         {
             await _asyncOutputPolicyRunner.ApplyAsync(item);
         }

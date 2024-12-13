@@ -3,4 +3,6 @@
 internal interface IProcessorRunner<in T>
 {
     void Process(T item);
+
+    void Shuffle();
 }

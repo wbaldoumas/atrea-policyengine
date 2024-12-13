@@ -18,4 +18,9 @@ public interface IPolicyEngine<in T> : IProcessor<T>
     /// </summary>
     /// <param name="items">The items to be processed.</param>
     void Process(IEnumerable<T> items);
+
+    /// <summary>
+    ///     Shuffle the order of the processors.
+    /// </summary>
+    void Shuffle();
 }

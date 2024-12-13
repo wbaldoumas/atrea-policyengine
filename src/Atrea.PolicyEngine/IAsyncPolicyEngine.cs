@@ -28,4 +28,9 @@ public interface IAsyncPolicyEngine<in T> : IAsyncProcessor<T>
     /// <param name="items">The items to be processed.</param>
     /// <returns>A <see cref="Task"/> to await, processing the items</returns>
     Task ProcessParallelAsync(IEnumerable<T> items);
+
+    /// <summary>
+    ///     Shuffle the order of the processors.
+    /// </summary>
+    void Shuffle();
 }

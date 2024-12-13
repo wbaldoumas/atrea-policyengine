@@ -184,6 +184,8 @@ public class AsyncPolicyEngineTests
             .Build();
 
         // act
+        engine.Shuffle();
+
         await engine.ProcessAsync(Item);
 
         // assert

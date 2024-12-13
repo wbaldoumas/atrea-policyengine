@@ -17,7 +17,7 @@ internal abstract class BaseAsyncInputPolicyRunnerDecorator<T> : IAsyncInputPoli
 
         // ReSharper disable once ConditionIsAlwaysTrueOrFalse
         // This may be null if nullable reference types aren't enabled in dependent project.
-        if (!(_asyncInputPolicyRunner is null))
+        if (_asyncInputPolicyRunner is not null)
         {
             result = await _asyncInputPolicyRunner.ShouldProcessAsync(item);
         }

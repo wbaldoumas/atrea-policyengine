@@ -74,6 +74,7 @@ public class PolicyEngineTests
             .WithOutputPolicies(_mockOutputPolicy)
             .Build();
 
+        policyEngine.Shuffle();
         policyEngine.Process(Item);
 
         Received.InOrder(() =>

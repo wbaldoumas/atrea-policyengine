@@ -13,13 +13,15 @@ internal abstract class BaseProcessorRunnerDecorator<T> : IAsyncProcessorRunner<
     {
         // ReSharper disable once ConditionIsAlwaysTrueOrFalse
         // This may be null if nullable reference types aren't enabled in dependent project.
-        if (!(_asyncProcessorRunner is null))
+        if (_asyncProcessorRunner is not null)
         {
             await _asyncProcessorRunner.ProcessAsync(item);
         }
 
         await RunProcessorsAsync(item);
     }
+
+    public void Shuffle() => _asyncProcessorRunner.Shuffle();
 
     protected abstract Task RunProcessorsAsync(T item);
 }
