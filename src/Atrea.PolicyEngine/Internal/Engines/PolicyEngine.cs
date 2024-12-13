@@ -40,4 +40,6 @@ internal class PolicyEngine<T> : IPolicyEngine<T>
             Process(item);
         }
     }
+
+    public void Shuffle() => _processorRunner.Shuffle();
 }

@@ -49,4 +49,6 @@ internal class AsyncPolicyEngine<T> : IAsyncPolicyEngine<T>
 
         await Task.WhenAll(tasks);
     }
+
+    public void Shuffle() => _processorRunner.Shuffle();
 }
