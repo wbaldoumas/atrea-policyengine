@@ -2055,6 +2055,23 @@ references:
   fullName.vb: Atrea.PolicyEngine.IAsyncPolicyEngine(Of T).ProcessParallelAsync
   nameWithType: IAsyncPolicyEngine<T>.ProcessParallelAsync
   nameWithType.vb: IAsyncPolicyEngine(Of T).ProcessParallelAsync
+- uid: Atrea.PolicyEngine.IAsyncPolicyEngine`1.Shuffle
+  name: Shuffle()
+  href: api/Atrea.PolicyEngine.IAsyncPolicyEngine-1.html#Atrea_PolicyEngine_IAsyncPolicyEngine_1_Shuffle
+  commentId: M:Atrea.PolicyEngine.IAsyncPolicyEngine`1.Shuffle
+  fullName: Atrea.PolicyEngine.IAsyncPolicyEngine<T>.Shuffle()
+  fullName.vb: Atrea.PolicyEngine.IAsyncPolicyEngine(Of T).Shuffle()
+  nameWithType: IAsyncPolicyEngine<T>.Shuffle()
+  nameWithType.vb: IAsyncPolicyEngine(Of T).Shuffle()
+- uid: Atrea.PolicyEngine.IAsyncPolicyEngine`1.Shuffle*
+  name: Shuffle
+  href: api/Atrea.PolicyEngine.IAsyncPolicyEngine-1.html#Atrea_PolicyEngine_IAsyncPolicyEngine_1_Shuffle_
+  commentId: Overload:Atrea.PolicyEngine.IAsyncPolicyEngine`1.Shuffle
+  isSpec: "True"
+  fullName: Atrea.PolicyEngine.IAsyncPolicyEngine<T>.Shuffle
+  fullName.vb: Atrea.PolicyEngine.IAsyncPolicyEngine(Of T).Shuffle
+  nameWithType: IAsyncPolicyEngine<T>.Shuffle
+  nameWithType.vb: IAsyncPolicyEngine(Of T).Shuffle
 - uid: Atrea.PolicyEngine.IPolicyEngine`1
   name: IPolicyEngine<T>
   href: api/Atrea.PolicyEngine.IPolicyEngine-1.html
@@ -2082,6 +2099,23 @@ references:
   fullName.vb: Atrea.PolicyEngine.IPolicyEngine(Of T).Process
   nameWithType: IPolicyEngine<T>.Process
   nameWithType.vb: IPolicyEngine(Of T).Process
+- uid: Atrea.PolicyEngine.IPolicyEngine`1.Shuffle
+  name: Shuffle()
+  href: api/Atrea.PolicyEngine.IPolicyEngine-1.html#Atrea_PolicyEngine_IPolicyEngine_1_Shuffle
+  commentId: M:Atrea.PolicyEngine.IPolicyEngine`1.Shuffle
+  fullName: Atrea.PolicyEngine.IPolicyEngine<T>.Shuffle()
+  fullName.vb: Atrea.PolicyEngine.IPolicyEngine(Of T).Shuffle()
+  nameWithType: IPolicyEngine<T>.Shuffle()
+  nameWithType.vb: IPolicyEngine(Of T).Shuffle()
+- uid: Atrea.PolicyEngine.IPolicyEngine`1.Shuffle*
+  name: Shuffle
+  href: api/Atrea.PolicyEngine.IPolicyEngine-1.html#Atrea_PolicyEngine_IPolicyEngine_1_Shuffle_
+  commentId: Overload:Atrea.PolicyEngine.IPolicyEngine`1.Shuffle
+  isSpec: "True"
+  fullName: Atrea.PolicyEngine.IPolicyEngine<T>.Shuffle
+  fullName.vb: Atrea.PolicyEngine.IPolicyEngine(Of T).Shuffle
+  nameWithType: IPolicyEngine<T>.Shuffle
+  nameWithType.vb: IPolicyEngine(Of T).Shuffle
 - uid: Atrea.PolicyEngine.Policies.Input
   name: Atrea.PolicyEngine.Policies.Input
   href: api/Atrea.PolicyEngine.Policies.Input.html
