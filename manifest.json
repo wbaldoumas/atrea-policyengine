@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Atrea.PolicyEngine.Builders.IPolicyEngineBuilder-1.html",
-          "hash": "5Gx3K5ADmPvHpqcmsfHB8Q=="
+          "hash": "ecL3GK13KhNSiFYgCDTDAw=="
         }
       },
       "is_incremental": false,
@@ -362,6 +362,42 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Containers.IProcessorContainer-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Containers.IProcessorContainer-1.html",
+          "hash": "MUoHKznnqdX1zXpBn8LUSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Containers.ISyncProcessorContainer-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Containers.ISyncProcessorContainer-1.html",
+          "hash": "R2oJD39GF4SuZOfbc+x5tw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.Containers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Atrea.PolicyEngine.Containers.html",
+          "hash": "2eAaImTfXDMk9s4JWu9bpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "../site/yml/api/Atrea.PolicyEngine.IAsyncPolicyEngine-1.yml",
       "output": {
         ".html": {
@@ -378,7 +414,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Atrea.PolicyEngine.IPolicyEngine-1.html",
-          "hash": "9piAHbmjgWZOAZNkT04RyQ=="
+          "hash": "hCNSK16rnzcRNLudrZUFaA=="
         }
       },
       "is_incremental": false,
@@ -630,7 +666,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "0KCz4B0iqhgfEcTwVmaSBg=="
+          "hash": "bxlikJ6d5Kk3GySLf1I4tg=="
         }
       },
       "is_incremental": false,
@@ -681,7 +717,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 51,
+          "total_file_count": 54,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {

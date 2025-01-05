@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface IPolicyEngine&lt;T&gt;
+    <title>Interface ISyncProcessorContainer&lt;T&gt;
    | Atrea.PolicyEngine </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface IPolicyEngine&lt;T&gt;
+    <meta name="title" content="Interface ISyncProcessorContainer&lt;T&gt;
    | Atrea.PolicyEngine ">
     <meta name="generator" content="docfx 2.56.7.0">
     
@@ -78,22 +78,16 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Atrea.PolicyEngine.IPolicyEngine`1">
+            <article class="content wrap" id="_content" data-uid="Atrea.PolicyEngine.Containers.ISyncProcessorContainer`1">
   
   
-  <h1 id="Atrea_PolicyEngine_IPolicyEngine_1" data-uid="Atrea.PolicyEngine.IPolicyEngine`1" class="text-break">Interface IPolicyEngine&lt;T&gt;
+  <h1 id="Atrea_PolicyEngine_Containers_ISyncProcessorContainer_1" data-uid="Atrea.PolicyEngine.Containers.ISyncProcessorContainer`1" class="text-break">Interface ISyncProcessorContainer&lt;T&gt;
   </h1>
-  <div class="markdown level0 summary"><p>A policy engine which will check if an item should be processed with its input policies,
-process the item using its processors, then apply any post-processing to the item using its
-output policies.
-See <a class="xref" href="Atrea.PolicyEngine.Builders.PolicyEngineBuilder-1.html">PolicyEngineBuilder&lt;T&gt;</a> for configuration of this policy engine.</p>
+  <div class="markdown level0 summary"><p>A container for synchronous processors.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="Atrea.PolicyEngine.Processors.IProcessor-1.html#Atrea_PolicyEngine_Processors_IProcessor_1_Process__0_">IProcessor&lt;T&gt;.Process(T)</a>
-    </div>
     <div>
       <a class="xref" href="Atrea.PolicyEngine.Containers.IProcessorContainer-1.html#Atrea_PolicyEngine_Containers_IProcessorContainer_1_Processors">IProcessorContainer&lt;IProcessor&lt;T&gt;&gt;.Processors</a>
     </div>
@@ -104,11 +98,11 @@ See <a class="xref" href="Atrea.PolicyEngine.Builders.PolicyEngineBuilder-1.html
       <a class="xref" href="Atrea.PolicyEngine.Containers.IProcessorContainer-1.html#Atrea_PolicyEngine_Containers_IProcessorContainer_1_Replace_IReadOnlyCollection__0__">IProcessorContainer&lt;IProcessor&lt;T&gt;&gt;.Replace(IReadOnlyCollection&lt;IProcessor&lt;T&gt;&gt;)</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Atrea.PolicyEngine.html">Atrea.PolicyEngine</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Atrea.PolicyEngine.Containers.html">Atrea.PolicyEngine.Containers</a></h6>
   <h6><strong>Assembly</strong>: Atrea.PolicyEngine.dll</h6>
-  <h5 id="Atrea_PolicyEngine_IPolicyEngine_1_syntax">Syntax</h5>
+  <h5 id="Atrea_PolicyEngine_Containers_ISyncProcessorContainer_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IPolicyEngine&lt;T&gt; : IProcessor&lt;T&gt;, ISyncProcessorContainer&lt;T&gt;, IProcessorContainer&lt;IProcessor&lt;T&gt;&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface ISyncProcessorContainer&lt;T&gt; : IProcessorContainer&lt;IProcessor&lt;T&gt;&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -121,43 +115,7 @@ See <a class="xref" href="Atrea.PolicyEngine.Builders.PolicyEngineBuilder-1.html
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>The type of the item to be processed.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_IPolicyEngine_1_Process_IEnumerable__0__.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.IPolicyEngine%601.Process(IEnumerable%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/IPolicyEngine.cs/#L21">View Source</a>
-  </span>
-  <a id="Atrea_PolicyEngine_IPolicyEngine_1_Process_" data-uid="Atrea.PolicyEngine.IPolicyEngine`1.Process*"></a>
-  <h4 id="Atrea_PolicyEngine_IPolicyEngine_1_Process_IEnumerable__0__" data-uid="Atrea.PolicyEngine.IPolicyEngine`1.Process(IEnumerable{`0})">Process(IEnumerable&lt;T&gt;)</h4>
-  <div class="markdown level1 summary"><p>Process items.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void Process(IEnumerable&lt;T&gt; items)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
-        <td><span class="parametername">items</span></td>
-        <td><p>The items to be processed.</p>
+        <td><p>The type of the items which the contained processors work with.</p>
 </td>
       </tr>
     </tbody>
@@ -170,10 +128,10 @@ See <a class="xref" href="Atrea.PolicyEngine.Builders.PolicyEngineBuilder-1.html
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_IPolicyEngine_1.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.IPolicyEngine%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/wbaldoumas/atrea-policyengine/new/main/apiSpec/new?filename=Atrea_PolicyEngine_Containers_ISyncProcessorContainer_1.md&amp;value=---%0Auid%3A%20Atrea.PolicyEngine.Containers.ISyncProcessorContainer%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/IPolicyEngine.cs/#L15" class="contribution-link">View Source</a>
+                    <a href="https://github.com/wbaldoumas/atrea-policyengine/blob/main/src/Atrea.PolicyEngine/Containers/ISyncProcessorContainer.cs/#L9" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
