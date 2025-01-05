@@ -1,0 +1,59 @@
+﻿# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [5.0.0] - 2025-01-04
+
+Happy New Year! 🎉
+
+### Added
+
+- Added the capability to get the `Processors` of an `IPolicyEngine<T>` instance
+- Added the capability to `Replace` the processors for an existing `IPolicyEngine<T>` instance
+
+### Changed
+
+- **Possible Breaking Change**: Some contravariant type parameters have been made invariant. This may require changes to your code if you were relying on contravariant type parameters.
+- Improved `IAsyncPolicyEngine<T>.Shuffle` method to more adequately shuffle its processors
+
+## [4.1.0] - 2024-12-12
+
+### Added
+
+- Added support for .NET 9.0
+- Added new `Shuffle` functionality, allowing users to shuffle processors
+
+## [4.0.0] - 2024-07-02
+
+No breaking API changes. Only the supported target frameworks have been changed with this release.
+
+### Added
+
+- Added support for .NET 8.0
+
+### Removed
+
+- Removed support for .NET 6.0
+
+## [3.0.0] - 2022-01-08
+
+### Added
+
+- Added README to package contents
+- Added missing XML doc comments
+
+### Changed
+
+#### Breaking Changes
+
+- Enabled nullable reference types
+- Appended "Async" to all methods returning an awaitable type that were missing the "Async" suffix
+
+## [2.2.1] - 2021-10-22
+
+### Changed
+
+- Updated package metadata and copyright information

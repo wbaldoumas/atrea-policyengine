@@ -4,15 +4,13 @@ namespace Atrea.PolicyEngine.Internal.ProcessorRunners;
 
 internal abstract class BaseProcessorRunnerDecorator<T> : IAsyncProcessorRunner<T>
 {
-    private readonly IAsyncProcessorRunner<T> _asyncProcessorRunner;
+    private readonly IAsyncProcessorRunner<T>? _asyncProcessorRunner;
 
-    private protected BaseProcessorRunnerDecorator(IAsyncProcessorRunner<T> asyncProcessorRunner) =>
+    private protected BaseProcessorRunnerDecorator(IAsyncProcessorRunner<T>? asyncProcessorRunner) =>
         _asyncProcessorRunner = asyncProcessorRunner;
 
     public async Task ProcessAsync(T item)
     {
-        // ReSharper disable once ConditionIsAlwaysTrueOrFalse
-        // This may be null if nullable reference types aren't enabled in dependent project.
         if (_asyncProcessorRunner is not null)
         {
             await _asyncProcessorRunner.ProcessAsync(item);
@@ -21,7 +19,13 @@ internal abstract class BaseProcessorRunnerDecorator<T> : IAsyncProcessorRunner<
         await RunProcessorsAsync(item);
     }
 
-    public void Shuffle() => _asyncProcessorRunner.Shuffle();
+    public virtual void Shuffle()
+    {
+        _asyncProcessorRunner?.Shuffle();
+        ShuffleProcessors();
+    }
 
     protected abstract Task RunProcessorsAsync(T item);
+
+    protected abstract void ShuffleProcessors();
 }

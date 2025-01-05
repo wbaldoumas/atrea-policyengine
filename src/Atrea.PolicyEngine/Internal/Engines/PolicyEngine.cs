@@ -2,11 +2,12 @@
 using Atrea.PolicyEngine.Internal.PolicyRunners.Output;
 using Atrea.PolicyEngine.Internal.ProcessorRunners;
 using Atrea.PolicyEngine.Policies.Input;
+using Atrea.PolicyEngine.Processors;
 using System.Collections.Generic;
 
 namespace Atrea.PolicyEngine.Internal.Engines;
 
-internal class PolicyEngine<T> : IPolicyEngine<T>
+internal sealed class PolicyEngine<T> : IPolicyEngine<T>
 {
     private readonly IInputPolicyRunner<T> _inputPolicyRunner;
     private readonly IProcessorRunner<T> _processorRunner;
@@ -21,6 +22,8 @@ internal class PolicyEngine<T> : IPolicyEngine<T>
         _processorRunner = processorRunner;
         _outputPolicyRunner = outputPolicyRunner;
     }
+
+    public IReadOnlyCollection<IProcessor<T>> Processors => _processorRunner.Processors;
 
     public void Process(T item)
     {
@@ -42,4 +45,6 @@ internal class PolicyEngine<T> : IPolicyEngine<T>
     }
 
     public void Shuffle() => _processorRunner.Shuffle();
+
+    public void Replace(IReadOnlyCollection<IProcessor<T>> processors) => _processorRunner.Replace(processors);
 }

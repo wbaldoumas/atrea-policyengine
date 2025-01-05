@@ -4,7 +4,7 @@ using Atrea.PolicyEngine.Processors;
 
 namespace Atrea.PolicyEngine.Builders;
 
-public interface IPolicyEngineBuilder<in T>
+public interface IPolicyEngineBuilder<T>
 {
     /// <summary>
     ///     Builds the configured <see cref="IPolicyEngine{T}" />.

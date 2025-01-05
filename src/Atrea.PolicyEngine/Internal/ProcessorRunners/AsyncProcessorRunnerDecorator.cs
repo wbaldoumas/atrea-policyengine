@@ -1,19 +1,16 @@
-﻿using Atrea.PolicyEngine.Processors;
+﻿using Atrea.PolicyEngine.Internal.Extensions;
+using Atrea.PolicyEngine.Processors;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Atrea.PolicyEngine.Internal.ProcessorRunners;
 
-internal class AsyncProcessorRunnerDecorator<T> : BaseProcessorRunnerDecorator<T>
+internal sealed class AsyncProcessorRunnerDecorator<T>(
+    IAsyncProcessorRunner<T>? asyncProcessorRunner,
+    IEnumerable<IAsyncProcessor<T>> asyncProcessors
+) : BaseProcessorRunnerDecorator<T>(asyncProcessorRunner)
 {
-    private readonly IEnumerable<IAsyncProcessor<T>> _asyncProcessors;
-
-    public AsyncProcessorRunnerDecorator(
-        IAsyncProcessorRunner<T> asyncProcessorRunner,
-        IEnumerable<IAsyncProcessor<T>> asyncProcessors)
-        : base(
-            asyncProcessorRunner) =>
-        _asyncProcessors = asyncProcessors;
+    private IEnumerable<IAsyncProcessor<T>> _asyncProcessors = asyncProcessors;
 
     protected override async Task RunProcessorsAsync(T item)
     {
@@ -22,4 +19,6 @@ internal class AsyncProcessorRunnerDecorator<T> : BaseProcessorRunnerDecorator<T
             await asyncProcessor.ProcessAsync(item);
         }
     }
+
+    protected override void ShuffleProcessors() => _asyncProcessors = _asyncProcessors.Shuffle();
 }

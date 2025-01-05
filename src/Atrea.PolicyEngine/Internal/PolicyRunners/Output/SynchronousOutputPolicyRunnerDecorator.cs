@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output;
 
-internal class SynchronousOutputPolicyRunnerDecorator<T> : BaseAsyncOutputPolicyRunnerDecorator<T>
+internal sealed class SynchronousOutputPolicyRunnerDecorator<T> : BaseAsyncOutputPolicyRunnerDecorator<T>
 {
     private readonly IEnumerable<IOutputPolicy<T>> _outputPolicies;
 

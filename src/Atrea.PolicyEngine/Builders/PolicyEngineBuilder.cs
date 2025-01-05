@@ -20,7 +20,7 @@ public class PolicyEngineBuilder<T> :
 {
     private IEnumerable<IInputPolicy<T>> _inputPolicies = new List<IInputPolicy<T>>();
     private IEnumerable<IOutputPolicy<T>> _outputPolicies = new List<IOutputPolicy<T>>();
-    private IEnumerable<IProcessor<T>> _processors = new List<IProcessor<T>>();
+    private IReadOnlyCollection<IProcessor<T>> _processors = new List<IProcessor<T>>();
 
     /// <summary>
     ///     Begin configuring a <see cref="IPolicyEngine{T}" />.

@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace Atrea.PolicyEngine.Internal.Engines;
 
-internal class AsyncPolicyEngine<T> : IAsyncPolicyEngine<T>
+internal sealed class AsyncPolicyEngine<T> : IAsyncPolicyEngine<T>
 {
     private readonly IAsyncInputPolicyRunner<T> _inputPolicyRunner;
-    private readonly IAsyncProcessorRunner<T> _processorRunner;
+    private readonly IAsyncProcessorRunner<T>? _processorRunner;
     private readonly IAsyncOutputPolicyRunner<T> _outputPolicyRunner;
 
     internal AsyncPolicyEngine(
         IAsyncInputPolicyRunner<T> inputPolicyRunner,
-        IAsyncProcessorRunner<T> processorRunner,
+        IAsyncProcessorRunner<T>? processorRunner,
         IAsyncOutputPolicyRunner<T> outputPolicyRunner)
     {
         _inputPolicyRunner = inputPolicyRunner;
@@ -31,7 +31,11 @@ internal class AsyncPolicyEngine<T> : IAsyncPolicyEngine<T>
             return;
         }
 
-        await _processorRunner.ProcessAsync(item);
+        if (_processorRunner is not null)
+        {
+            await _processorRunner.ProcessAsync(item);
+        }
+
         await _outputPolicyRunner.ApplyAsync(item);
     }
 
@@ -50,5 +54,5 @@ internal class AsyncPolicyEngine<T> : IAsyncPolicyEngine<T>
         await Task.WhenAll(tasks);
     }
 
-    public void Shuffle() => _processorRunner.Shuffle();
+    public void Shuffle() => _processorRunner?.Shuffle();
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input;
 
-internal class InputPolicyRunner<T> : IInputPolicyRunner<T>
+internal sealed class InputPolicyRunner<T> : IInputPolicyRunner<T>
 {
     private readonly IEnumerable<IInputPolicy<T>> _inputPolicies;
 

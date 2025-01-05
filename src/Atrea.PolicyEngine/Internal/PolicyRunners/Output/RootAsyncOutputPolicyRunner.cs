@@ -2,7 +2,7 @@
 
 namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output;
 
-internal class RootAsyncOutputPolicyRunner<T> : IAsyncOutputPolicyRunner<T>
+internal sealed class RootAsyncOutputPolicyRunner<T> : IAsyncOutputPolicyRunner<T>
 {
     public Task ApplyAsync(T item)
     {

@@ -1,8 +1,8 @@
-﻿namespace Atrea.PolicyEngine.Internal.ProcessorRunners;
+﻿using Atrea.PolicyEngine.Containers;
 
-internal interface IProcessorRunner<in T>
+namespace Atrea.PolicyEngine.Internal.ProcessorRunners;
+
+internal interface IProcessorRunner<T> : ISyncProcessorContainer<T>
 {
     void Process(T item);
-
-    void Shuffle();
 }
