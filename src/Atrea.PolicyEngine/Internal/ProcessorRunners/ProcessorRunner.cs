@@ -1,22 +1,23 @@
 ﻿using Atrea.PolicyEngine.Internal.Extensions;
 using Atrea.PolicyEngine.Processors;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Atrea.PolicyEngine.Internal.ProcessorRunners;
 
-internal class ProcessorRunner<T> : IProcessorRunner<T>
+internal sealed class ProcessorRunner<T>(IReadOnlyCollection<IProcessor<T>> processors) : IProcessorRunner<T>
 {
-    private IEnumerable<IProcessor<T>> _processors;
-
-    public ProcessorRunner(IEnumerable<IProcessor<T>> processors) => _processors = processors;
+    public IReadOnlyCollection<IProcessor<T>> Processors { get; private set; } = processors;
 
     public void Process(T item)
     {
-        foreach (var processor in _processors)
+        foreach (var processor in Processors)
         {
             processor.Process(item);
         }
     }
 
-    public void Shuffle() => _processors = _processors.Shuffle();
+    public void Shuffle() => Processors = Processors.Shuffle().ToList();
+
+    public void Replace(IReadOnlyCollection<IProcessor<T>> processors) => Processors = processors;
 }

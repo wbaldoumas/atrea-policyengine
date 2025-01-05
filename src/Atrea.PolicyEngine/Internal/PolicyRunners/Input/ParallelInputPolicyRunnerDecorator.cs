@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input;
 
-internal class ParallelInputPolicyRunnerDecorator<T> : BaseAsyncInputPolicyRunnerDecorator<T>
+internal sealed class ParallelInputPolicyRunnerDecorator<T> : BaseAsyncInputPolicyRunnerDecorator<T>
 {
     private readonly IEnumerable<IAsyncInputPolicy<T>> _parallelAsyncInputPolicies;
 

@@ -1,4 +1,5 @@
 ﻿using Atrea.PolicyEngine.Builders;
+using Atrea.PolicyEngine.Containers;
 using Atrea.PolicyEngine.Processors;
 using System.Collections.Generic;
 
@@ -11,16 +12,11 @@ namespace Atrea.PolicyEngine;
 ///     See <see cref="PolicyEngineBuilder{T}" /> for configuration of this policy engine.
 /// </summary>
 /// <typeparam name="T">The type of the item to be processed.</typeparam>
-public interface IPolicyEngine<in T> : IProcessor<T>
+public interface IPolicyEngine<T> : IProcessor<T>, ISyncProcessorContainer<T>
 {
     /// <summary>
     ///     Process items.
     /// </summary>
     /// <param name="items">The items to be processed.</param>
     void Process(IEnumerable<T> items);
-
-    /// <summary>
-    ///     Shuffle the order of the processors.
-    /// </summary>
-    void Shuffle();
 }

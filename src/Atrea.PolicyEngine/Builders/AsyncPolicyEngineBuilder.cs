@@ -35,7 +35,7 @@ public class AsyncPolicyEngineBuilder<T> :
 {
     private IAsyncInputPolicyRunner<T> _asyncInputPolicyRunner = new RootAsyncInputPolicyRunner<T>();
     private IAsyncOutputPolicyRunner<T> _asyncOutputPolicyRunner = new RootAsyncOutputPolicyRunner<T>();
-    private IAsyncProcessorRunner<T> _asyncProcessorRunner = new RootAsyncProcessorRunner<T>();
+    private IAsyncProcessorRunner<T>? _asyncProcessorRunner;
 
     /// <summary>
     ///     Begin configuring a <see cref="IAsyncPolicyEngine{T}" />.

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Atrea.PolicyEngine.Internal.PolicyRunners.Output;
 
-internal class OutputPolicyRunner<T> : IOutputPolicyRunner<T>
+internal sealed class OutputPolicyRunner<T> : IOutputPolicyRunner<T>
 {
     private readonly IEnumerable<IOutputPolicy<T>> _outputPolicies;
 

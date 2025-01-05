@@ -1,4 +1,12 @@
+[*]
+insert_final_newline = true
+
 [*.cs]
+
+# code cannot contain empty statements
+dotnet_diagnostic.SA1106.severity = none
+dotnet_diagnostic.SA1500.severity = none
+dotnet_diagnostic.SA1508.severity = none
 
 # closing parenthesis should not be preceded by a space
 dotnet_diagnostic.SA1009.severity = none
@@ -44,3 +52,4 @@ dotnet_diagnostic.SA1201.severity = none
 
 # static members must appear before non-static members
 dotnet_diagnostic.SA1204.severity = none
+

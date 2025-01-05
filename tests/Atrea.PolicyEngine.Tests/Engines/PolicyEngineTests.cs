@@ -75,6 +75,7 @@ public class PolicyEngineTests
             .Build();
 
         policyEngine.Shuffle();
+        policyEngine.Replace(policyEngine.Processors);
         policyEngine.Process(Item);
 
         Received.InOrder(() =>

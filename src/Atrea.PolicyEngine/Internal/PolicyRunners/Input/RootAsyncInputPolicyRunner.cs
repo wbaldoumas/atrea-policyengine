@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Atrea.PolicyEngine.Internal.PolicyRunners.Input;
 
-internal class RootAsyncInputPolicyRunner<T> : IAsyncInputPolicyRunner<T>
+internal sealed class RootAsyncInputPolicyRunner<T> : IAsyncInputPolicyRunner<T>
 {
     public Task<InputPolicyResult> ShouldProcessAsync(T item)
     {
